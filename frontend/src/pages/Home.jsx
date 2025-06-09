@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import img1 from '../assets/Media/Image1.jpg';
 import img2 from '../assets/Media/Image2.avif';
 import img3 from '../assets/Media/Image3.avif';
+import HowITWorks from './HowItWorks';
+import ClientStories from './ClientStories';
 
 // Import Swiper React components and styles
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -65,6 +67,8 @@ const Home = () => {
           </SwiperSlide>
         </Swiper>
       </div>
+          <section className="mt-16"><HowITWorks /></section>
+          <section className="mt-16"><ClientStories /></section>
     </main>
   );
 };
