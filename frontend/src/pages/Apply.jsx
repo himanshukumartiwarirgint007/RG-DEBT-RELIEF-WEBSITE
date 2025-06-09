@@ -1,6 +1,9 @@
 import React, { useState } from "react";
 import applyNowImg from '../assets/Media/applynow.png';
-import HowItWorks from "./HowItWorks";
+import ChatIcon from "../assets/Media/chat.png";
+import CalculatorIcon from "../assets/Media/Calculator.png";
+import CoinIcon from "../assets/Media/coin.png";
+
 
 const styles = `
 html, body {
@@ -493,9 +496,61 @@ export default function Apply() {
           </div>
         </div>
      </form>
-      <section className="mt-16">
-        <HowItWorks />
-      </section>
+     {/* How It Works Section */}
+    <section className="bg-[#f1f3f6] py-16">
+      <div className="max-w-5xl mx-auto text-center px-6">
+        <h2 className="text-3xl font-bold mb-4">How It Works</h2>
+        <p className="text-gray-600 mb-10">
+          You’re in control, our debt experts do the work.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
+          {/* Step 1 */}
+          <div>
+            <img
+              src={ChatIcon}
+              alt="Chat Icon"
+              className="mx-auto mb-4 w-12 h-12"
+            />
+            <h3 className="font-semibold text-lg mb-2">
+              Talk to us for a free consultation
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Tell us your situation, then find out your debt relief options – no obligation.
+            </p>
+          </div>
+          {/* Step 2 */}
+          <div>
+            <img
+              src={CalculatorIcon}
+              alt="Plan Icon"
+              className="mx-auto mb-4 w-12 h-12"
+            />
+            <h3 className="font-semibold text-lg mb-2">
+              We create an affordable plan that works for you
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Approve your plan, personalized from our suite of products.
+            </p>
+          </div>
+          {/* Step 3 */}
+          <div>
+            <img
+              src={CoinIcon}
+              alt="Coins Icon"
+              className="mx-auto mb-4 w-12 h-12"
+            />
+            <h3 className="font-semibold text-lg mb-2">
+              Get out of debt faster than you think
+            </h3>
+            <p className="text-gray-600 text-sm">
+              Take back your life in as little as 24–48 months.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     </>
   );
 }
