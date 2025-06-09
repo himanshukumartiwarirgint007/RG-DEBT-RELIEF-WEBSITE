@@ -7,7 +7,7 @@ const Navbar = () => {
   const navigate = useNavigate(); // Initialize navigate
 
   return (
-    <header className="bg-[#002855] w-full">
+    <header className="bg-[#002855] w-full sticky top-0 z-50">
       <div className="max-w-7xl mx-auto flex items-center px-2 py-4">
         {/* Left: Logo and Brand */}
         <div className="flex items-center gap-4 flex-shrink-0 min-w-0">

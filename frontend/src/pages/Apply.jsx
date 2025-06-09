@@ -1,86 +1,497 @@
 import React, { useState } from "react";
+import applyNowImg from '../assets/Media/applynow.png';
 
-const Apply = () => {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  });
+const styles = `
+html, body {
+  height: 100%; margin: 0; font-family: Arial, sans-serif;
+}
+body {
+  background: #ffffff;
+}
+.container {
+  background: white;
+  width: 80%; max-width: 900px;
+  min-height: 600px;
+  border-radius: 15px;
+  overflow: hidden;
+  display: flex;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+  margin: 48px auto; /* Center the form horizontally with margin */
+}
+.image-side {
+  flex: 1;
+  background: url('../assets/Media/applynow.png') center/cover no-repeat;
+}
+.form-side {
+  flex: 1;
+  padding: 40px;
+  position: relative;
+}
+.form-page {
+  display: none;
+  animation: fadeIn 0.5s ease-in-out;
+}
+.form-page.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateX(20px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+label { display: block; margin: 15px 0 5px; font-weight: bold; }
+input, select, textarea {
+  width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;
+}
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.buttons {
+  margin-top: 20px; display: flex; justify-content: space-between;
+}
+button {
+  padding: 10px 20px; border: none; border-radius: 5px;
+  cursor: pointer; font-weight: bold;
+}
+.next-btn { background: #4b38d3; color: white; }
+.back-btn { background: #ccc; }
 
-  const [submitted, setSubmitted] = useState(false);
+.radio-option input[type="checkbox"] {
+  opacity: 0;
+  position: absolute;
+  right: 16px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.radio-option {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 6px 0;
+}
+.radio-option span:last-child {
+  font-weight: bold;
+}
+
+.custom-radio {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #000000;
+  border-radius: 6px;
+  display: inline-block;
+  position: relative;
+  background: #fff;
+  margin-left: 12px;
+  transition: border-color 0.2s;
+}
+
+.radio-option input[type="checkbox"]:checked + .custom-radio {
+  border-color: #000000;
+  background: #000000;
+}
+
+.radio-option input[type="checkbox"]:checked + .custom-radio::after {
+  content: '';
+  display: block;
+  width: 10px;
+  height: 10px;
+  background: #000000;
+  border-radius: 2px;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+}
+
+.radio-option input[type="checkbox"]:focus + .custom-radio {
+  outline: 2px solid #ffffff;
+}
+
+.radio-option input[type="checkbox"]:checked ~ .custom-radio,
+.radio-option:hover {
+  background: #fff7f7;
+}
+.radio-box-group {
+  border: 2px solid #222;
+  border-radius: 10px;
+  background: #f7f7ff;
+  padding: 18px 20px;
+  margin-bottom: 24px;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.radio-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: normal;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 6px 0;
+}
+
+.radio-row input[type="radio"] {
+  accent-color: #4b38d3;
+  width: 18px;
+  height: 18px;
+  margin: 0;
+}
+`;
+
+const initialForm = {
+  firstName: "",
+  lastName: "",
+  email: "",
+  countryCode: "",
+  phone: "",
+  state: "",
+  debtAmount: "",
+  typeOfDebt: [],
+  employmentStatus: "",
+  monthlyIncome: "",
+  source: "",
+  status: "",
+  notes: "",
+};
+
+const debtTypes = ["Credit Cards", "Loans", "Medical"];
+const sources = ["Facebook", "Google", "Referral"];
+const statuses = ["New Client", "Current Client", "Previous Client"];
+const states = [
+  "Alabama","Alaska","Arizona","Arkansas","California","Colorado","Connecticut","Delaware","Florida","Georgia","Hawaii","Idaho","Illinois","Indiana","Iowa","Kansas","Kentucky","Louisiana","Maine","Maryland","Massachusetts","Michigan","Minnesota","Mississippi","Missouri","Montana","Nebraska","Nevada","New Hampshire","New Jersey","New Mexico","New York","North Carolina","North Dakota","Ohio","Oklahoma","Oregon","Pennsylvania","Rhode Island","South Carolina","South Dakota","Tennessee","Texas","Utah","Vermont","Virginia","Washington","West Virginia","Wisconsin","Wyoming"
+];
+
+export default function Apply() {
+  const [form, setForm] = useState(initialForm);
+  const [page, setPage] = useState(1);
+  const [submitting, setSubmitting] = useState(false);
+
+  const phoneLength = form.countryCode === "+1" ? 10 : 10;
 
   const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
+    const { name, value, type, checked } = e.target;
+    if (name === "typeOfDebt") {
+      setForm((f) => ({
+        ...f,
+        typeOfDebt: checked
+          ? [...f.typeOfDebt, value]
+          : f.typeOfDebt.filter((v) => v !== value),
+      }));
+    } else if (type === "checkbox" || type === "radio") {
+      setForm((f) => ({ ...f, [name]: value }));
+    } else if (name === "phone") {
+      setForm((f) => ({
+        ...f,
+        phone: value.replace(/[^0-9]/g, "").slice(0, phoneLength),
+      }));
+    } else {
+      setForm((f) => ({ ...f, [name]: value }));
+    }
   };
 
-  const handleSubmit = (e) => {
+  const validatePage = () => {
+    if (page === 1) {
+      return (
+        form.firstName &&
+        form.lastName &&
+        form.email &&
+        form.countryCode &&
+        form.phone.length === phoneLength &&
+        form.state
+      );
+    }
+    if (page === 2) {
+      return (
+        form.debtAmount &&
+        form.typeOfDebt.length > 0 &&
+        form.employmentStatus &&
+        form.monthlyIncome
+      );
+    }
+    if (page === 3) {
+      return form.source && form.status;
+    }
+    return true;
+  };
+
+  const handleNext = () => {
+    if (!validatePage()) {
+      alert("Please fill all required fields.");
+      return;
+    }
+    setPage((p) => p + 1);
+  };
+
+  const handleBack = () => setPage((p) => p - 1);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
-    setSubmitted(true);
+    if (!validatePage()) {
+      alert("Please fill all required fields.");
+      return;
+    }
+    setSubmitting(true);
+    try {
+      const res = await fetch("/api/apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (res.ok) {
+        alert("Form submitted!");
+        setForm(initialForm);
+        setPage(1);
+      } else {
+        alert("Submission failed.");
+      }
+    } catch {
+      alert("Submission failed.");
+    }
+    setSubmitting(false);
   };
 
   return (
-    <div className="apply-page">
-      <h1>Apply for Debt Relief</h1>
-      <p>
-        Fill out the form below and our team will contact you to discuss your options.
-      </p>
-      {submitted ? (
-        <div className="success-message">
-          <h2>Thank you for applying!</h2>
-          <p>We have received your information and will be in touch soon.</p>
-        </div>
-      ) : (
-        <form className="apply-form" onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="name">Full Name:</label>
+    <>
+      <style>{styles}</style>
+      <form className="container" onSubmit={handleSubmit} autoComplete="off">
+        <div className="image-side" style={{ background: `url(${applyNowImg}) center/cover no-repeat` }} />
+        <div className="form-side">
+          <div className={`form-page${page === 1 ? " active" : ""}`}>
+            <label>First Name*</label>
             <input
               type="text"
-              id="name"
-              name="name"
-              value={form.name}
+              name="firstName"
+              value={form.firstName}
               onChange={handleChange}
               required
             />
-          </div>
-          <div>
-            <label htmlFor="email">Email Address:</label>
+
+            <label>Last Name*</label>
+            <input
+              type="text"
+              name="lastName"
+              value={form.lastName}
+              onChange={handleChange}
+              required
+            />
+
+            <label>Email*</label>
             <input
               type="email"
-              id="email"
               name="email"
               value={form.email}
               onChange={handleChange}
               required
             />
+
+            <label>Phone Number*</label>
+            <div style={{ display: "flex", gap: 8 }}>
+              <select
+                name="countryCode"
+                value={form.countryCode}
+                onChange={handleChange}
+                required
+                style={{ maxWidth: 110 }}
+              >
+                <option value="" disabled>
+                  Select
+                </option>
+                <option value="+1" data-length="10">
+                  +1 (USA)
+                </option>
+              </select>
+              <input
+                type="tel"
+                name="phone"
+                value={form.phone}
+                onChange={handleChange}
+                required
+                maxLength={phoneLength}
+                placeholder={`Enter ${phoneLength}-digit phone number`}
+                style={{ flex: 1 }}
+              />
+            </div>
+
+            <label>State*</label>
+            <select
+              name="state"
+              value={form.state}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select State</option>
+              {states.map((s) => (
+                <option key={s} value={s}>
+                  {s}
+                </option>
+              ))}
+            </select>
+            <div className="buttons">
+              <span />
+              <button
+                type="button"
+                className="next-btn"
+                onClick={handleNext}
+                disabled={submitting}
+              >
+                Next
+              </button>
+            </div>
           </div>
-          <div>
-            <label htmlFor="phone">Phone Number:</label>
+
+          <div className={`form-page${page === 2 ? " active" : ""}`}>
+            <label>Debt Amount*</label>
+            <select
+              name="debtAmount"
+              value={form.debtAmount}
+              onChange={handleChange}
+              required
+            >
+              <option value="">Select Amount</option>
+              <option>$1k–$5k</option>
+              <option>$5k–$10k</option>
+              <option>$10k–$20k</option>
+              <option>$20k–$50k</option>
+              <option>$50k–$100k</option>
+              <option>$100k+</option>
+            </select>
+
+            <label>Type of Debt*</label>
+            <div className="radio-box-group">
+              {debtTypes.map((type) => (
+                <label className="radio-option" key={type}>
+                  <input
+                    type="checkbox"
+                    name="typeOfDebt"
+                    value={type}
+                    checked={form.typeOfDebt.includes(type)}
+                    onChange={handleChange}
+                  />
+                  <span className="custom-radio"></span>
+                  <span>{type}</span>
+                </label>
+              ))}
+            </div>
+
+            <label>Employment Status*</label>
+            <select
+              name="employmentStatus"
+              value={form.employmentStatus}
+              onChange={handleChange}
+              required
+            >
+              <option value="" disabled>
+                Select Employment Status
+              </option>
+              <option>Employed</option>
+              <option>Unemployed</option>
+              <option>Self-employed</option>
+            </select>
+
+            <label>Monthly Income*</label>
             <input
-              type="tel"
-              id="phone"
-              name="phone"
-              value={form.phone}
+              type="number"
+              name="monthlyIncome"
+              value={form.monthlyIncome}
               onChange={handleChange}
               required
             />
-          </div>
-          <div>
-            <label htmlFor="message">Message:</label>
-            <textarea
-              id="message"
-              name="message"
-              value={form.message}
-              onChange={handleChange}
-              rows="4"
-            />
-          </div>
-          <button type="submit">Apply Now</button>
-        </form>
-      )}
-    </div>
-  );
-};
 
-export default Apply;
+            <div className="buttons">
+              <button
+                type="button"
+                className="back-btn"
+                onClick={handleBack}
+                disabled={submitting}
+              >
+                Back
+              </button>
+              <button
+                type="button"
+                className="next-btn"
+                onClick={handleNext}
+                disabled={submitting}
+              >
+                Next
+              </button>
+            </div>
+          </div>
+
+          <div className={`form-page${page === 3 ? " active" : ""}`}>
+            <label>Source*</label>
+            <div className="radio-box-group">
+              {sources.map((src) => (
+                <label className="radio-row" key={src}>
+                  <input
+                    type="radio"
+                    name="source"
+                    value={src}
+                    checked={form.source === src}
+                    onChange={handleChange}
+                  />
+                  <span>{src}</span>
+                </label>
+              ))}
+            </div>
+
+            <label>Status*</label>
+            <div className="radio-box-group">
+              {statuses.map((stat) => (
+                <label className="radio-row" key={stat}>
+                  <input
+                    type="radio"
+                    name="status"
+                    value={stat}
+                    checked={form.status === stat}
+                    onChange={handleChange}
+                  />
+                  <span>
+                    {stat === "New Client"
+                      ? "New User"
+                      : stat === "Current Client"
+                      ? "Current Client"
+                      : "Previous Client"}
+                  </span>
+                </label>
+              ))}
+            </div>
+
+            <label>Comments</label>
+            <textarea
+              name="notes"
+              value={form.notes}
+              onChange={handleChange}
+              placeholder="Leave Your Comment"
+            />
+
+            <div className="buttons">
+              <button
+                type="button"
+                className="back-btn"
+                onClick={handleBack}
+                disabled={submitting}
+              >
+                Back
+              </button>
+              <button
+                type="submit"
+                className="next-btn"
+                disabled={submitting}
+              >
+                {submitting ? "Submitting..." : "Submit"}
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </>
+  );
+}
