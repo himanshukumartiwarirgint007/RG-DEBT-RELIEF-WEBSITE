@@ -226,14 +226,28 @@ export default function Apply() {
     return true;
   };
 
-  const handleNext = () => {
-    if (!validatePage()) {
-      alert("Please fill all required fields.");
-      return;
-    }
-    setPage((p) => p + 1);
-  };
+  const handleNext = async () => {
+  if (!validatePage()) {
+    alert("Please fill all required fields.");
+    return;
+  }
 
+  // Save to Apply_uncomplete only after page 1 (initial data)
+  if (page === 1) {
+    try {
+      const res = await fetch("http://localhost:3001/api/apply/partial", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Partial save failed");
+    } catch (error) {
+      console.error("Error saving partial form:", error.message);
+    }
+  }
+
+  setPage((p) => p + 1);
+};
   const handleBack = () => setPage((p) => p - 1);
 
   const handleSubmit = async (e) => {
@@ -244,7 +258,7 @@ export default function Apply() {
     }
     setSubmitting(true);
     try {
-      const res = await fetch("/api/apply", {
+      const res = await fetch("http://localhost:3001/api/apply", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
