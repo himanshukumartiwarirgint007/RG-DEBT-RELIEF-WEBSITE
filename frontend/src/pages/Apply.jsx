@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import applyNowImg from '../assets/Media/applynow.png';
+import HowItWorks from "./HowItWorks";
 
 const styles = `
 html, body {
@@ -491,7 +492,10 @@ export default function Apply() {
             </div>
           </div>
         </div>
-      </form>
+     </form>
+      <section className="mt-16">
+        <HowItWorks />
+      </section>
     </>
   );
 }
