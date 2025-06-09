@@ -1,20 +1,25 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom'; // Import useNavigate
+import { useNavigate } from 'react-router-dom';
 import logo from '../assets/Media/logo.png';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const navigate = useNavigate(); // Initialize navigate
+  const navigate = useNavigate();
 
   return (
     <header className="bg-[#002855] w-full sticky top-0 z-50">
-      <div className="max-w-7xl mx-auto flex items-center px-2 py-4">
+      <div className="w-full mx-auto flex items-center px-4 py-0 justify-between">
         {/* Left: Logo and Brand */}
-        <div className="flex items-center gap-4 flex-shrink-0 min-w-0">
-          <img src={logo} alt="Logo" className="w-32 h-20 object-contain" />
+        <div className="flex items-center gap-2 flex-shrink-0 min-w-0">
+          <img
+            src={logo}
+            alt="Logo"
+            className="w-20 h-16 object-contain sm:w-28 sm:h-20 lg:w-32 lg:h-30"
+          />
           <div className="min-w-0">
-            <div className="text-white font-bold text-2xl lg:text-3xl leading-tight truncate">
-              REDDINGTON<br className="hidden lg:block" /> GLOBAL Pvt. Ltd.
+            <div className="text-white font-bold text-lg sm:text-xl lg:text-2xl leading-tight truncate">
+              REDDINGTON
+              <br className="hidden lg:block" /> GLOBAL Pvt. Ltd.
             </div>
             <div className="text-white text-xs tracking-widest mt-1 hidden lg:block">
               DEBT RELIEF
@@ -23,7 +28,7 @@ const Navbar = () => {
         </div>
 
         {/* Centre: Navbar */}
-       <nav className="hidden lg:flex flex-wrap gap-6 min-w-0 mx-2 whitespace-nowrap flex-shrink-0">
+        <nav className="hidden lg:flex flex-1 justify-center flex-wrap gap-6 min-w-0 mx-2 whitespace-nowrap">
           <button
             onClick={() => navigate('/')}
             className="text-white font-semibold text-base px-3 py-2 hover:bg-[#16b477] rounded transition whitespace-nowrap bg-transparent"
@@ -69,14 +74,16 @@ const Navbar = () => {
         </nav>
 
         {/* Right: Login + Contact */}
-        <div className="hidden lg:flex items-center gap-2 flex-shrink-0 ml-auto">
+        <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
           <button
             onClick={() => navigate('/login')}
             className="bg-[#2563eb] text-white font-bold px-5 py-2 rounded hover:bg-[#174ea6] transition text-base"
           >
             Login
           </button>
-          <span className="border-2 border-white bg-white text-[#002855] font-bold px-6 py-2 rounded-full transition text-base whitespace-nowrap">800-300-9550</span>
+          <span className="border-2 border-white bg-white text-[#002855] font-bold px-6 py-2 rounded-full transition text-base whitespace-nowrap mr-6">
+            800-300-9550
+          </span>
         </div>
 
         {/* Hamburger for mobile */}
@@ -137,13 +144,17 @@ const Navbar = () => {
             >
               Blog
             </button>
-            <button
-              onClick={() => { navigate('/login'); setMenuOpen(false); }}
-              className="bg-[#2563eb] text-white font-bold px-7 py-3 rounded hover:bg-[#174ea6] transition text-lg mt-2 text-left"
-            >
-              Login
-            </button>
-            <span className="border-2 border-white bg-white text-[#002855] font-bold px-8 py-3 rounded-full transition text-lg whitespace-nowrap mt-2">800-300-9550</span>
+            <div className="flex flex-col items-start pl-2">
+              <button
+                onClick={() => { navigate('/login'); setMenuOpen(false); }}
+                className="bg-[#2563eb] text-white font-bold px-7 py-3 rounded hover:bg-[#174ea6] transition text-lg mt-2 text-left"
+              >
+                Login
+              </button>
+              <span className="border-2 border-white bg-white text-[#002855] font-bold px-6 py-2 rounded-full transition text-base whitespace-nowrap mt-2">
+                800-300-9550
+              </span>
+            </div>
           </nav>
         </div>
       )}
