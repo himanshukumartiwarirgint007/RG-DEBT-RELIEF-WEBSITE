@@ -58,7 +58,7 @@ const Home = () => {
       </div>
     </div>
 
-     {/* 2x2 Grid Section */}
+     {/* Grid Section */}
 <div className="max-w-7xl mx-auto py-20 px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
   {/* Top Left: Text Block */}
   <div className="flex flex-col justify-center bg-white p-12 rounded-3xl shadow-2xl">
