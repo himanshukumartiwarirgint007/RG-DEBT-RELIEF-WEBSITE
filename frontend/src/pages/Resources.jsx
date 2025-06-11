@@ -261,7 +261,7 @@ const Resources = () => {
           </div>
         </div>
 
-        {/* Cards Section */}}
+        {/* Cards Section */}
       <div style={styles.cardsGrid}>
         {cardData.map((card, idx) => (
           <div
