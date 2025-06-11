@@ -9,7 +9,7 @@ const PORT = 3001;
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost:27017/userDB', {
+mongoose.connect('mongodb+srv://sd5:SD5-123@rg.chrbsm4.mongodb.net/?retryWrites=true&w=majority&appName=rg', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
