@@ -150,22 +150,6 @@ const ClientStories = () => {
     window.addEventListener('scroll', animateOnScroll);
     window.addEventListener('load', animateOnScroll);
 
-    // Animate footer separately
-    const footer = document.querySelector('.footer');
-    if (footer) {
-      footer.style.opacity = '0';
-      footer.style.transform = 'translateY(30px)';
-      const footerObserver = new window.IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            footer.style.opacity = '1';
-            footer.style.transform = 'translateY(0)';
-          }
-        });
-      }, { threshold: 0.1 });
-      footerObserver.observe(footer);
-    }
-
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function(e) {
@@ -567,65 +551,6 @@ const ClientStories = () => {
           padding: 1rem 1.5rem 1.5rem;
           color: var(--gray);
         }
-        .footer {
-          background-color: var(--darker);
-          color: var(--white);
-          padding: 3rem 0 1.5rem;
-        }
-        .footer-logo {
-          font-size: 1.5rem;
-          font-weight: 700;
-          margin-bottom: 1rem;
-          display: inline-block;
-          color: var(--secondary);
-        }
-        .footer-links h5 {
-          font-size: 1rem;
-          margin-bottom: 1rem;
-          color: var(--white);
-          opacity: 0.9;
-        }
-        .footer-links ul {
-          list-style: none;
-          padding-left: 0;
-        }
-        .footer-links li {
-          margin-bottom: 0.5rem;
-        }
-        .footer-links a {
-          color: var(--light-gray);
-          text-decoration: none;
-          transition: var(--transition);
-        }
-        .footer-links a:hover {
-          color: var(--secondary);
-          padding-left: 5px;
-        }
-        .social-links a {
-          display: inline-flex;
-          align-items: center;
-          justify-content: center;
-          width: 36px;
-          height: 36px;
-          background-color: rgba(247,201,72,0.12);
-          border-radius: 50%;
-          color: var(--secondary);
-          margin-right: 0.5rem;
-          transition: var(--transition);
-          font-size: 1.2rem;
-        }
-        .social-links a:hover {
-          background-color: var(--secondary);
-          color: var(--primary);
-          transform: translateY(-3px);
-        }
-        .copyright {
-          border-top: 1px solid rgba(255,255,255,0.1);
-          padding-top: 1.5rem;
-          margin-top: 2rem;
-          font-size: 0.85rem;
-          color: var(--light-gray);
-        }
         .ripple {
           position: absolute;
           border-radius: 50%;
@@ -882,59 +807,6 @@ const ClientStories = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <div className="row">
-            <div className="col-lg-4 mb-4">
-              <a href="#" className="footer-logo">DebtFree Solutions</a>
-              <p className="text-white-50">Helping individuals and families achieve financial freedom through ethical debt relief solutions since 2010.</p>
-            </div>
-            <div className="col-lg-2 col-md-4 mb-4 footer-links">
-              <h5>Company</h5>
-              <ul>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Our Team</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">News</a></li>
-                <li><a href="#">Contact</a></li>
-              </ul>
-            </div>
-            <div className="col-lg-2 col-md-4 mb-4 footer-links">
-              <h5>Services</h5>
-              <ul>
-                <li><a href="#">Debt Settlement</a></li>
-                <li><a href="#">Debt Management</a></li>
-                <li><a href="#">Credit Counseling</a></li>
-                <li><a href="#">Bankruptcy Alternatives</a></li>
-                <li><a href="#">Financial Education</a></li>
-              </ul>
-            </div>
-            <div className="col-lg-2 col-md-4 mb-4 footer-links">
-              <h5>Resources</h5>
-              <ul>
-                <li><a href="#">Success Stories</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Calculators</a></li>
-                <li><a href="#">FAQ</a></li>
-                <li><a href="#">Glossary</a></li>
-              </ul>
-            </div>
-            <div className="col-lg-2 col-md-12 mb-4 footer-links">
-              <h5>Legal</h5>
-              <ul>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Disclosures</a></li>
-                <li><a href="#">Licenses</a></li>
-              </ul>
-            </div>
-          </div>
-          <div className="copyright text-center">
-            <p className="mb-0">&copy; 2025 DebtFree Solutions. All rights reserved. | <a href="#" className="text-white-50">Privacy Policy</a> | <a href="#" className="text-white-50">Terms of Service</a></p>
-          </div>
-        </div>
-      </footer>
       {/* Bootstrap JS */}
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
