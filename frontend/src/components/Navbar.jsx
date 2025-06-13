@@ -1,10 +1,20 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useLocation } from 'react-router-dom';
 import logo from '../assets/Media/logo.png';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavClick = (path) => {
+    if (location.pathname === path) {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    } else {
+      navigate(path);
+    }
+    setMenuOpen(false);
+  };
 
   return (
     <header className="bg-[#002855] w-full sticky top-0 z-50">
@@ -29,55 +39,30 @@ const Navbar = () => {
 
         {/* Centre: Navbar */}
         <nav className="hidden lg:flex flex-1 justify-center flex-wrap gap-6 min-w-0 mx-2 whitespace-nowrap">
-          <button
-            onClick={() => navigate('/')}
-            className="text-white font-semibold text-base px-3 py-2 hover:bg-[#16b477] rounded transition whitespace-nowrap bg-transparent"
-          >
-            Home
-          </button>
-          <button
-            onClick={() => navigate('/apply')}
-            className="text-white font-semibold text-base px-3 py-2 hover:bg-[#16b477] rounded transition whitespace-nowrap bg-transparent"
-          >
-            Apply
-          </button>
-          <button
-            onClick={() => navigate('/howitworks')}
-            className="text-white font-semibold text-base px-3 py-2 hover:bg-[#16b477] rounded transition whitespace-nowrap bg-transparent"
-          >
-            How It Works
-          </button>
-          <button
-            onClick={() => navigate('/aboutus')}
-            className="text-white font-semibold text-base px-3 py-2 hover:bg-[#16b477] rounded transition whitespace-nowrap bg-transparent"
-          >
-            About&nbsp;Us
-          </button>
-          <button
-            onClick={() => navigate('/resources')}
-            className="text-white font-semibold text-base px-3 py-2 hover:bg-[#16b477] rounded transition whitespace-nowrap bg-transparent"
-          >
-            Resources
-          </button>
-          <button
-            onClick={() => navigate('/clientstories')}
-            className="text-white font-semibold text-base px-3 py-2 hover:bg-[#16b477] rounded transition whitespace-nowrap bg-transparent"
-          >
-            Client&nbsp;Stories
-          </button>
-          <button
-            onClick={() => navigate('/blog')}
-            className="text-white font-semibold text-base px-3 py-2 hover:bg-[#16b477] rounded transition whitespace-nowrap bg-transparent"
-          >
-            Blog
-          </button>
+          {[
+            { label: 'Home', path: '/' },
+            { label: 'Apply', path: '/apply' },
+            { label: 'How It Works', path: '/howitworks' },
+            { label: 'About Us', path: '/aboutus' },
+            { label: 'Resources', path: '/resources' },
+            { label: 'Client Stories', path: '/clientstories' },
+            { label: 'Blog', path: '/blog' }
+          ].map(({ label, path }) => (
+            <button
+              key={path}
+              onClick={() => handleNavClick(path)}
+              className="text-white font-semibold text-base px-3 py-2 hover:bg-[#002855] rounded transition whitespace-nowrap bg-transparent"
+            >
+              {label}
+            </button>
+          ))}
         </nav>
 
         {/* Right: Login + Contact */}
         <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
           <button
-            onClick={() => navigate('/login')}
-            className="bg-[#2563eb] text-white font-bold px-5 py-2 rounded hover:bg-[#174ea6] transition text-base"
+            onClick={() => handleNavClick('/login')}
+            className="bg-[#f7c948] text-white font-bold px-5 py-2 rounded hover:bg-[#174ea6] transition text-base"
           >
             Login
           </button>
@@ -102,51 +87,26 @@ const Navbar = () => {
       {menuOpen && (
         <div className="lg:hidden px-2 pb-4">
           <nav className="flex flex-col gap-2 mt-2">
-            <button
-              onClick={() => { navigate('/'); setMenuOpen(false); }}
-              className="text-white font-semibold text-base px-4 py-2 hover:bg-[#16b477] rounded transition bg-transparent text-left"
-            >
-              Home
-            </button>
-            <button
-              onClick={() => { navigate('/apply'); setMenuOpen(false); }}
-              className="text-white font-semibold text-base px-4 py-2 hover:bg-[#16b477] rounded transition bg-transparent text-left"
-            >
-              Apply
-            </button>
-            <button
-              onClick={() => { navigate('/howitworks'); setMenuOpen(false); }}
-              className="text-white font-semibold text-base px-4 py-2 hover:bg-[#16b477] rounded transition bg-transparent text-left"
-            >
-              How It Works
-            </button>
-            <button
-              onClick={() => { navigate('/aboutus'); setMenuOpen(false); }}
-              className="text-white font-semibold text-base px-4 py-2 hover:bg-[#16b477] rounded transition bg-transparent text-left"
-            >
-              About Us
-            </button>
-            <button
-              onClick={() => { navigate('/resources'); setMenuOpen(false); }}
-              className="text-white font-semibold text-base px-4 py-2 hover:bg-[#16b477] rounded transition bg-transparent text-left"
-            >
-              Resources
-            </button>
-            <button
-              onClick={() => { navigate('/clientstories'); setMenuOpen(false); }}
-              className="text-white font-semibold text-base px-4 py-2 hover:bg-[#16b477] rounded transition bg-transparent text-left"
-            >
-              Client Stories
-            </button>
-            <button
-              onClick={() => { navigate('/blog'); setMenuOpen(false); }}
-              className="text-white font-semibold text-base px-4 py-2 hover:bg-[#16b477] rounded transition bg-transparent text-left"
-            >
-              Blog
-            </button>
+            {[
+              { label: 'Home', path: '/' },
+              { label: 'Apply', path: '/apply' },
+              { label: 'How It Works', path: '/howitworks' },
+              { label: 'About Us', path: '/aboutus' },
+              { label: 'Resources', path: '/resources' },
+              { label: 'Client Stories', path: '/clientstories' },
+              { label: 'Blog', path: '/blog' }
+            ].map(({ label, path }) => (
+              <button
+                key={path}
+                onClick={() => handleNavClick(path)}
+                className="text-white font-semibold text-base px-4 py-2 hover:bg-[#16b477] rounded transition bg-transparent text-left"
+              >
+                {label}
+              </button>
+            ))}
             <div className="flex flex-col items-start pl-2">
               <button
-                onClick={() => { navigate('/login'); setMenuOpen(false); }}
+                onClick={() => handleNavClick('/login')}
                 className="bg-[#2563eb] text-white font-bold px-7 py-3 rounded hover:bg-[#174ea6] transition text-lg mt-2 text-left"
               >
                 Login
