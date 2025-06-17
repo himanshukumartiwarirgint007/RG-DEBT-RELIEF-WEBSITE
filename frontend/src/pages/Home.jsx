@@ -8,7 +8,7 @@ import homebg2 from '../assets/Media/HomeBg2.jpg';
 import homebg3 from '../assets/Media/HomeBg3.jpg';
 import HowItWorks from './HowItWorks';
 import ClientStories from './ClientStories';
-import FAQ from '../components/FAQ';
+// import FAQ from '../components/FAQ';
 
 // Import Swiper React components and styles
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -127,7 +127,7 @@ const Home = () => {
 </div>
     <section className="mt-16"><HowItWorks /></section>
     <section className="mt-16"><ClientStories /></section>
-    <section className="mt-16"><FAQ /></section>
+    {/* <section className="mt-16"><FAQ /></section> */}
   </>
   );
 }
