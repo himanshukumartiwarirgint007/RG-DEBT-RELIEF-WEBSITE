@@ -191,7 +191,6 @@ const ClientStories = () => {
   return (
     <div>
       <style>{`
-        /* Place all your CSS here (copy from your <style> tag) */
         :root {
           --primary: #002856;
           --primary-light: #003e7e;
@@ -529,28 +528,6 @@ const ClientStories = () => {
         .btn-read-more:focus {
           outline: 2px solid var(--secondary);
         }
-        .faq-section {
-          padding: 4rem 0;
-          background-color: var(--white);
-        }
-        .accordion-button {
-          font-weight: 500;
-          padding: 1.25rem 1.5rem;
-          box-shadow: none !important;
-          color: var(--primary);
-          background: var(--light);
-        }
-        .accordion-button:not(.collapsed) {
-          background-color: rgba(0, 40, 86, 0.07);
-          color: var(--primary);
-        }
-        .accordion-button::after {
-          background-size: 1rem;
-        }
-        .accordion-body {
-          padding: 1rem 1.5rem 1.5rem;
-          color: var(--gray);
-        }
         .ripple {
           position: absolute;
           border-radius: 50%;
@@ -603,6 +580,7 @@ const ClientStories = () => {
           100% { transform: scale(1); }
         }
       `}</style>
+      
       {/* Header with Hero Section */}
       <header className="header">
         <div className="container header-content">
@@ -736,73 +714,6 @@ const ClientStories = () => {
             <a href="#" className="btn btn-primary btn-lg">
               View All Success Stories <i className="fas fa-arrow-right ms-2"></i>
             </a>
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="faq-section">
-        <div className="container">
-          <div className="section-title animate">
-            <h2>Frequently Asked Questions</h2>
-          </div>
-          <div className="row justify-content-center">
-            <div className="col-lg-8">
-              <div className="accordion" id="faqAccordion">
-                {/* FAQ Item 1 */}
-                <div className="accordion-item border-0 mb-3 shadow-sm animate">
-                  <h3 className="accordion-header" id="headingOne">
-                    <button className="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                      How does the debt relief process work?
-                    </button>
-                  </h3>
-                  <div id="collapseOne" className="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                    <div className="accordion-body">
-                      <p>Our debt relief process begins with a free consultation where we analyze your financial situation. We then develop a customized plan that may include debt settlement, consolidation, or management strategies. Our team negotiates directly with your creditors to reduce balances, lower interest rates, or create affordable payment plans. The average program lasts 24-48 months, with most clients seeing significant reductions in their total debt.</p>
-                    </div>
-                  </div>
-                </div>
-                {/* FAQ Item 2 */}
-                <div className="accordion-item border-0 mb-3 shadow-sm animate delay-1">
-                  <h3 className="accordion-header" id="headingTwo">
-                    <button className="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                      Will debt relief hurt my credit score?
-                    </button>
-                  </h3>
-                  <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                    <div className="accordion-body">
-                      <p>Debt relief programs may initially impact your credit score, as we negotiate with creditors to accept less than the full balance owed. However, most clients see their scores rebound within 12-18 months after completing their program. Our counselors will explain all potential impacts upfront and provide strategies to rebuild your credit during and after the program.</p>
-                    </div>
-                  </div>
-                </div>
-                {/* FAQ Item 3 */}
-                <div className="accordion-item border-0 mb-3 shadow-sm animate delay-2">
-                  <h3 className="accordion-header" id="headingThree">
-                    <button className="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                      How much does your service cost?
-                    </button>
-                  </h3>
-                  <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                    <div className="accordion-body">
-                      <p>Our fees are based on a percentage of the debt enrolled or the amount saved, and we only charge after we've successfully negotiated with your creditors. Initial consultations are always free, and we're completely transparent about all costs before you commit to any program. On average, our clients save significantly more than our fees through reduced debt amounts and interest rates.</p>
-                    </div>
-                  </div>
-                </div>
-                {/* FAQ Item 4 */}
-                <div className="accordion-item border-0 mb-3 shadow-sm animate delay-3">
-                  <h3 className="accordion-header" id="headingFour">
-                    <button className="accordion-button collapsed rounded" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                      Can you help with all types of debt?
-                    </button>
-                  </h3>
-                  <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                    <div className="accordion-body">
-                      <p>We specialize in unsecured debts like credit cards, medical bills, personal loans, and private student loans. We cannot assist with secured debts (mortgages, auto loans) or federal student loans. During your consultation, we'll review all your debts and advise which ones we can help with and recommend solutions for the others.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

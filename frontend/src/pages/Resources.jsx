@@ -5,7 +5,7 @@ const cardData = [
   {
     icon: "💳",
     title: "Credit Card Debt Relief",
-    description: "Pay off the credit card debt you’ve racked up.",
+    description: "Pay off the credit card debt you've racked up.",
     link: "#"
   },
   {
@@ -17,7 +17,7 @@ const cardData = [
   {
     icon: "🤝",
     title: "Personal Loan Debt Relief",
-    description: "We’ll help you navigate through life’s financial challenges.",
+    description: "We'll help you navigate through life's financial challenges.",
     link: "#"
   },
   {
@@ -47,19 +47,19 @@ const cardData = [
   {
     icon: "🎖️",
     title: "Veteran Debt Relief",
-    description: "We’re honored to help you pay off your debt and get a fresh start.",
+    description: "We're honored to help you pay off your debt and get a fresh start.",
     link: "#"
   },
   {
     icon: "💼",
     title: "Business Debt Relief",
-    description: "Don’t start or run your business on a negative note.",
+    description: "Don't start or run your business on a negative note.",
     link: "#"
   },
   {
     icon: "🏦",
     title: "Bankruptcy",
-    description: "Learn how bankruptcy works and if it’s right for you.",
+    description: "Learn how bankruptcy works and if it's right for you.",
     link: "#"
   },
   {
@@ -94,7 +94,17 @@ const cardData = [
   }
 ];
 
+const howItWorksSteps = [
+  "Talk to a Debt Specialist for a free, no-obligation consultation.",
+  "Customize your plan to fit your needs and budget.",
+  "We negotiate with your creditors to reduce your total debt.",
+  "Complete your program and enjoy a fresh financial start."
+];
+
 const Resources = () => {
+  const [hoveredCard, setHoveredCard] = useState(null);
+  const [hoveredLink, setHoveredLink] = useState(null);
+
   const styles = {
     page: {
       padding: "40px 20px",
@@ -196,15 +206,6 @@ const Resources = () => {
     }
   };
 
-  // State to track hovered card index
-  // (Removed unused hoveredCard and setHoveredCard)
-
-  // State to track hovered link index
-  // (Removed unused hoveredLink and setHoveredLink)
-  // State to track hovered card and link
-  const [hoveredCard, setHoveredCard] = useState(null);
-  const [hoveredLink, setHoveredLink] = useState(null);
-  // Add keyframes for fadeInUp animation
   useEffect(() => {
     const style = document.createElement("style");
     style.innerHTML = `
@@ -228,40 +229,40 @@ const Resources = () => {
   return (
     <div style={styles.page}>
       {/* Top Section */}
-        <div style={{ ...styles.hero, flexWrap: "nowrap", minHeight: 0 }}>
-          <div style={{ ...styles.heroText, flex: "1 1 350px", maxWidth: "600px" }}>
-            <h1 style={styles.heroTextH1}>All You Need To Know</h1>
-            <p style={styles.heroTextP}>
-          We’ve put all our essential resources in one spot. Everything from debt resolution to taking control of your financial future.
-          Need to talk? Our experts are here to help. Call us anytime for a free no-obligation consultation.
-            </p>
-            <a style={styles.heroBtn} href="tel:8003009550">800-300-9550</a>
-          </div>
-          <div style={{ 
-            flex: "1 1 320px", 
-            display: "flex", 
-            alignItems: "center", 
-            justifyContent: "flex-end", 
-            minWidth: 0 
-          }}>
-            <img
-          src={people}
-          alt="People working in an office"
-          style={{ 
-            ...styles.heroImg, 
-            width: "100%", 
-            maxWidth: "400px", 
-            minWidth: "220px", 
-            height: "auto", 
-            marginLeft: "32px", 
-            objectFit: "cover", 
-            objectPosition: "center" 
-          }}
-            />
-          </div>
+      <div style={{ ...styles.hero, flexWrap: "nowrap", minHeight: 0 }}>
+        <div style={{ ...styles.heroText, flex: "1 1 350px", maxWidth: "600px" }}>
+          <h1 style={styles.heroTextH1}>All You Need To Know</h1>
+          <p style={styles.heroTextP}>
+            We've put all our essential resources in one spot. Everything from debt resolution to taking control of your financial future.
+            Need to talk? Our experts are here to help. Call us anytime for a free no-obligation consultation.
+          </p>
+          <a style={styles.heroBtn} href="tel:8003009550">800-300-9550</a>
         </div>
+        <div style={{
+          flex: "1 1 320px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "flex-end",
+          minWidth: 0
+        }}>
+          <img
+            src={people}
+            alt="People working in an office"
+            style={{
+              ...styles.heroImg,
+              width: "100%",
+              maxWidth: "400px",
+              minWidth: "220px",
+              height: "auto",
+              marginLeft: "32px",
+              objectFit: "cover",
+              objectPosition: "center"
+            }}
+          />
+        </div>
+      </div>
 
-        {/* Cards Section */}
+      {/* Cards Section */}
       <div style={styles.cardsGrid}>
         {cardData.map((card, idx) => (
           <div
@@ -293,6 +294,71 @@ const Resources = () => {
           </div>
         ))}
       </div>
+
+      {/* How Debt Relief Works Section */}
+      <section style={{
+        display: "flex",
+        flexWrap: "wrap",
+        alignItems: "center",
+        justifyContent: "space-between",
+        background: "#fff",
+        borderRadius: "20px",
+        boxShadow: "0 4px 24px rgba(0,0,0,0.07)",
+        padding: "32px 24px",
+        margin: "48px 0"
+      }}>
+        <div style={{ flex: "1 1 350px", minWidth: "280px", maxWidth: "600px" }}>
+          <h2 style={{ fontSize: "2.2rem", color: "#1a202c", marginBottom: "18px" }}>
+            How Debt Relief Works in 4 Life-Changing Steps
+          </h2>
+          <p style={{ color: "#444", fontSize: "1.1rem", marginBottom: "18px" }}>
+            At National Debt Relief, we've helped over 550,000 clients with their debt settlement. We negotiate with major credit card issuers and banks to reduce debts, and cover most unsecured debt. For anyone carrying the burden of credit card debt, personal loans, private student loans, collections or business debt, it starts with one simple call and ends with you living again, debt free!
+          </p>
+          <a style={{
+            display: "inline-block",
+            background: "#1976d2",
+            color: "#fff",
+            padding: "12px 28px",
+            borderRadius: "24px",
+            fontWeight: "bold",
+            textDecoration: "none",
+            marginTop: "12px"
+          }} href="tel:8003009550">800-300-9550</a>
+          <ul style={{ marginTop: "28px", paddingLeft: "20px", color: "#1976d2", fontSize: "1.08rem" }}>
+            {howItWorksSteps.map((step, idx) => (
+              <li key={idx} style={{ marginBottom: "10px" }}>
+                <span style={{
+                  fontWeight: "bold",
+                  color: "#ff7a59",
+                  marginRight: "8px"
+                }}>{idx + 1}.</span> {step}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div style={{
+          flex: "1 1 320px",
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+          minWidth: "260px"
+        }}>
+          <iframe
+            width="360"
+            height="200"
+            src="https://www.youtube.com/embed/4Q7FTjhvZ7Y"
+            title="How Does Debt Relief Work?"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+            style={{
+              borderRadius: "16px",
+              boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
+              background: "#eee"
+            }}
+          ></iframe>
+        </div>
+      </section>
     </div>
   );
 };

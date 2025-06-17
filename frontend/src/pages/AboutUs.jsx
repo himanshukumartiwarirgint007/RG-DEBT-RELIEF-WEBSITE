@@ -1904,7 +1904,7 @@ const AboutUs = () => {
               <img
                 src={debtRelief}  // Using debt relief image as placeholder
                 alt="Team Member 9"
-                className="team-img"
+                className="team-photo"
               />
               <div className="team-name">n</div>
               <div className="team-role">or</div>
