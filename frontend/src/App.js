@@ -12,6 +12,7 @@ import Resources from './pages/Resources';
 import ClientStories from './pages/ClientStories';
 import Blog from './pages/Blog';
 import Login from './pages/Login';
+import FAQ from './components/FAQ';
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
         <Route path="/clientstories" element={<ClientStories />} />
         <Route path="/blog" element={<Blog />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/FAQ" element={<FAQ />} />
       </Routes>
       <ScrollToTopButton />
       <Footer />

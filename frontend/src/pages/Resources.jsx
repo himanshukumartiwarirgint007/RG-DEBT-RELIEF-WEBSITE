@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import people from '../assets/Media/People.avif'; // Update with your image path
+import people from '../assets/Media/People.avif'; 
+import FAQ from '../components/FAQ';
 
 const cardData = [
   {
@@ -359,6 +360,7 @@ const Resources = () => {
           ></iframe>
         </div>
       </section>
+      <section className="mt-16"><FAQ /></section>
     </div>
   );
 };

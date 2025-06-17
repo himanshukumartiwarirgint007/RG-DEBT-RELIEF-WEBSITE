@@ -18,6 +18,7 @@ import sd2 from "../assets/Media/AboutUsImage/sd2.jpg";
 import sd3 from "../assets/Media/AboutUsImage/sd3.jpg";
 import sd4 from "../assets/Media/AboutUsImage/sd4.jpg";
 import sd5 from "../assets/Media/AboutUsImage/sd5.jpg";
+import FAQ from '../components/FAQ';
 
 const AboutUs = () => {
   // Refs for testimonials carousel
@@ -1953,6 +1954,7 @@ const AboutUs = () => {
           ))}
         </div>
       </section>
+      <section className="mt-16"><FAQ /></section>
     </div>
   );
 };
