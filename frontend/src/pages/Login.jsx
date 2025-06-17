@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import logo from '../assets/Media/logo.png';
+import backgroundImage from '../assets/Media/background.jpg';
 
 const containerStyle = {
   display: "flex",
@@ -334,19 +335,14 @@ const Login = () => {
             </div>
           </form>
         </div>
-        <div className="right-panel" style={rightPanelStyle}>
-          <video
-          style={videoStyle}
-          src={require("../assets/Media/LoginBackground.mp4")}
-          autoPlay
-          loop
-          muted
-          playsInline
-          controls={false}
-          disablePictureInPicture
-          controlsList="nodownload nofullscreen noremoteplayback"
-          />
-        </div>
+        {/* Right panel */}
+       <div className="w-1/2 relative">
+       <img
+       src={backgroundImage}
+       alt="Login Background"
+       className="absolute top-0 left-0 w-full h-full object-cover"
+      />
+      </div>
       </div>
     </div>
   );
