@@ -4,150 +4,247 @@ import ChatIcon from "../assets/Media/chat.png";
 import CalculatorIcon from "../assets/Media/Calculator.png";
 import CoinIcon from "../assets/Media/coin.png";
 
-
 const styles = `
-html, body {
-  height: 100%; margin: 0; font-family: Arial, sans-serif;
-}
-body {
-  background: #ffffff;
-}
-.container {
-  background: white;
-  width: 80%; max-width: 900px;
-  min-height: 600px;
-  border-radius: 15px;
-  overflow: hidden;
-  display: flex;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-  margin: 48px auto; /* Center the form horizontally with margin */
-}
-.image-side {
-  flex: 1;
-  background: url('../assets/Media/applynow.png') center/cover no-repeat;
-}
-.form-side {
-  flex: 1;
-  padding: 40px;
-  position: relative;
-}
-.form-page {
-  display: none;
-  animation: fadeIn 0.5s ease-in-out;
-}
-.form-page.active {
-  display: block;
-}
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateX(20px); }
-  to { opacity: 1; transform: translateX(0); }
-}
-label { display: block; margin: 15px 0 5px; font-weight: bold; }
-input, select, textarea {
-  width: 100%; padding: 10px; border-radius: 5px; border: 1px solid #ccc;
-}
-.checkbox-group label {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 10px;
-}
-.buttons {
-  margin-top: 20px; display: flex; justify-content: space-between;
-}
-button {
-  padding: 10px 20px; border: none; border-radius: 5px;
-  cursor: pointer; font-weight: bold;
-}
-.next-btn { background: #4b38d3; color: white; }
-.back-btn { background: #ccc; }
+  html, body {
+    height: 100%; 
+    margin: 0; 
+    font-family: Arial, sans-serif;
+    background: #ffffff;
+  }
+  
+  .container {
+    background: white;
+    width: 95%;
+    max-width: 900px;
+    min-height: auto;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    margin: 24px auto;
+  }
 
-.radio-option input[type="checkbox"] {
-  opacity: 0;
-  position: absolute;
-  right: 16px;
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-}
-.radio-option {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: bold;
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 6px 0;
-}
-.radio-option span:last-child {
-  font-weight: bold;
-}
+  .image-side {
+    height: 200px;
+    background: url(${applyNowImg}) center/cover no-repeat;
+  }
 
-.custom-radio {
-  width: 20px;
-  height: 20px;
-  border: 2px solid #000000;
-  border-radius: 6px;
-  display: inline-block;
-  position: relative;
-  background: #fff;
-  margin-left: 12px;
-  transition: border-color 0.2s;
-}
+  .form-side {
+    padding: 20px;
+    position: relative;
+  }
 
-.radio-option input[type="checkbox"]:checked + .custom-radio {
-  border-color: #000000;
-  background: #000000;
-}
+  @media (min-width: 768px) {
+    .container {
+      flex-direction: row;
+      min-height: 600px;
+      margin: 48px auto;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
 
-.radio-option input[type="checkbox"]:checked + .custom-radio::after {
-  content: '';
-  display: block;
-  width: 10px;
-  height: 10px;
-  background: #000000;
-  border-radius: 2px;
-  position: absolute;
-  top: 3px;
-  left: 3px;
-}
+    .image-side {
+      flex: 1;
+      height: auto;
+    }
 
-.radio-option input[type="checkbox"]:focus + .custom-radio {
-  outline: 2px solid #ffffff;
-}
+    .form-side {
+      flex: 1;
+      padding: 40px;
+    }
+  }
 
-.radio-option input[type="checkbox"]:checked ~ .custom-radio,
-.radio-option:hover {
-  background: #fff7f7;
-}
-.radio-box-group {
-  border: 2px solid #222;
-  border-radius: 10px;
-  background: #f7f7ff;
-  padding: 18px 20px;
-  margin-bottom: 24px;
-  max-width: 350px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
+  .form-page {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+  }
 
-.radio-row {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-weight: normal;
-  font-size: 1rem;
-  cursor: pointer;
-  padding: 6px 0;
-}
+  .form-page.active {
+    display: block;
+  }
 
-.radio-row input[type="radio"] {
-  accent-color: #4b38d3;
-  width: 18px;
-  height: 18px;
-  margin: 0;
-}
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateX(20px); }
+    to { opacity: 1; transform: translateX(0); }
+  }
+
+  label { 
+    display: block; 
+    margin: 15px 0 5px; 
+    font-weight: bold; 
+    font-size: 0.9rem;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 480px) {
+    label { font-size: 1rem; }
+  }
+
+  .checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+  }
+
+  .buttons {
+    margin-top: 25px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+
+  button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    flex: 1;
+  }
+
+  .next-btn { background: #4b38d3; color: white; }
+  .back-btn { background: #ccc; }
+
+  .phone-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  @media (min-width: 480px) {
+    .phone-input-container {
+      flex-direction: row;
+    }
+  }
+
+  .radio-option {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 10px 0;
+  }
+
+  .custom-radio {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #000000;
+    border-radius: 6px;
+    position: relative;
+    background: #fff;
+    flex-shrink: 0;
+  }
+
+  .radio-box-group {
+    border: 2px solid #222;
+    border-radius: 10px;
+    background: #f7f7ff;
+    padding: 15px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .radio-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: normal;
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 6px 0;
+  }
+
+  .how-it-works {
+    background: #f1f3f6;
+    padding: 40px 20px;
+  }
+
+  .steps-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .steps-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    margin-top: 30px;
+  }
+
+  @media (min-width: 768px) {
+    .steps-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  .step-card {
+    background: white;
+    border-radius: 12px;
+    padding: 25px 20px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  }
+
+  /* Original styles preserved below */
+  .radio-option input[type="checkbox"] {
+    opacity: 0;
+    position: absolute;
+    right: 16px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+  }
+
+  .radio-option span:last-child {
+    font-weight: bold;
+  }
+
+  .radio-option input[type="checkbox"]:checked + .custom-radio {
+    border-color: #000000;
+    background: #000000;
+  }
+
+  .radio-option input[type="checkbox"]:checked + .custom-radio::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #000000;
+    border-radius: 2px;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+  }
+
+  .radio-option input[type="checkbox"]:focus + .custom-radio {
+    outline: 2px solid #ffffff;
+  }
+
+  .radio-option input[type="checkbox"]:checked ~ .custom-radio,
+  .radio-option:hover {
+    background: #fff7f7;
+  }
+
+  .radio-row input[type="radio"] {
+    accent-color: #4b38d3;
+    width: 18px;
+    height: 18px;
+    margin: 0;
+  }
 `;
 
 const initialForm = {
@@ -227,27 +324,27 @@ export default function Apply() {
   };
 
   const handleNext = async () => {
-  if (!validatePage()) {
-    alert("Please fill all required fields.");
-    return;
-  }
-
-  // Save to Apply_uncomplete only after page 1 (initial data)
-  if (page === 1) {
-    try {
-      const res = await fetch("http://localhost:3001/api/apply/partial", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (!res.ok) throw new Error("Partial save failed");
-    } catch (error) {
-      console.error("Error saving partial form:", error.message);
+    if (!validatePage()) {
+      alert("Please fill all required fields.");
+      return;
     }
-  }
 
-  setPage((p) => p + 1);
-};
+    if (page === 1) {
+      try {
+        const res = await fetch("http://localhost:3001/api/apply/partial", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        });
+        if (!res.ok) throw new Error("Partial save failed");
+      } catch (error) {
+        console.error("Error saving partial form:", error.message);
+      }
+    }
+
+    setPage((p) => p + 1);
+  };
+  
   const handleBack = () => setPage((p) => p - 1);
 
   const handleSubmit = async (e) => {
@@ -311,7 +408,7 @@ export default function Apply() {
             />
 
             <label>Phone Number*</label>
-            <div style={{ display: "flex", gap: 8 }}>
+            <div className="phone-input-container">
               <select
                 name="countryCode"
                 value={form.countryCode}
@@ -509,62 +606,60 @@ export default function Apply() {
             </div>
           </div>
         </div>
-     </form>
-     {/* How It Works Section */}
-    <section className="bg-[#f1f3f6] py-16">
-      <div className="max-w-5xl mx-auto text-center px-6">
-        <h2 className="text-3xl font-bold mb-4">How It Works</h2>
-        <p className="text-gray-600 mb-10">
-          You’re in control, our debt experts do the work.
-        </p>
+      </form>
+      
+      <section className="how-it-works">
+        <div className="steps-container">
+          <h2>How It Works</h2>
+          <p>
+            You're in control, our debt experts do the work.
+          </p>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-          {/* Step 1 */}
-          <div>
-            <img
-              src={ChatIcon}
-              alt="Chat Icon"
-              className="mx-auto mb-4 w-12 h-12"
-            />
-            <h3 className="font-semibold text-lg mb-2">
-              Talk to us for a free consultation
-            </h3>
-            <p className="text-gray-600 text-sm">
-              Tell us your situation, then find out your debt relief options – no obligation.
-            </p>
-          </div>
-          {/* Step 2 */}
-          <div>
-            <img
-              src={CalculatorIcon}
-              alt="Plan Icon"
-              className="mx-auto mb-4 w-12 h-12"
-            />
-            <h3 className="font-semibold text-lg mb-2">
-              We create an affordable plan that works for you
-            </h3>
-            <p className="text-gray-600 text-sm">
-              Approve your plan, personalized from our suite of products.
-            </p>
-          </div>
-          {/* Step 3 */}
-          <div>
-            <img
-              src={CoinIcon}
-              alt="Coins Icon"
-              className="mx-auto mb-4 w-12 h-12"
-            />
-            <h3 className="font-semibold text-lg mb-2">
-              Get out of debt faster than you think
-            </h3>
-            <p className="text-gray-600 text-sm">
-              Take back your life in as little as 24–48 months.
-            </p>
+          <div className="steps-grid">
+            <div className="step-card">
+              <img
+                src={ChatIcon}
+                alt="Chat Icon"
+                className="mx-auto mb-4 w-12 h-12"
+              />
+              <h3>
+                Talk to us for a free consultation
+              </h3>
+              <p>
+                Tell us your situation, then find out your debt relief options – no obligation.
+              </p>
+            </div>
+            
+            <div className="step-card">
+              <img
+                src={CalculatorIcon}
+                alt="Plan Icon"
+                className="mx-auto mb-4 w-12 h-12"
+              />
+              <h3>
+                We create an affordable plan that works for you
+              </h3>
+              <p>
+                Approve your plan, personalized from our suite of products.
+              </p>
+            </div>
+            
+            <div className="step-card">
+              <img
+                src={CoinIcon}
+                alt="Coins Icon"
+                className="mx-auto mb-4 w-12 h-12"
+              />
+              <h3>
+                Get out of debt faster than you think
+              </h3>
+              <p>
+                Take back your life in as little as 24–48 months.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
-
+      </section>
     </>
   );
 }

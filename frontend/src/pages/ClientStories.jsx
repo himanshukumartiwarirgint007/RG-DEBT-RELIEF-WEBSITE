@@ -130,26 +130,38 @@ const ClientStories = () => {
       }
     }, 200);
 
-    // Animate on scroll
+    // Animate on scroll (show/hide based on visibility)
     const animateOnScroll = () => {
       document.querySelectorAll('.animate').forEach(element => {
-        const elementPosition = element.getBoundingClientRect().top;
+        const rect = element.getBoundingClientRect();
         const windowHeight = window.innerHeight;
-        if (elementPosition < windowHeight - 100) {
+        if (rect.top < windowHeight - 100 && rect.bottom > 0) {
+          // Element is in viewport: fade in
           element.style.opacity = '1';
           element.style.transform = 'translateY(0)';
+          element.style.pointerEvents = 'auto';
+        } else {
+          // Element is out of viewport: fade out
+          element.style.opacity = '0';
+          element.style.transform = 'translateY(30px)';
+          element.style.pointerEvents = 'none';
         }
       });
     };
 
+    // Set initial state for all .animate elements
     document.querySelectorAll('.animate').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(30px)';
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      el.style.pointerEvents = 'none';
     });
 
     window.addEventListener('scroll', animateOnScroll);
     window.addEventListener('load', animateOnScroll);
+
+    // Call once on mount to show elements in view
+    animateOnScroll();
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
