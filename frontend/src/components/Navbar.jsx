@@ -31,11 +31,11 @@ const Navbar = () => {
               REDDINGTON GLOBAL
             </div>
             <div className="text-white font-bold text-lg sm:text-xl lg:text-2xl leading-tight truncate">
-              CONSULTANCY PVT. LTD.
+              CONSULTANCY 
             </div>
-            <div className="text-white font-bold text-xs sm:text-xs lg:text-2xl leading-tight truncate">
+            {/* <div className="text-white font-bold text-xs sm:text-xs lg:text-2xl leading-tight truncate">
               DEBT RELIEF
-            </div>
+            </div> */}
           </div>
         </div>
 
