@@ -6,7 +6,6 @@ import img3 from '../assets/Media/Image3.png';
 import homebg1 from '../assets/Media/HomeBg1.jpg';
 import homebg2 from '../assets/Media/HomeBg2.jpg';
 import homebg3 from '../assets/Media/HomeBg3.jpg';
-import HowItWorks from './HowItWorks';
 import ClientStories from './ClientStories';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
@@ -48,7 +47,7 @@ const Home = () => {
             Reddington Global Debt Relief helps you find real solutions for your financial future. Start your journey to financial freedom with our expert team.
           </p>
           <button
-            onClick={() => navigate('/apply')}
+            onClick={() => navigate('/Apply')}
             className="bg-[#16b477] text-white font-bold px-4 py-2 sm:px-6 sm:py-3 text-sm sm:text-base rounded-full shadow hover:bg-[#13a06b] transition"
           >
             Get Started
@@ -155,8 +154,6 @@ const Home = () => {
           </React.Fragment>
         ))}
       </div>
-      
-      <section className="mt-8 sm:mt-12 md:mt-16"><HowItWorks /></section>
       <section className="mt-8 sm:mt-12 md:mt-16"><ClientStories /></section>
     </>
   );
