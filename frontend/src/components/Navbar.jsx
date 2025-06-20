@@ -21,23 +21,27 @@ const Navbar = () => {
       <div className="w-full mx-auto flex items-center px-4 py-0 justify-between">
         {/* Left: Logo and Brand */}
         <div className="flex items-center gap-0 flex-shrink-0 min-w-0">
-          <img
-            src={logo}
-            alt="Logo"
-            className="w-20 h-16 object-contain sm:w-28 sm:h-20 lg:w-32 lg:h-26"
-          />
-          <div className="min-w-0">
-            <div className="text-white font-bold text-lg sm:text-xl lg:text-2xl leading-tight truncate">
-              REDDINGTON GLOBAL
-            </div>
-            <div className="text-white font-bold text-lg sm:text-xl lg:text-2xl leading-tight truncate">
-              CONSULTANCY 
-            </div>
-            {/* <div className="text-white font-bold text-xs sm:text-xs lg:text-2xl leading-tight truncate">
-              DEBT RELIEF
-            </div> */}
-          </div>
-        </div>
+  <button
+    onClick={() => handleNavClick('/')}
+    className="flex items-center gap-2 cursor-pointer bg-transparent border-none outline-none p-0 m-0" >
+    <img
+      src={logo}
+      alt="Logo"
+      className="w-20 h-16 object-contain sm:w-28 sm:h-20 lg:w-32 lg:h-26" />
+      <div className="min-w-0 text-left">
+      <div className="text-white font-bold text-lg sm:text-xl lg:text-2xl leading-tight truncate">
+        REDDINGTON GLOBAL
+      </div>
+      <div className="text-white font-bold text-lg sm:text-xl lg:text-2xl leading-tight truncate">
+        CONSULTANCY
+      </div>
+      {/* <div className="text-white font-bold text-xs sm:text-xs lg:text-2xl leading-tight truncate">
+         DEBT RELIEF
+      </div> */}
+    </div>
+  </button>
+</div>
+
 
         {/* Centre: Navbar */}
         <nav className="hidden lg:flex flex-1 justify-center flex-wrap gap-6 min-w-0 mx-2 whitespace-nowrap">
