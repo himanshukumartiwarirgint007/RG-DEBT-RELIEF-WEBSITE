@@ -1,5 +1,5 @@
 import React from "react";
-import HeroImg from "../assets/Media/Hero.jpg";
+import HappyFamily from "../assets/Media/HappyFamily.jpg";
 import ChatIcon from "../assets/Media/chat.png";
 import CalculatorIcon from "../assets/Media/Calculator.png";
 import CoinIcon from "../assets/Media/coin.png";
@@ -11,7 +11,7 @@ const HowItWorks = () => (
     <section className="flex flex-col md:flex-row items-center justify-center px-6 py-16 md:py-24 gap-8 md:gap-16 max-w-7xl mx-auto">
       <div className="w-full md:w-1/2">
         <img
-          src={HeroImg}
+          src={HappyFamily}
           alt="Happy family"
           className="rounded-md w-full h-auto shadow-lg"
         />
