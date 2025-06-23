@@ -3,13 +3,6 @@ import React from 'react';
 const CreditCard = () => {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* SEO Meta Tags (Placeholders - should be in document head) */}
-      {/* 
-        <title>Credit Card Debt Relief | Pay Off Your Debt Faster</title>
-        <meta name="description" content="Get expert help with credit card debt relief through negotiation, consolidation, and counseling. Reduce your payments and become debt-free." />
-        <meta name="keywords" content="credit card debt relief, debt settlement, debt consolidation, financial counseling, debt negotiation" />
-      */}
-
       {/* Header */}
       <header className="bg-gradient-to-r from-blue-700 to-orange-000 text-white">
         <div className="container mx-auto px-4 py-16 md:py-24 text-center">
