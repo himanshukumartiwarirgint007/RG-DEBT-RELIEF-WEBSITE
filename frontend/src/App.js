@@ -16,6 +16,7 @@ import FAQ from './components/FAQ';
 import PrivacyPolicy from './ExtraPages/PrivacyPolicy';
 import TermsOfService from './ExtraPages/TermsOfServices';
 import CareersPage from './ExtraPages/CareersPage';
+import CreditCard from './Resources/CreditCard';
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         <Route path="/PrivacyPolicy" element={<PrivacyPolicy/>} />
         <Route path="/TermsOfServices" element={<TermsOfService />} />
         <Route path="/CareersPage" element={<CareersPage />} />
+        <Route path="/CreditCard" element={<CreditCard />} />
       </Routes>
       <ScrollToTopButton />
       <Footer />

@@ -1,13 +1,12 @@
-import { useState, useEffect, useRef } from "react";
-import people from '../assets/Media/People.avif'; 
+import React, { useState, useEffect, useRef } from "react";
 import FAQ from '../components/FAQ';
-
+import People from '../assets/Media/People.jpg';
 const cardData = [
   {
     icon: "💳",
     title: "Credit Card Debt Relief",
     description: "Pay off the credit card debt you've racked up.",
-    link: "#"
+    link: "/CreditCard"
   },
   {
     icon: "💰",
@@ -104,7 +103,6 @@ const howItWorksSteps = [
 
 const Resources = () => {
   const [hoveredCard, setHoveredCard] = useState(null);
-  const [isMobile, setIsMobile] = useState(false);
   const [isVisible, setIsVisible] = useState({
     hero: false,
     cards: false,
@@ -118,14 +116,6 @@ const Resources = () => {
   const faqRef = useRef(null);
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth <= 768);
-    };
-    
-    checkMobile();
-    window.addEventListener('resize', checkMobile);
-    
-    // Intersection Observer for scroll animations
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -152,309 +142,9 @@ const Resources = () => {
     }
     
     return () => {
-      window.removeEventListener('resize', checkMobile);
       observer.disconnect();
     };
   }, []);
-
-  const styles = {
-    page: {
-      padding: "40px 20px",
-      background: "linear-gradient(135deg, #f9fcff 0%, #f6f8fa 100%)",
-      fontFamily: "'Inter', Arial, sans-serif",
-      minHeight: "100vh"
-    },
-    hero: {
-      display: "flex",
-      flexDirection: isMobile ? "column-reverse" : "row",
-      alignItems: "center",
-      justifyContent: "space-between",
-      marginBottom: "60px",
-      background: "linear-gradient(to right, #ffffff 0%, #f8faff 100%)",
-      borderRadius: "24px",
-      boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-      padding: isMobile ? "24px 16px" : "48px 40px",
-      gap: isMobile ? "24px" : "60px",
-      opacity: 0,
-      transform: "translateY(20px)",
-      transition: "all 0.8s ease-out"
-    },
-    heroVisible: {
-      opacity: 1,
-      transform: "translateY(0)"
-    },
-    heroText: {
-      flex: "1 1 350px",
-      maxWidth: "600px",
-      textAlign: isMobile ? "center" : "left"
-    },
-    heroTextH1: {
-      fontSize: isMobile ? "2.2rem" : "3rem",
-      marginBottom: "16px",
-      color: "#1a202c",
-      lineHeight: "1.2",
-      fontWeight: 800,
-      background: "linear-gradient(90deg, #ff7a59 0%, #ff4c1c 100%)",
-      WebkitBackgroundClip: "text",
-      WebkitTextFillColor: "transparent"
-    },
-    heroTextP: {
-      fontSize: isMobile ? "1.1rem" : "1.25rem",
-      marginBottom: "32px",
-      color: "#555",
-      lineHeight: "1.6"
-    },
-    heroBtn: {
-      display: "inline-flex",
-      alignItems: "center",
-      justifyContent: "center",
-      background: "linear-gradient(90deg, #ff7a59 0%, #ff4c1c 100%)",
-      color: "#fff",
-      padding: "15px 35px",
-      borderRadius: "12px",
-      fontWeight: "bold",
-      textDecoration: "none",
-      transition: "all 0.3s ease",
-      fontSize: isMobile ? "1.1rem" : "1.2rem",
-      boxShadow: "0 6px 15px rgba(255, 122, 89, 0.4)",
-      position: "relative",
-      overflow: "hidden",
-      zIndex: 1,
-      border: "none",
-      cursor: "pointer"
-    },
-    heroBtnHover: {
-      transform: "translateY(-3px)",
-      boxShadow: "0 10px 20px rgba(255, 122, 89, 0.6)"
-    },
-    heroBtnBefore: {
-      content: '""',
-      position: "absolute",
-      top: 0,
-      left: 0,
-      width: "100%",
-      height: "100%",
-      background: "linear-gradient(90deg, #ff4c1c 0%, #ff7a59 100%)",
-      zIndex: -1,
-      transition: "transform 0.5s ease",
-      transform: "scaleX(0)",
-      transformOrigin: "right"
-    },
-    heroBtnHoverBefore: {
-      transform: "scaleX(1)",
-      transformOrigin: "left"
-    },
-    heroImgContainer: {
-      flex: "1 1 320px",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: isMobile ? "center" : "flex-end",
-      minWidth: 0,
-      width: isMobile ? "100%" : "auto",
-      perspective: "1000px"
-    },
-    heroImg: {
-      maxWidth: "100%",
-      width: isMobile ? "90%" : "480px",
-      minWidth: "220px",
-      height: "auto",
-      borderRadius: "20px",
-      objectFit: "cover",
-      objectPosition: "center",
-      boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
-      transform: "rotateY(5deg)",
-      transition: "transform 0.5s ease, box-shadow 0.5s ease"
-    },
-    heroImgHover: {
-      transform: "rotateY(0deg)",
-      boxShadow: "0 25px 50px rgba(0,0,0,0.2)"
-    },
-    cardsGrid: {
-      display: "grid",
-      gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(280px, 1fr))",
-      gap: "32px",
-      opacity: 0,
-      transform: "translateY(40px)",
-      transition: "all 0.8s ease-out"
-    },
-    cardsVisible: {
-      opacity: 1,
-      transform: "translateY(0)"
-    },
-    card: {
-      background: "#ffffff",
-      borderRadius: "20px",
-      boxShadow: "0 5px 15px rgba(0,0,0,0.08)",
-      padding: "36px 24px",
-      textAlign: "center",
-      transition: "all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275)",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      position: "relative",
-      overflow: "hidden",
-      zIndex: 1,
-      transform: "translateY(0)",
-      cursor: "pointer"
-    },
-    cardHover: {
-      transform: "translateY(-10px) scale(1.03)",
-      boxShadow: "0 15px 30px rgba(0,0,0,0.15)",
-      background: "linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%)"
-    },
-    cardIcon: {
-      fontSize: "3.5rem",
-      marginBottom: "20px",
-      transition: "transform 0.3s ease",
-      filter: "drop-shadow(0 5px 5px rgba(0,0,0,0.1))"
-    },
-    cardIconHover: {
-      transform: "scale(1.2)"
-    },
-    cardTitle: {
-      fontSize: "1.3rem",
-      marginBottom: "12px",
-      color: "#1a202c",
-      fontWeight: 700
-    },
-    cardDescription: {
-      fontSize: "1.05rem",
-      color: "#555",
-      marginBottom: "24px",
-      lineHeight: "1.5"
-    },
-    cardLink: {
-      color: "#ff7a59",
-      textDecoration: "none",
-      fontWeight: "600",
-      transition: "all 0.3s ease",
-      display: "flex",
-      alignItems: "center",
-      gap: "5px"
-    },
-    cardLinkHover: {
-      color: "#ff4c1c",
-      transform: "translateX(5px)"
-    },
-    cardGlow: {
-      position: "absolute",
-      top: 0,
-      left: 0,
-      right: 0,
-      height: "5px",
-      background: "linear-gradient(90deg, #ff7a59 0%, #ff4c1c 100%)",
-      opacity: 0,
-      transition: "opacity 0.3s ease"
-    },
-    cardGlowHover: {
-      opacity: 1
-    },
-    howItWorks: {
-      display: "flex",
-      flexDirection: "column",
-      background: "linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%)",
-      borderRadius: "24px",
-      boxShadow: "0 10px 30px rgba(0,0,0,0.08)",
-      padding: "48px 32px",
-      margin: "60px 0",
-      opacity: 0,
-      transform: "translateY(40px)",
-      transition: "all 0.8s ease-out"
-    },
-    howItWorksVisible: {
-      opacity: 1,
-      transform: "translateY(0)"
-    },
-    stepList: {
-      marginTop: "30px",
-      paddingLeft: "20px",
-      fontSize: "1.1rem"
-    },
-    stepItem: {
-      marginBottom: "25px",
-      position: "relative",
-      paddingLeft: "40px",
-      opacity: 0,
-      transform: "translateX(-20px)",
-      transition: "all 0.5s ease-out"
-    },
-    stepItemVisible: {
-      opacity: 1,
-      transform: "translateX(0)"
-    },
-    stepNumber: {
-      position: "absolute",
-      left: 0,
-      top: "2px",
-      fontWeight: "bold",
-      color: "#ff7a59",
-      fontSize: "1.8rem",
-      background: "linear-gradient(135deg, #fff8f6 0%, #ffede8 100%)",
-      width: "36px",
-      height: "36px",
-      borderRadius: "50%",
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "center",
-      boxShadow: "0 4px 10px rgba(255, 122, 89, 0.2)"
-    },
-    stepText: {
-      color: "#444",
-      lineHeight: "1.6"
-    },
-    videoContainer: {
-      flex: "1 1 45%",
-      minWidth: "300px",
-      display: "flex",
-      justifyContent: "center",
-      borderRadius: "20px",
-      overflow: "hidden",
-      boxShadow: "0 20px 40px rgba(0,0,0,0.15)",
-      transform: "scale(0.95)",
-      transition: "transform 0.5s ease, box-shadow 0.5s ease",
-      opacity: 0,
-      transform: "translateY(20px) rotate(2deg)"
-    },
-    videoContainerVisible: {
-      opacity: 1,
-      transform: "translateY(0) rotate(0deg)"
-    },
-    videoHover: {
-      transform: "scale(1)",
-      boxShadow: "0 25px 50px rgba(0,0,0,0.2)"
-    },
-    faqSection: {
-      opacity: 0,
-      transform: "translateY(40px)",
-      transition: "all 0.8s ease-out"
-    },
-    faqVisible: {
-      opacity: 1,
-      transform: "translateY(0)"
-    },
-    sectionTitle: {
-      fontSize: isMobile ? "2rem" : "2.5rem",
-      marginBottom: "40px",
-      color: "#1a202c",
-      lineHeight: "1.2",
-      fontWeight: 800,
-      textAlign: "center",
-      position: "relative",
-      display: "inline-block",
-      width: "100%"
-    },
-    sectionTitleAfter: {
-      content: '""',
-      position: "absolute",
-      bottom: "-10px",
-      left: "50%",
-      transform: "translateX(-50%)",
-      width: "80px",
-      height: "4px",
-      background: "linear-gradient(90deg, #ff7a59 0%, #ff4c1c 100%)",
-      borderRadius: "2px"
-    }
-  };
 
   useEffect(() => {
     const style = document.createElement("style");
@@ -471,12 +161,12 @@ const Resources = () => {
         100% { transform: scale(1); }
       }
       
-      .pulse-animation {
-        animation: pulse 2s infinite ease-in-out;
+      .animate-float {
+        animation: float 4s infinite ease-in-out;
       }
       
-      .float-animation {
-        animation: float 4s infinite ease-in-out;
+      .animate-pulse-custom {
+        animation: pulse 2s infinite ease-in-out;
       }
     `;
     document.head.appendChild(style);
@@ -486,39 +176,57 @@ const Resources = () => {
   }, []);
 
   return (
-    <div style={styles.page}>
+    <div className="min-h-screen p-5 sm:p-10 bg-gradient-to-br from-[#f9fcff] to-[#f6f8fa] font-sans">
       {/* Hero Section */}
       <div 
         ref={heroRef}
-        style={{
-          ...styles.hero,
-          ...(isVisible.hero && styles.heroVisible)
-        }}
+        className={`
+          flex flex-col-reverse md:flex-row items-center justify-between 
+          mb-14 md:mb-16 
+          bg-gradient-to-r from-white to-[#f8faff] 
+          rounded-3xl shadow-xl 
+          p-6 md:p-12 
+          gap-6 md:gap-14 
+          transition-all duration-700 ease-out 
+          ${isVisible.hero ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}
+        `}
       >
-        <div style={styles.heroText}>
-          <h1 style={styles.heroTextH1}>All You Need To Know</h1>
-          <p style={styles.heroTextP}>
+        <div className="flex-1 min-w-[350px] max-w-[600px] text-center md:text-left">
+          <h1 className="text-3xl md:text-4xl lg:text-5xl font-extrabold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-[#ff7a59] to-[#ff4c1c]">
+            All You Need To Know
+          </h1>
+          <p className="text-lg md:text-xl text-gray-600 mb-8 leading-relaxed">
             We've put all our essential resources in one spot. Everything from debt resolution to taking control of your financial future.
             Need to talk? Our experts are here to help. Call us anytime for a free no-obligation consultation.
           </p>
           <a 
-            style={styles.heroBtn} 
+            className="
+              inline-flex items-center justify-center 
+              bg-gradient-to-r from-[#ff7a59] to-[#ff4c1c] 
+              text-white font-bold px-8 py-4 rounded-xl 
+              shadow-lg hover:shadow-xl transition-all duration-300
+              transform hover:-translate-y-1
+              relative overflow-hidden z-10
+              animate-pulse-custom
+              text-lg
+            "
             href="tel:8003009550"
-            className="pulse-animation"
           >
-            <span style={styles.heroBtnBefore}></span>
+            <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#ff4c1c] to-[#ff7a59] z-[-1] transition-transform duration-500 origin-right scale-x-0 group-hover:scale-x-100 group-hover:origin-left"></span>
             800-300-9550
           </a>
         </div>
         
-        <div 
-          style={styles.heroImgContainer}
-          className="float-animation"
-        >
+        <div className="flex-1 min-w-[320px] flex items-center justify-center md:justify-end perspective-1000 animate-float">
           <img
-            src={people}
-            alt="People working in an office"
-            style={styles.heroImg}
+            src={People}
+            alt={'People working in an office'}
+            className="
+              max-w-full w-full md:w-[480px] min-w-[220px] h-auto 
+              rounded-2xl object-cover object-center 
+              shadow-lg transition-all duration-500 ease-out
+              transform rotate-y-5 hover:rotate-y-0 hover:shadow-2xl
+            "
           />
         </div>
       </div>
@@ -526,44 +234,44 @@ const Resources = () => {
       {/* Cards Section */}
       <div 
         ref={cardsRef}
-        style={{
-          ...styles.cardsGrid,
-          ...(isVisible.cards && styles.cardsVisible)
-        }}
+        className={`
+          grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 
+          transition-all duration-700 ease-out 
+          ${isVisible.cards ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+        `}
       >
         {cardData.map((card, idx) => (
           <div
-            style={{
-              ...styles.card,
-              ...(hoveredCard === idx && styles.cardHover),
-              transitionDelay: `${idx * 0.05}s`
-            }}
             key={idx}
+            className={`
+              bg-white rounded-2xl shadow-md p-8 text-center 
+              flex flex-col items-center 
+              relative overflow-hidden 
+              transition-all duration-400 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] 
+              transform hover:-translate-y-2 hover:scale-105 hover:shadow-xl 
+              ${hoveredCard === idx ? 'bg-gradient-to-br from-white to-[#f8f9ff]' : ''}
+            `}
+            style={{ transitionDelay: `${idx * 0.05}s` }}
             onMouseEnter={() => setHoveredCard(idx)}
             onMouseLeave={() => setHoveredCard(null)}
           >
-            <div style={styles.cardGlow}></div>
-            <div 
-              style={{
-                ...styles.cardIcon,
-                ...(hoveredCard === idx && styles.cardIconHover)
-              }}
-            >
+            <div className={`absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-[#ff7a59] to-[#ff4c1c] transition-opacity duration-300 ${hoveredCard === idx ? 'opacity-100' : 'opacity-0'}`}></div>
+            <div className={`text-5xl mb-5 transition-transform duration-300 ${hoveredCard === idx ? 'scale-110' : ''} drop-shadow-md`}>
               {card.icon}
             </div>
-            <h3 style={styles.cardTitle}>{card.title}</h3>
-            <p style={styles.cardDescription}>{card.description}</p>
+            <h3 className="text-xl font-bold mb-3 text-gray-900">{card.title}</h3>
+            <p className="text-gray-600 mb-6 leading-normal">{card.description}</p>
             <a
-              style={{
-                ...styles.cardLink,
-                ...(hoveredCard === idx && styles.cardLinkHover)
-              }}
-              href={card.link}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learn More <span style={{ transition: "transform 0.3s", transform: hoveredCard === idx ? "translateX(5px)" : "none" }}>→</span>
-            </a>
+  className={`
+    text-[#ff7a59] font-semibold flex items-center gap-1 
+    transition-all duration-300
+    ${hoveredCard === idx ? 'text-[#ff4c1c] translate-x-1' : ''}
+  `}
+  href={card.link}
+>
+  Learn More 
+  <span className={`transition-transform duration-300 ${hoveredCard === idx ? 'translate-x-1' : ''}`}>→</span>
+</a>
           </div>
         ))}
       </div>
@@ -571,53 +279,59 @@ const Resources = () => {
       {/* How It Works Section */}
       <section 
         ref={howItWorksRef}
-        style={{
-          ...styles.howItWorks,
-          ...(isVisible.howItWorks && styles.howItWorksVisible)
-        }}
+        className={`
+          flex flex-col 
+          bg-gradient-to-br from-white to-[#f8f9ff] 
+          rounded-3xl shadow-xl 
+          p-8 md:p-12 
+          my-16 
+          transition-all duration-700 ease-out 
+          ${isVisible.howItWorks ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+        `}
       >
-        <h2 style={styles.sectionTitle}>
+        <h2 className="text-3xl md:text-4xl font-extrabold text-center mb-10 relative">
           How Debt Relief Works in 4 Life-Changing Steps
-          <span style={styles.sectionTitleAfter}></span>
+          <span className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-20 h-1 bg-gradient-to-r from-[#ff7a59] to-[#ff4c1c] rounded"></span>
         </h2>
         
-        <div style={{
-          display: "flex",
-          flexWrap: "wrap",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: "40px"
-        }}>
-          <div style={{ flex: "1 1 350px", minWidth: "280px" }}>
-            <p style={{ color: "#444", fontSize: "1.15rem", marginBottom: "32px", lineHeight: "1.7" }}>
+        <div className="flex flex-wrap items-center justify-between gap-10">
+          <div className="flex-1 min-w-[280px]">
+            <p className="text-gray-700 text-lg mb-8 leading-relaxed">
               At National Debt Relief, we've helped over 550,000 clients with their debt settlement. We negotiate with major credit card issuers and banks to reduce debts, and cover most unsecured debt. For anyone carrying the burden of credit card debt, personal loans, private student loans, collections or business debt, it starts with one simple call and ends with you living again, debt free!
             </p>
             
             <a 
-              style={{
-                ...styles.heroBtn,
-                background: "linear-gradient(90deg, #1976d2 0%, #1e88e5 100%)",
-                boxShadow: "0 6px 15px rgba(25, 118, 210, 0.4)"
-              }} 
+              className="
+                inline-flex items-center justify-center 
+                bg-gradient-to-r from-[#1976d2] to-[#1e88e5] 
+                text-white font-bold px-8 py-4 rounded-xl 
+                shadow-lg hover:shadow-xl transition-all duration-300
+                transform hover:-translate-y-1
+                relative overflow-hidden z-10
+                animate-pulse-custom
+                text-lg
+                mb-10
+              "
               href="tel:8003009550"
-              className="pulse-animation"
             >
-              <span style={styles.heroBtnBefore}></span>
+              <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#1e88e5] to-[#1976d2] z-[-1] transition-transform duration-500 origin-right scale-x-0 group-hover:scale-x-100 group-hover:origin-left"></span>
               800-300-9550
             </a>
             
-            <ul style={styles.stepList}>
+            <ul className="list-none pl-0 mt-8">
               {howItWorksSteps.map((step, idx) => (
                 <li 
                   key={idx} 
-                  style={{
-                    ...styles.stepItem,
-                    ...(isVisible.howItWorks && styles.stepItemVisible),
-                    transitionDelay: `${idx * 0.2}s`
-                  }}
+                  className={`
+                    relative pl-12 mb-8 transition-all duration-500 ease-out 
+                    ${isVisible.howItWorks ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-5'}
+                  `}
+                  style={{ transitionDelay: `${idx * 0.2}s` }}
                 >
-                  <div style={styles.stepNumber}>{idx + 1}</div>
-                  <p style={styles.stepText}>{step}</p>
+                  <div className="absolute left-0 top-0 font-bold text-[#ff7a59] text-2xl w-9 h-9 rounded-full bg-gradient-to-br from-[#fff8f6] to-[#ffede8] flex items-center justify-center shadow">
+                    {idx + 1}
+                  </div>
+                  <p className="text-gray-700 leading-relaxed">{step}</p>
                 </li>
               ))}
             </ul>
@@ -625,29 +339,38 @@ const Resources = () => {
           
           {/* Video Container */}
           <div 
-            ref={howItWorksRef}
-            style={{
-              ...styles.videoContainer,
-              ...(isVisible.howItWorks && styles.videoContainerVisible)
-            }}
+            className={`
+              flex-1 min-w-[300px] 
+              rounded-2xl shadow-lg overflow-hidden 
+              transform scale-95 
+              transition-all duration-700 ease-out 
+              ${isVisible.howItWorks ? 'opacity-100 translate-y-0 rotate-0' : 'opacity-0 translate-y-5 rotate-2'}
+              hover:scale-100 hover:shadow-xl
+            `}
           >
             <iframe
               width="100%"
               height="400"
               src="https://www.youtube.com/embed/oQjdOMSUZpA"
               title="How Debt Relief Works - 4 Simple Steps"
-              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
-              style={{
-                borderRadius: "16px",
-                border: "none"
-              }}
+              className="rounded-2xl border-none"
             ></iframe>
           </div>
         </div>
       </section>
-      <section className="mt-16"><FAQ /></section>
+      
+      {/* FAQ Section */}
+      <section 
+        ref={faqRef}
+        className={`
+          mt-16 transition-all duration-700 ease-out 
+          ${isVisible.faq ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+        `}
+      >
+        <FAQ />
+      </section>
     </div>
   );
 };
