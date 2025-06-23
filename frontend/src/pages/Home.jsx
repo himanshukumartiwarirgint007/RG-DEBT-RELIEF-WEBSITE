@@ -6,7 +6,6 @@ import img3 from '../assets/Media/Image3.png';
 import homebg1 from '../assets/Media/HomeBg1.jpg';
 import homebg2 from '../assets/Media/HomeBg2.jpg';
 import homebg3 from '../assets/Media/HomeBg3.jpg';
-import ClientStories from './ClientStories';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -154,7 +153,6 @@ const Home = () => {
           </React.Fragment>
         ))}
       </div>
-      <section className="mt-8 sm:mt-12 md:mt-16"><ClientStories /></section>
     </>
   );
 }

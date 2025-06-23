@@ -30,11 +30,11 @@ const Footer = () => {
           <div className="footer-links text-center">
             <h5 className="text-[#f7c948] font-semibold mb-3">Company</h5>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-[#ffffff] hover:text-yellow-400 transition-all">About Us</a></li>
-              <li><a href="#" className="text-[#ffffff] hover:text-yellow-400 transition-all">Our Team</a></li>
-              <li><a href="#" className="text-[#ffffff] hover:text-yellow-400 transition-all">Careers</a></li>
-              <li><a href="#" className="text-[#ffffff] hover:text-yellow-400 transition-all">News</a></li>
-              <li><a href="#" className="text-[#ffffff] hover:text-yellow-400 transition-all">Contact</a></li>
+              <li><a href="AboutUs" className="text-[#ffffff] hover:text-yellow-400 transition-all">About Us</a></li>
+              <li><a href="AboutUs" className="text-[#ffffff] hover:text-yellow-400 transition-all">Our Team</a></li>
+              <li><a href="CareersPage" className="text-[#ffffff] hover:text-yellow-400 transition-all">Careers</a></li>
+              <li><a href="Blog" className="text-[#ffffff] hover:text-yellow-400 transition-all">News</a></li>
+              <li><a href="Apply" className="text-[#ffffff] hover:text-yellow-400 transition-all">Contact</a></li>
             </ul>
           </div>
 
@@ -63,15 +63,15 @@ const Footer = () => {
           <div className="footer-links text-center">
             <h5 className="text-[#f7c948] font-semibold mb-3">Legal</h5>
             <ul className="space-y-2 text-sm">
-              <li><a href="#" className="text-[#ffffff] hover:text-yellow-400 transition-all">Privacy Policy</a></li>
-              <li><a href="#" className="text-[#ffffff] hover:text-yellow-400 transition-all">Terms of Service</a></li>
+              <li><a href="PrivacyPolicy" className="text-[#ffffff] hover:text-yellow-400 transition-all">Privacy Policy</a></li>
+              <li><a href="TermsOfServices" className="text-[#ffffff] hover:text-yellow-400 transition-all">Terms of Service</a></li>
               <li><a href="#" className="text-[#ffffff] hover:text-yellow-400 transition-all">Disclosures</a></li>
               <li><a href="#" className="text-[#ffffff] hover:text-yellow-400 transition-all">Licenses</a></li>
             </ul>
           </div>
         </div>
         <div className="border-t border-[#fff]-700 mt-10 pt-6 text-center text-sm text-[#ffffff]-400">
-          <p>&copy; 2025 DebtFree Solutions. All rights reserved. | <a href="#" className="text-[#ffffff] hover:text-yellow-400">Privacy Policy</a> | <a href="#" className="text-[#ffffff] hover:text-yellow-400">Terms of Service</a></p>
+          <p>&copy; 2025 DebtFree Solutions. All rights reserved. | <a href="PrivacyPolicy" className="text-[#ffffff] hover:text-yellow-400">Privacy Policy</a> | <a href="TermsOFServices" className="text-[#ffffff] hover:text-yellow-400">Terms of Service</a></p>
         </div>
       </div>
     </footer>

@@ -328,7 +328,9 @@ const Login = () => {
               </button>
             </div>
             <div className="terms" style={termsStyle}>
-              By signing up you agree to our terms and that you have read our data policy.
+              By signing up you agree to our <Link to="/TermsOfServices" style={{ color: "#2563eb", textDecoration: "underline", fontWeight: "bold" }}>
+              Terms </Link> and that you have read our data <Link to="/PrivacyPolicy" style={{ color: "#2563eb", textDecoration: "underline", fontWeight: "bold" }}>
+              Privacy Policy </Link>.
             </div>
           </form>
         </div>

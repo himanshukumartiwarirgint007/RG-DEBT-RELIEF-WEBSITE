@@ -13,6 +13,9 @@ import ClientStories from './pages/ClientStories';
 import Blog from './pages/Blog';
 import Login from './pages/Login';
 import FAQ from './components/FAQ';
+import PrivacyPolicy from './ExtraPages/PrivacyPolicy';
+import TermsOfService from './ExtraPages/TermsOfServices';
+import CareersPage from './ExtraPages/CareersPage';
 
 function App() {
   return (
@@ -29,6 +32,9 @@ function App() {
         <Route path="/blog" element={<Blog />} />
         <Route path="/login" element={<Login />} />
         <Route path="/FAQ" element={<FAQ />} />
+        <Route path="/PrivacyPolicy" element={<PrivacyPolicy/>} />
+        <Route path="/TermsOfServices" element={<TermsOfService />} />
+        <Route path="/CareersPage" element={<CareersPage />} />
       </Routes>
       <ScrollToTopButton />
       <Footer />
