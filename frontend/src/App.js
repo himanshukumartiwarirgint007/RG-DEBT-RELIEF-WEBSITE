@@ -17,6 +17,7 @@ import PrivacyPolicy from './ExtraPages/PrivacyPolicy';
 import TermsOfService from './ExtraPages/TermsOfServices';
 import CareersPage from './ExtraPages/CareersPage';
 import CreditCard from './Resources/CreditCard';
+import DebtConsolidationPage from './Resources/DebtConsolidationPage';
 
 function App() {
   return (
@@ -37,6 +38,7 @@ function App() {
         <Route path="/TermsOfServices" element={<TermsOfService />} />
         <Route path="/CareersPage" element={<CareersPage />} />
         <Route path="/CreditCard" element={<CreditCard />} />
+        <Route path="/DebtConsolidationPage" element={<DebtConsolidationPage/>} />
       </Routes>
       <ScrollToTopButton />
       <Footer />

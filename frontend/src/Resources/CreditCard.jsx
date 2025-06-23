@@ -1,4 +1,5 @@
 import React from 'react';
+import Credit from '../assets/Media/creditcard.png'
 
 const CreditCard = () => {
   return (
@@ -25,9 +26,14 @@ const CreditCard = () => {
           <div className="flex flex-col md:flex-row items-center">
             <div className="md:w-1/2 mb-8 md:mb-0 md:pr-8">
               {/* IMAGE PLACEHOLDER - Replace with actual image */}
-              <div className="bg-gray-200 border-2 border-dashed rounded-xl w-full h-64 flex items-center justify-center">
-                <span className="text-gray-500">[Image: Person looking relieved about finances]</span>
-              </div>
+              
+                <span className="inline-block max-w-2xl rounded-2xl overflow-hidden shadow-xl">
+          <img 
+            src={Credit} 
+            alt="Person looking relieved about finances" 
+            className="w-full h-auto object-cover transition-transform duration-500 hover:scale-105"
+          />
+        </span>
             </div>
             <div className="md:w-1/2">
               <h2 className="text-3xl font-bold text-gray-800 mb-4">Find Freedom From Credit Card Debt</h2>

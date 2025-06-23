@@ -12,7 +12,7 @@ const cardData = [
     icon: "💰",
     title: "Debt Consolidation",
     description: "Combine multiple credit card debts into one loan and save.",
-    link: "#"
+    link: "/DebtConsolidationPage"
   },
   {
     icon: "🤝",
