@@ -79,7 +79,7 @@ export const PrivacyPolicy = () => (
     <Section title="Contact Us">
       <p>If you have any questions about this privacy policy or your personal data, please contact us:</p>
       <p className="mt-2"><a className="text-indigo-600 dark:text-indigo-400 underline hover:no-underline" href="mailto:support@rgdebtrelief.com"><MailIcon />support@rgdebtrelief.com</a></p>
-      <p><AddressIcon />Reddington Global Consultancy, [Insert Address]</p>
+      <p><AddressIcon />Reddington Global Consultancy</p>
     </Section>
   </div>
 );
