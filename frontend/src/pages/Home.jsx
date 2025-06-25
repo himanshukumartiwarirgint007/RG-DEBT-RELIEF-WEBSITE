@@ -11,6 +11,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
 import FAQSection from '../components/FAQ';
+import HomeAboutSection from '../ExtraPages/HomeAboutSection';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -61,122 +62,124 @@ const Home = () => {
     <div className="w-full md:w-1/2 flex justify-center pointer-events-auto">
       <div className="w-full max-w-[480px] aspect-video rounded-xl overflow-hidden shadow-lg">
         <iframe
-          src="https://www.youtube.com/embed/oQjdOMSUZpA?autoplay=1&mute=1&loop=1&playlist=oQjdOMSUZpA"
-          title="YouTube Video"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          className="w-full h-full"
-        ></iframe>
+  src="https://www.youtube.com/embed/CHiOBzqcMV8?autoplay=1&mute=1&loop=1&playlist=CHiOBzqcMV8"
+  title="YouTube Video"
+  frameBorder="0"
+  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+  allowFullScreen
+  className="w-full h-full"
+></iframe>
+
       </div>
     </div>
   </div>
 </div>
-      {/* Responsive Grid Section */}
-      <div className="max-w-7xl mx-auto py-10 sm:py-16 md:py-20 px-4 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
-        {[
-          {
-            type: 'text',
-            content: (
-              <div className="flex flex-col justify-center bg-white p-4 sm:p-6 md:p-8 lg:p-12 rounded-2xl md:rounded-3xl shadow-lg md:shadow-2xl">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold sm:font-extrabold mb-3 sm:mb-4 md:mb-6">
-                  Overcoming Key Challenges in Debt Relief Programs
-                </h2>
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 md:mb-8">
-                  Many programs fail due to avoidable mistakes. Discover
-                  practical strategies to guide you toward debt-free living
-                </p>
-                <Link
-                  to="/apply"
-                  className="text-[#2563eb] font-bold hover:underline text-sm sm:text-base md:text-lg lg:text-xl"
-                >
-                  Reset Your Finances &rarr;
-                </Link>
-              </div>
-            )
-          },
-          {
-            type: 'image',
-            content: (
-              <img
-                src={img1}
-                alt="AI Cubes"
-                className="w-full h-auto max-h-[300px] sm:max-h-[350px] md:max-h-[400px] object-cover rounded-2xl md:rounded-3xl shadow-lg md:shadow-2xl"
-              />
-            )
-          },
-          {
-            type: 'image',
-            content: (
-              <img
-                src={img2}
-                alt="Team Collaboration"
-                className="w-full h-auto max-h-[300px] sm:max-h-[350px] md:max-h-[400px] object-cover rounded-2xl md:rounded-3xl shadow-lg md:shadow-2xl"
-              />
-            )
-          },
-          {
-            type: 'text',
-            content: (
-              <div className="flex flex-col justify-center bg-white p-4 sm:p-6 md:p-8 lg:p-12 rounded-2xl md:rounded-3xl shadow-lg md:shadow-2xl">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold sm:font-extrabold mb-3 sm:mb-4 md:mb-6">
-                  Tackle the Biggest Pitfalls in Debt Relief
-                </h2>
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 md:mb-8">
-                  Many people enter debt relief with good intentions but fall
-                  into avoidable traps—like unrealistic repayment plans or lack
-                  of proper guidance. With the right strategies, you can avoid
-                  setbacks and build real financial stability.
-                </p>
-                <Link
-                  to="/Apply"
-                  className="text-[#2563eb] font-bold hover:underline text-sm sm:text-base md:text-lg lg:text-xl"
-                >
-                  Rebuild with Confidence &rarr;
-                </Link>
-              </div>
-            )
-          },
-          {
-            type: 'text',
-            content: (
-              <div className="flex flex-col justify-center bg-white p-4 sm:p-6 md:p-8 lg:p-12 rounded-2xl md:rounded-3xl shadow-lg md:shadow-2xl">
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold sm:font-extrabold mb-3 sm:mb-4 md:mb-6">
-                  Why Debt Programs Fail—and How Yours Won’t
-                </h2>
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 md:mb-8">
-                  Hard experience has revealed common pitfalls in debt relief
-                  programs—and proven strategies that truly lead to lasting
-                  financial freedom.
-                </p>
-                <Link
-                  to="/Apply"
-                  className="text-[#2563eb] font-bold hover:underline text-sm sm:text-base md:text-lg lg:text-xl"
-                >
-                  Begin Your Debt-Free Journey &rarr;
-                </Link>
-              </div>
-            )
-          },
-          {
-            type: 'image',
-            content: (
-              <img
-                src={img3}
-                alt="Additional Visual"
-                className="w-full h-auto max-h-[300px] sm:max-h-[350px] md:max-h-[400px] object-cover rounded-2xl md:rounded-3xl shadow-lg md:shadow-2xl"
-              />
-            )
-          }
-        ].map((item, index) => (
-          <React.Fragment key={index}>{item.content}</React.Fragment>
-        ))}
-      </div>
 
-      {/* FAQ Section */}
-      <section className="mt-8 sm:mt-12 md:mt-16">
-        <FAQSection />
-      </section>
+  <div className="bg-[linear-gradient(to_bottom_right,#875af7_0%,#ffffff_100%)]">
+  {/* Responsive Grid Section */}
+  <div className="max-w-7xl mx-auto py-10 sm:py-16 md:py-20 px-4 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
+    {[
+      {
+        type: 'text',
+        content: (
+          <div className="flex flex-col justify-center bg-white p-4 sm:p-6 md:p-8 lg:p-12 rounded-2xl md:rounded-3xl shadow-lg md:shadow-2xl">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold sm:font-extrabold mb-3 sm:mb-4 md:mb-6">
+              Overcoming Key Challenges in Debt Relief Programs
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 md:mb-8">
+              Many programs fail due to avoidable mistakes. Discover
+              practical strategies to guide you toward debt-free living
+            </p>
+            <Link
+              to="/apply"
+              className="text-[#2563eb] font-bold hover:underline text-sm sm:text-base md:text-lg lg:text-xl"
+            >
+              Reset Your Finances &rarr;
+            </Link>
+          </div>
+        )
+      },
+      {
+        type: 'image',
+        content: (
+          <img
+            src={img1}
+            alt="AI Cubes"
+            className="w-full h-auto max-h-[300px] sm:max-h-[350px] md:max-h-[400px] object-cover rounded-2xl md:rounded-3xl shadow-lg md:shadow-2xl"
+          />
+        )
+      },
+      {
+        type: 'image',
+        content: (
+          <img
+            src={img2}
+            alt="Team Collaboration"
+            className="w-full h-auto max-h-[300px] sm:max-h-[350px] md:max-h-[400px] object-cover rounded-2xl md:rounded-3xl shadow-lg md:shadow-2xl"
+          />
+        )
+      },
+      {
+        type: 'text',
+        content: (
+          <div className="flex flex-col justify-center bg-white p-4 sm:p-6 md:p-8 lg:p-12 rounded-2xl md:rounded-3xl shadow-lg md:shadow-2xl">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold sm:font-extrabold mb-3 sm:mb-4 md:mb-6">
+              Tackle the Biggest Pitfalls in Debt Relief
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 md:mb-8">
+              Many people enter debt relief with good intentions but fall
+              into avoidable traps—like unrealistic repayment plans or lack
+              of proper guidance. With the right strategies, you can avoid
+              setbacks and build real financial stability.
+            </p>
+            <Link
+              to="/Apply"
+              className="text-[#2563eb] font-bold hover:underline text-sm sm:text-base md:text-lg lg:text-xl"
+            >
+              Rebuild with Confidence &rarr;
+            </Link>
+          </div>
+        )
+      },
+      {
+        type: 'text',
+        content: (
+          <div className="flex flex-col justify-center bg-white p-4 sm:p-6 md:p-8 lg:p-12 rounded-2xl md:rounded-3xl shadow-lg md:shadow-2xl">
+            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold sm:font-extrabold mb-3 sm:mb-4 md:mb-6">
+              Why Debt Programs Fail—and How Yours Won’t
+            </h2>
+            <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-4 sm:mb-6 md:mb-8">
+              Hard experience has revealed common pitfalls in debt relief
+              programs—and proven strategies that truly lead to lasting
+              financial freedom.
+            </p>
+            <Link
+              to="/Apply"
+              className="text-[#2563eb] font-bold hover:underline text-sm sm:text-base md:text-lg lg:text-xl"
+            >
+              Begin Your Debt-Free Journey &rarr;
+            </Link>
+          </div>
+        )
+      },
+      {
+        type: 'image',
+        content: (
+          <img
+            src={img3}
+            alt="Additional Visual"
+            className="w-full h-auto max-h-[300px] sm:max-h-[350px] md:max-h-[400px] object-cover rounded-2xl md:rounded-3xl shadow-lg md:shadow-2xl"
+          />
+        )
+      }
+    ].map((item, index) => (
+      <React.Fragment key={index}>{item.content}</React.Fragment>
+    ))}
+  </div>
+</div>
+      {/* Page Call Section */}
+      <section className="mt-8 sm:mt-12 md:mt-16"> <HomeAboutSection /> </section>
+      <section className="mt-8 sm:mt-12 md:mt-16"> <FAQSection /> </section>
     </>
   );
 };
