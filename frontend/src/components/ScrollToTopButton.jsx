@@ -1,40 +1,36 @@
 import React, { useEffect, useState } from 'react';
 
+// Up Arrow Icon SVG Component
+const ArrowUpIcon = () => (
+  <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" d="M5 10l7-7m0 0l7 7m-7-7v18" />
+  </svg>
+);
+
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show button when scrolled down
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
-        setIsVisible(true);
-      } else {
-        setIsVisible(false);
-      }
+      setIsVisible(window.pageYOffset > 300);
     };
 
-    window.addEventListener('scroll', toggleVisibility);
-    return () => window.removeEventListener('scroll', toggleVisibility);
+    window.addEventListener("scroll", toggleVisibility);
+    return () => window.removeEventListener("scroll", toggleVisibility);
   }, []);
 
-  // Scroll to top handler
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth', // Smooth scrolling
-    });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
   return (
-    isVisible && (
-      <button
-        onClick={scrollToTop}
-        className="fixed bottom-5 right-5 z-50 bg-[#002855] text-white p-3 rounded-full shadow-lg hover:bg-[#174ea6] transition duration-300"
-        aria-label="Scroll to Top"
-      >
-        ↑
-      </button>
-    )
+    <button
+      onClick={scrollToTop}
+      className={`fixed bottom-5 right-5 z-50 p-3 rounded-full bg-indigo-600 text-white shadow-lg hover:bg-indigo-700 transition-all duration-300 ${
+        isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
+      }`}
+      aria-label="Scroll to top"
+    >
+      <ArrowUpIcon />
+    </button>
   );
 };
 

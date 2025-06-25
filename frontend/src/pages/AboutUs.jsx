@@ -58,7 +58,7 @@ const AboutUs = () => (
       </a>
       {/* Testimonial */}
       <blockquote className="max-w-xl mx-auto mt-10 italic text-lg text-white/90 z-10 animate-fadeIn delay-300">
-        “Reddington Global helped me get my life back on track. Their team truly cares and delivers real results.”<br />
+        “Reddington Global helped me get my life back on track. It truly made a change in my life nad helped me in the future endeviours. Their team truly cares and delivers real results.”<br />
         <span className="not-italic font-bold text-yellow-200">— Satisfied Client</span>
       </blockquote>
     </section>
@@ -90,7 +90,7 @@ const AboutUs = () => (
     <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
       <h3 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">Our Vision</h3>
       <p className="text-lg sm:text-2xl text-white max-w-2xl drop-shadow-lg">
-        To be the most trusted partner in debt relief, inspiring hope and building a financially healthy community for generations to come.
+        To be the most trusted partner in debt relief, made a final chnge in society and empowered people for change, inspiring hope and building a financially healthy community for generations to come.
       </p>
     </div>
   </div>
