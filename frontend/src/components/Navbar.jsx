@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { PhoneCall } from 'lucide-react';
 import logo from '../assets/Media/logo.png';
 
 const Navbar = () => {
@@ -17,34 +18,33 @@ const Navbar = () => {
   };
 
   return (
-    <header className="bg-[#002855] w-full sticky top-0 z-50">
-      <div className="w-full mx-auto flex items-center px-4 py-0 justify-between">
-        {/* Left: Logo and Brand */}
-        <div className="flex items-center gap-0 flex-shrink-0 min-w-0">
-  <button
-    onClick={() => handleNavClick('/')}
-    className="flex items-center gap-2 cursor-pointer bg-transparent border-none outline-none p-0 m-0" >
-    <img
-      src={logo}
-      alt="Logo"
-      className="w-20 h-16 object-contain sm:w-28 sm:h-20 lg:w-32 lg:h-26" />
-      <div className="min-w-0 text-left">
-      <div className="text-white font-bold text-lg sm:text-xl lg:text-2xl leading-tight truncate">
-        REDDINGTON GLOBAL
-      </div>
-      <div className="text-white font-bold text-lg sm:text-xl lg:text-2xl leading-tight truncate">
-        DEBT RELIEF
-      </div>
-      {/* <div className="text-white font-bold text-xs sm:text-xs lg:text-2xl leading-tight truncate">
-         DEBT RELIEF
-      </div> */}
-    </div>
-  </button>
-</div>
+    <header className="w-full sticky top-0 z-50 bg-gradient-to-r from-[#002855] to-[#66B2FF] text-white shadow-md transition-all duration-300">
+      <div className="w-full mx-auto flex items-center px-4 py-4 justify-between">
 
+        {/* Left: Logo and Brand */}
+        <div className="flex items-center gap-3 flex-shrink-0 min-w-0">
+          <button
+            onClick={() => handleNavClick('/')}
+            className="flex items-center gap-3 cursor-pointer bg-transparent border-none outline-none p-0 m-0"
+          >
+            <img
+              src={logo}
+              alt="Logo"
+              className="w-24 h-20 object-contain sm:w-32 sm:h-24 lg:w-36 lg:h-28"
+            />
+            <div className="min-w-0 text-left hidden sm:block">
+              <div className="text-white font-bold text-xl lg:text-2xl leading-tight truncate">
+                REDDINGTON GLOBAL
+              </div>
+              <div className="text-white font-bold text-xl lg:text-2xl leading-tight truncate">
+                DEBT RELIEF
+              </div>
+            </div>
+          </button>
+        </div>
 
         {/* Centre: Navbar */}
-        <nav className="hidden lg:flex flex-1 justify-center flex-wrap gap-6 min-w-0 mx-2 whitespace-nowrap">
+        <nav className="hidden lg:flex flex-1 justify-center flex-wrap gap-4 min-w-0 mx-2 whitespace-nowrap">
           {[
             { label: 'Home', path: '/' },
             { label: 'Apply', path: '/apply' },
@@ -57,27 +57,26 @@ const Navbar = () => {
             <button
               key={path}
               onClick={() => handleNavClick(path)}
-              className="text-white font-semibold text-base px-3 py-2 hover:bg-[#002855] rounded transition whitespace-nowrap bg-transparent"
+              className="text-white font-medium text-base xl:text-lg px-4 py-2 rounded-md hover:bg-white hover:text-[#002855] transition duration-200"
             >
               {label}
             </button>
           ))}
         </nav>
 
-        {/* Right: Login + Contact */}
-        <div className="hidden lg:flex items-center gap-2 flex-shrink-0">
-          <button
-            onClick={() => handleNavClick('/login')}
-            className="bg-[#f7c948] text-white font-bold px-4 py-2 rounded hover:bg-[#174ea6] transition text-base"
-          >
-            Login
-          </button>
-          <span className="border-2 border-white bg-white text-[#002855] font-bold px-2 py-2 rounded-full transition text-base whitespace-nowrap mr-6">
-            800-300-9550
-          </span>
+        {/* Right: Contact Number */}
+        <div className="hidden lg:flex items-center gap-3 flex-shrink-0">
+        <a
+        href="tel:8003009550"
+         className="flex items-center gap-2 border-2 border-white bg-white text-[#002855] font-bold px-4 py-2 rounded-full transition text-base whitespace-nowrap hover:bg-gray-200 hover:text-[#001F3F]"
+         >
+        {/* Phone Icon */}
+        <PhoneCall className="w-5 h-5 text-[#002855]" />
+        800-300-9550
+        </a>
         </div>
 
-        {/* Hamburger for mobile */}
+         {/* Hamburger for mobile */}
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="lg:hidden flex flex-col justify-center items-center w-1 h-10 ml-auto"
@@ -89,7 +88,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile / Tablet Menu */}
+      {/* Mobile Menu */}
       {menuOpen && (
         <div className="lg:hidden px-2 pb-4">
           <nav className="flex flex-col gap-2 mt-2">
@@ -105,22 +104,21 @@ const Navbar = () => {
               <button
                 key={path}
                 onClick={() => handleNavClick(path)}
-                className="text-white font-semibold text-base px-4 py-2 hover:bg-[#16b477] rounded transition bg-transparent text-left"
+                className="text-white font-medium text-base px-4 py-2 hover:bg-white hover:text-[#002855] transition bg-transparent text-left rounded"
               >
                 {label}
               </button>
             ))}
-            <div className="flex flex-col items-start pl-2">
-              <button
-                onClick={() => handleNavClick('/login')}
-                className="bg-[#f7c948] text-white font-bold px-3 py-1 rounded hover:bg-[#174ea6] transition text-lg mt-2 text-left"
-              >
-                Login
-              </button>
-              <span className="border-2 border-white bg-white text-[#002855] font-bold px-2 py-1 rounded-full transition text-base whitespace-nowrap mt-2">
-                800-300-9550
-              </span>
-            </div>
+            <div className="flex flex-col items-start pl-2 mt-2">
+          <a
+          href="tel:8003009550"
+          className="flex items-center gap-2 border-2 border-white bg-white text-[#002855] font-bold px-4 py-2 rounded-full transition text-base whitespace-nowrap hover:bg-gray-200 hover:text-[#001F3F]"
+          >
+         <PhoneCall className="w-5 h-5 text-[#002855]" />
+          800-300-9550
+        </a>
+        </div>
+
           </nav>
         </div>
       )}
