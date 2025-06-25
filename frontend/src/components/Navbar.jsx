@@ -33,7 +33,7 @@ const Navbar = () => {
         REDDINGTON GLOBAL
       </div>
       <div className="text-white font-bold text-lg sm:text-xl lg:text-2xl leading-tight truncate">
-        CONSULTANCY
+        DEBT RELIEF
       </div>
       {/* <div className="text-white font-bold text-xs sm:text-xs lg:text-2xl leading-tight truncate">
          DEBT RELIEF
