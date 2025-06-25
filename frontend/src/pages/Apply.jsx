@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import applyNowImg from '../assets/Media/applynow.png';
+import applyNowImg from '../assets/Media/apply.png';
 import ChatIcon from "../assets/Media/chat.png";
 import CalculatorIcon from "../assets/Media/Calculator.png";
 import CoinIcon from "../assets/Media/coin.png";
@@ -28,7 +28,7 @@ body {
 }
 .image-side {
   flex: 1;
-  background: url('../assets/Media/applynow.png') center/cover no-repeat;
+  background: url('../assets/Media/apply.png') center/cover no-repeat;
 }
 .form-side {
   flex: 1;
