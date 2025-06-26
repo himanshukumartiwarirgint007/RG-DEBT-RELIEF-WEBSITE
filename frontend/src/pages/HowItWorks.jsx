@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-
 import HappyFamily from "../assets/Media/HappyFamily.jpg";
 import ChatIcon from "../assets/Media/chat.png";
 import CalculatorIcon from "../assets/Media/Calculator.png";
 import CoinIcon from "../assets/Media/coin.png";
-
 import secure from "../assets/Media/secure.png";
 import trusted from "../assets/Media/trusted.png";
 import support from "../assets/Media/support.png";
+import FAQSection from "../components/FAQ";
+import LoanCalculator from "../ExtraPages/LoanCalculator";
 
 // ✅ Correct trust badge format
 const trustBadges = [
@@ -158,6 +158,8 @@ const HowItWorks = () => (
         </Link>
       </div>
     </section>
+    <section className="mt-8 sm:mt-12 md:mt-16"> <LoanCalculator /> </section>
+    <section className="mt-8 sm:mt-12 md:mt-16"> <FAQSection /> </section>
   </div>
 );
 

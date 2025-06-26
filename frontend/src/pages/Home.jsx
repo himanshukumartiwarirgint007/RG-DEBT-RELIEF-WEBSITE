@@ -53,9 +53,9 @@ const Home = () => {
       </p>
       <button
         onClick={() => navigate('/Apply')}
-        className="bg-[#16b477] text-white font-bold px-6 py-3 text-base rounded-full shadow hover:bg-[#13a06b] transition"
+        className="bg-[#FF624D] text-white font-bold px-6 py-3 text-base rounded-full shadow hover:bg-[#13a06b] transition"
       >
-        Get Started
+        Get Free Consultancy
       </button>
     </div>
 
@@ -177,8 +177,9 @@ const Home = () => {
       <React.Fragment key={index}>{item.content}</React.Fragment>
     ))}
   </div>
+  
       {/* Page Call Section */}
-      <div className="bg-[length:200%] bg-gradient-to-r from-blue-100 to-pink-400 animate-bg-pan-right">
+      <div className="bg-[length:200%] bg-gradient-to-r from-blue-100 to-pink-100 animate-bg-pan-right">
   <section className="py-2 px-2 mt-8 sm:mt-12 md:mt-16"> <DebtCalculator /> </section>
   <section className="py-2 mt-8 sm:mt-12 md:mt-16"> <HomeAboutSection /> </section>
 </div>

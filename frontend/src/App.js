@@ -20,6 +20,7 @@ import CreditCard from './Resources/CreditCard';
 import DebtConsolidationPage from './Resources/DebtConsolidationPage';
 import HomeAboutSection from './ExtraPages/HomeAboutSection';
 import DebtCalculator from './ExtraPages/DebtCalculator';
+import LoanCalculator from './ExtraPages/LoanCalculator';
 
 function App() {
   return (
@@ -43,6 +44,7 @@ function App() {
         <Route path="/DebtConsolidationPage" element={<DebtConsolidationPage/>} />
         <Route path="/HomeAboutSection" element={<HomeAboutSection />} />
         <Route path="/DebtCalculator" element={<DebtCalculator />} />
+        <Route path="/LoanCalculator" element={<LoanCalculator />} />
       </Routes>
       <ScrollToTopButton />
       <Footer />
