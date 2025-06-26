@@ -1,97 +1,31 @@
 import React, { useState, useEffect, useRef } from "react";
 import FAQ from '../components/FAQ';
 import People from '../assets/Media/People.jpg';
+
 const cardData = [
-  // {
-  //   icon: "💳",
-  //   title: "Credit Card Debt Relief",
-  //   description: "Pay off the credit card debt you've racked up.",
-  //   link: "/CreditCard"
-  // },
-  // {
-  //   icon: "💰",
-  //   title: "Debt Consolidation",
-  //   description: "Combine multiple credit card debts into one loan and save.",
-  //   link: "/DebtConsolidationPage"
-  // },
-  // {
-  //   icon: "🤝",
-  //   title: "Personal Loan Debt Relief",
-  //   description: "We'll help you navigate through life's financial challenges.",
-  //   link: "#"
-  // },
   {
     icon: "📄",
     title: "Debt Relief Settlement",
     description: "Pay off your debt in less time with the most savings.",
-    link: "#"
+    link: "#",
+    extraContent: (
+      <div className="mt-3 p-4 bg-gray-50 rounded-lg w-full text-left">
+        <h4 className="font-bold text-gray-800 mb-2">How It Works:</h4>
+        <p className="text-gray-600 text-sm">
+          Our debt relief settlement program helps you pay off debts faster by negotiating 
+          with creditors to reduce your total balance. We work with all major credit card 
+          companies and lenders to get you the best possible settlement terms.
+        </p>
+        <ul className="mt-2 list-disc pl-5 text-sm text-gray-600">
+          <li>Average savings: 30-50% before fees</li>
+          <li>Program duration: 24-48 months</li>
+          <li>No upfront fees</li>
+          <li>Personalized debt management plan</li>
+          <li>Dedicated account manager</li>
+        </ul>
+      </div>
+    )
   },
-  // {
-  //   icon: "🏥",
-  //   title: "Medical Debt Relief",
-  //   description: "We can help you feel better by paying off your medical debt.",
-  //   link: "#"
-  // },
-  // {
-  //   icon: "🧑‍💼",
-  //   title: "Unemployment Debt Relief",
-  //   description: "Put unemployment debt relief to work and pay off your bills.",
-  //   link: "#"
-  // },
-  // {
-  //   icon: "👴",
-  //   title: "Retirement Debt Relief",
-  //   description: "We can help you make your golden years more valuable.",
-  //   link: "#"
-  // },
-  // {
-  //   icon: "🎖️",
-  //   title: "Veteran Debt Relief",
-  //   description: "We're honored to help you pay off your debt and get a fresh start.",
-  //   link: "#"
-  // },
-  // {
-  //   icon: "💼",
-  //   title: "Business Debt Relief",
-  //   description: "Don't start or run your business on a negative note.",
-  //   link: "#"
-  // },
-  // {
-  //   icon: "🏦",
-  //   title: "Bankruptcy",
-  //   description: "Learn how bankruptcy works and if it's right for you.",
-  //   link: "#"
-  // },
-  // {
-  //   icon: "👨‍🏫",
-  //   title: "Credit Counseling",
-  //   description: "Is a credit counselor or debt management plan for you?",
-  //   link: "#"
-  // },
-  // {
-  //   icon: "🎓",
-  //   title: "Private Student Debt Relief",
-  //   description: "Learn how to pay off your private student debt for less money.",
-  //   link: "#"
-  // },
-  // {
-  //   icon: "💍",
-  //   title: "Marital Debt Relief",
-  //   description: "Discover how to afford a wedding or divorce and turn your life around.",
-  //   link: "#"
-  // },
-  // {
-  //   icon: "🛑",
-  //   title: "Personal Finance Debt Relief",
-  //   description: "Stop personal debt from interfering with your personal life.",
-  //   link: "#"
-  // },
-  // {
-  //   icon: "📍",
-  //   title: "Debt Relief by State",
-  //   description: "See your debt relief options based on where you live.",
-  //   link: "#"
-  // }
 ];
 
 const howItWorksSteps = [
@@ -109,6 +43,7 @@ const Resources = () => {
     howItWorks: false,
     faq: false
   });
+  const [expandedCards, setExpandedCards] = useState([]);
   
   const heroRef = useRef(null);
   const cardsRef = useRef(null);
@@ -161,12 +96,21 @@ const Resources = () => {
         100% { transform: scale(1); }
       }
       
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
       .animate-float {
         animation: float 4s infinite ease-in-out;
       }
       
       .animate-pulse-custom {
         animation: pulse 2s infinite ease-in-out;
+      }
+      
+      .animate-fadeIn {
+        animation: fadeIn 0.3s ease-out forwards;
       }
     `;
     document.head.appendChild(style);
@@ -175,8 +119,16 @@ const Resources = () => {
     };
   }, []);
 
+  const toggleExpand = (idx) => {
+    if (expandedCards.includes(idx)) {
+      setExpandedCards(expandedCards.filter(index => index !== idx));
+    } else {
+      setExpandedCards([...expandedCards, idx]);
+    }
+  };
+
   return (
-    <div className="min-h-screen p-5 sm:p-10 bg-gradient-to-br from-[#f9fcff] to-[#f6f8fa] font-sans">
+    <div className="min-h-screen p-5 sm:p-10 bg-gradient-to-br from-[#abd5ff] to-[#abfbff] font-sans">
       {/* Hero Section */}
       <div 
         ref={heroRef}
@@ -234,7 +186,7 @@ const Resources = () => {
       {/* Cards Section */}
       <div 
         ref={cardsRef}
-        
+        className="grid grid-cols-1 gap-8"
       >
         {cardData.map((card, idx) => (
           <div
@@ -244,11 +196,11 @@ const Resources = () => {
               flex flex-col items-center 
               relative overflow-hidden 
               rounded-3xl shadow-xl 
-          p-6 md:p-12 
-          gap-2 md:gap-4
+              p-6 md:p-8
+              gap-2 md:gap-4
               transition-all duration-400 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] 
-              transform hover:-translate-y-2 hover:scale-105 hover:shadow-xl 
-              ${hoveredCard === idx ? 'bg-gradient-to-br from-white to-[#f8f9ff] opacity-100 translate-y-0' : 'opacity-1 translate-y-10'}
+              transform hover:-translate-y-2 hover:scale-[1.02] hover:shadow-xl 
+              ${hoveredCard === idx ? 'bg-gradient-to-br from-white to-[#f8f9ff] opacity-100' : 'opacity-1'}
             `}
             style={{ transitionDelay: `${idx * 0.05}s` }}
             onMouseEnter={() => setHoveredCard(idx)}
@@ -260,17 +212,26 @@ const Resources = () => {
             </div>
             <h3 className="text-xl font-bold mb-3 text-gray-900">{card.title}</h3>
             <p className="text-gray-600 mb-6 leading-normal">{card.description}</p>
-            <a
-  className={`
-    text-[#ff7a59] font-semibold flex items-center gap-1 
-    transition-all duration-300
-    ${hoveredCard === idx ? 'text-[#ff4c1c] translate-x-1' : ''}
-  `}
-  href={card.link}
->
-  Learn More 
-  <span className={`transition-transform duration-300 ${hoveredCard === idx ? 'translate-x-1' : ''}`}>→</span>
-</a>
+            
+            <button
+              className={`
+                text-[#ff7a59] font-semibold flex items-center gap-1 
+                transition-all duration-300 mb-2
+                ${hoveredCard === idx ? 'text-[#ff4c1c]' : ''}
+              `}
+              onClick={() => toggleExpand(idx)}
+            >
+              {expandedCards.includes(idx) ? 'Read Less' : 'Read More'}
+              <span className={`transition-transform duration-300 ${hoveredCard === idx ? 'translate-x-1' : ''}`}>
+                {expandedCards.includes(idx) ? '↑' : '↓'}
+              </span>
+            </button>
+            
+            {expandedCards.includes(idx) && card.extraContent && (
+              <div className="animate-fadeIn w-full">
+                {card.extraContent}
+              </div>
+            )}
           </div>
         ))}
       </div>
