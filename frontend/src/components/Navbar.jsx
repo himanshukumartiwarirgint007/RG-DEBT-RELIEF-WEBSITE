@@ -18,7 +18,7 @@ const Navbar = () => {
   };
 
   return (
-    <header className="w-full sticky top-0 z-50 bg-gradient-to-r from-[#002855] to-[#66B2FF] text-white shadow-md transition-all duration-300">
+    <header className="w-full sticky top-0 z-50 bg-gradient-to-r from-[#0059B3] to-[#66B3FF] dark:from-[#0e1a2b] dark:to-[#1a2d47] text-white shadow-md transition-all duration-300">
       <div className="w-full mx-auto flex items-center px-4 py-4 justify-between">
 
         {/* Left: Logo and Brand */}

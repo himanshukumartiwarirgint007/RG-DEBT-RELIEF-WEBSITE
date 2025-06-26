@@ -76,7 +76,7 @@ const Home = () => {
   </div>
 </div>
 
-  <div className="bg-[linear-gradient(to_bottom_right,#875af7_0%,#ffffff_100%)]">
+  <div className="bg-[linear-gradient(to_bottom_right,#FFFFFF_0%,#B3D9FF_100%)]">
   {/* Responsive Grid Section */}
   <div className="max-w-7xl mx-auto py-10 sm:py-16 md:py-20 px-4 grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 md:gap-12">
     {[
