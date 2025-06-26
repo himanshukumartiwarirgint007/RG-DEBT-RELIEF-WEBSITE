@@ -177,11 +177,14 @@ const Home = () => {
       <React.Fragment key={index}>{item.content}</React.Fragment>
     ))}
   </div>
+      {/* Page Call Section */}
+      <div className="bg-[length:200%] bg-gradient-to-r from-blue-100 to-pink-400 animate-bg-pan-right">
+  <section className="py-2 px-2 mt-8 sm:mt-12 md:mt-16"> <DebtCalculator /> </section>
+  <section className="py-2 mt-8 sm:mt-12 md:mt-16"> <HomeAboutSection /> </section>
+</div>
 </div>
       {/* Page Call Section */}
-      <section className="mt-8 sm:mt-12 md:mt-16"> <DebtCalculator /> </section>
-      <section className="mt-8 sm:mt-12 md:mt-16"> <HomeAboutSection /> </section>
-      <section className="mt-8 sm:mt-12 md:mt-16"> <FAQSection /> </section>
+       <section className="mt-8 sm:mt-12 md:mt-16"> <FAQSection /> </section>
     </>
   );
 };
