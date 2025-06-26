@@ -19,6 +19,7 @@ import CareersPage from './ExtraPages/CareersPage';
 import CreditCard from './Resources/CreditCard';
 import DebtConsolidationPage from './Resources/DebtConsolidationPage';
 import HomeAboutSection from './ExtraPages/HomeAboutSection';
+import DebtCalculator from './ExtraPages/DebtCalculator';
 
 function App() {
   return (
@@ -41,6 +42,7 @@ function App() {
         <Route path="/CreditCard" element={<CreditCard />} />
         <Route path="/DebtConsolidationPage" element={<DebtConsolidationPage/>} />
         <Route path="/HomeAboutSection" element={<HomeAboutSection />} />
+        <Route path="/DebtCalculator" element={<DebtCalculator />} />
       </Routes>
       <ScrollToTopButton />
       <Footer />

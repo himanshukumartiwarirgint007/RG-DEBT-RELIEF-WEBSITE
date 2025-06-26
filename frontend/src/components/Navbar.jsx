@@ -51,7 +51,7 @@ const Navbar = () => {
             { label: 'How It Works', path: '/howitworks' },
             { label: 'About Us', path: '/aboutus' },
             { label: 'Resources', path: '/resources' },
-            { label: 'Client Stories', path: '/clientstories' },
+            // { label: 'Client Stories', path: '/clientstories' },
             { label: 'Blog', path: '/blog' }
           ].map(({ label, path }) => (
             <button
@@ -98,7 +98,7 @@ const Navbar = () => {
               { label: 'How It Works', path: '/howitworks' },
               { label: 'About Us', path: '/aboutus' },
               { label: 'Resources', path: '/resources' },
-              { label: 'Client Stories', path: '/clientstories' },
+              // { label: 'Client Stories', path: '/clientstories' },
               { label: 'Blog', path: '/blog' }
             ].map(({ label, path }) => (
               <button

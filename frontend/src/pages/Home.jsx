@@ -12,6 +12,7 @@ import 'swiper/css/pagination';
 import { Pagination, Autoplay } from 'swiper/modules';
 import FAQSection from '../components/FAQ';
 import HomeAboutSection from '../ExtraPages/HomeAboutSection';
+import DebtCalculator from '../ExtraPages/DebtCalculator';
 
 const Home = () => {
   const navigate = useNavigate();
@@ -178,6 +179,7 @@ const Home = () => {
   </div>
 </div>
       {/* Page Call Section */}
+      <section className="mt-8 sm:mt-12 md:mt-16"> <DebtCalculator /> </section>
       <section className="mt-8 sm:mt-12 md:mt-16"> <HomeAboutSection /> </section>
       <section className="mt-8 sm:mt-12 md:mt-16"> <FAQSection /> </section>
     </>
