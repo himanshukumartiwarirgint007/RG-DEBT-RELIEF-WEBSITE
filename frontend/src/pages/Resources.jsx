@@ -2,96 +2,96 @@ import React, { useState, useEffect, useRef } from "react";
 import FAQ from '../components/FAQ';
 import People from '../assets/Media/People.jpg';
 const cardData = [
-  {
-    icon: "💳",
-    title: "Credit Card Debt Relief",
-    description: "Pay off the credit card debt you've racked up.",
-    link: "/CreditCard"
-  },
-  {
-    icon: "💰",
-    title: "Debt Consolidation",
-    description: "Combine multiple credit card debts into one loan and save.",
-    link: "/DebtConsolidationPage"
-  },
-  {
-    icon: "🤝",
-    title: "Personal Loan Debt Relief",
-    description: "We'll help you navigate through life's financial challenges.",
-    link: "#"
-  },
+  // {
+  //   icon: "💳",
+  //   title: "Credit Card Debt Relief",
+  //   description: "Pay off the credit card debt you've racked up.",
+  //   link: "/CreditCard"
+  // },
+  // {
+  //   icon: "💰",
+  //   title: "Debt Consolidation",
+  //   description: "Combine multiple credit card debts into one loan and save.",
+  //   link: "/DebtConsolidationPage"
+  // },
+  // {
+  //   icon: "🤝",
+  //   title: "Personal Loan Debt Relief",
+  //   description: "We'll help you navigate through life's financial challenges.",
+  //   link: "#"
+  // },
   {
     icon: "📄",
     title: "Debt Relief Settlement",
     description: "Pay off your debt in less time with the most savings.",
     link: "#"
   },
-  {
-    icon: "🏥",
-    title: "Medical Debt Relief",
-    description: "We can help you feel better by paying off your medical debt.",
-    link: "#"
-  },
-  {
-    icon: "🧑‍💼",
-    title: "Unemployment Debt Relief",
-    description: "Put unemployment debt relief to work and pay off your bills.",
-    link: "#"
-  },
-  {
-    icon: "👴",
-    title: "Retirement Debt Relief",
-    description: "We can help you make your golden years more valuable.",
-    link: "#"
-  },
-  {
-    icon: "🎖️",
-    title: "Veteran Debt Relief",
-    description: "We're honored to help you pay off your debt and get a fresh start.",
-    link: "#"
-  },
-  {
-    icon: "💼",
-    title: "Business Debt Relief",
-    description: "Don't start or run your business on a negative note.",
-    link: "#"
-  },
-  {
-    icon: "🏦",
-    title: "Bankruptcy",
-    description: "Learn how bankruptcy works and if it's right for you.",
-    link: "#"
-  },
-  {
-    icon: "👨‍🏫",
-    title: "Credit Counseling",
-    description: "Is a credit counselor or debt management plan for you?",
-    link: "#"
-  },
-  {
-    icon: "🎓",
-    title: "Private Student Debt Relief",
-    description: "Learn how to pay off your private student debt for less money.",
-    link: "#"
-  },
-  {
-    icon: "💍",
-    title: "Marital Debt Relief",
-    description: "Discover how to afford a wedding or divorce and turn your life around.",
-    link: "#"
-  },
-  {
-    icon: "🛑",
-    title: "Personal Finance Debt Relief",
-    description: "Stop personal debt from interfering with your personal life.",
-    link: "#"
-  },
-  {
-    icon: "📍",
-    title: "Debt Relief by State",
-    description: "See your debt relief options based on where you live.",
-    link: "#"
-  }
+  // {
+  //   icon: "🏥",
+  //   title: "Medical Debt Relief",
+  //   description: "We can help you feel better by paying off your medical debt.",
+  //   link: "#"
+  // },
+  // {
+  //   icon: "🧑‍💼",
+  //   title: "Unemployment Debt Relief",
+  //   description: "Put unemployment debt relief to work and pay off your bills.",
+  //   link: "#"
+  // },
+  // {
+  //   icon: "👴",
+  //   title: "Retirement Debt Relief",
+  //   description: "We can help you make your golden years more valuable.",
+  //   link: "#"
+  // },
+  // {
+  //   icon: "🎖️",
+  //   title: "Veteran Debt Relief",
+  //   description: "We're honored to help you pay off your debt and get a fresh start.",
+  //   link: "#"
+  // },
+  // {
+  //   icon: "💼",
+  //   title: "Business Debt Relief",
+  //   description: "Don't start or run your business on a negative note.",
+  //   link: "#"
+  // },
+  // {
+  //   icon: "🏦",
+  //   title: "Bankruptcy",
+  //   description: "Learn how bankruptcy works and if it's right for you.",
+  //   link: "#"
+  // },
+  // {
+  //   icon: "👨‍🏫",
+  //   title: "Credit Counseling",
+  //   description: "Is a credit counselor or debt management plan for you?",
+  //   link: "#"
+  // },
+  // {
+  //   icon: "🎓",
+  //   title: "Private Student Debt Relief",
+  //   description: "Learn how to pay off your private student debt for less money.",
+  //   link: "#"
+  // },
+  // {
+  //   icon: "💍",
+  //   title: "Marital Debt Relief",
+  //   description: "Discover how to afford a wedding or divorce and turn your life around.",
+  //   link: "#"
+  // },
+  // {
+  //   icon: "🛑",
+  //   title: "Personal Finance Debt Relief",
+  //   description: "Stop personal debt from interfering with your personal life.",
+  //   link: "#"
+  // },
+  // {
+  //   icon: "📍",
+  //   title: "Debt Relief by State",
+  //   description: "See your debt relief options based on where you live.",
+  //   link: "#"
+  // }
 ];
 
 const howItWorksSteps = [
@@ -234,11 +234,7 @@ const Resources = () => {
       {/* Cards Section */}
       <div 
         ref={cardsRef}
-        className={`
-          grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-8 
-          transition-all duration-700 ease-out 
-          ${isVisible.cards ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-        `}
+        
       >
         {cardData.map((card, idx) => (
           <div
@@ -247,9 +243,12 @@ const Resources = () => {
               bg-white rounded-2xl shadow-md p-8 text-center 
               flex flex-col items-center 
               relative overflow-hidden 
+              rounded-3xl shadow-xl 
+          p-6 md:p-12 
+          gap-2 md:gap-4
               transition-all duration-400 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] 
               transform hover:-translate-y-2 hover:scale-105 hover:shadow-xl 
-              ${hoveredCard === idx ? 'bg-gradient-to-br from-white to-[#f8f9ff]' : ''}
+              ${hoveredCard === idx ? 'bg-gradient-to-br from-white to-[#f8f9ff] opacity-100 translate-y-0' : 'opacity-1 translate-y-10'}
             `}
             style={{ transitionDelay: `${idx * 0.05}s` }}
             onMouseEnter={() => setHoveredCard(idx)}

@@ -5,7 +5,7 @@ const CreditCard = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Header */}
-      <header className="bg-gradient-to-r from-blue-700 to-orange-000 text-white">
+      <header className="bg-gradient-to-r from-blue-700 to-white-000 text-white">
         <div className="container mx-auto px-4 py-16 md:py-24 text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Credit Card Debt Relief</h1>
           <p className="text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
@@ -97,7 +97,7 @@ const CreditCard = () => {
       </section>
 
       {/* Contact/CTA Section */}
-      <section id="contact" className="py-16 bg-gradient-to-r from-orange-500 to-blue-700 text-white">
+      <section id="contact" className="py-16 bg-gradient-to-r from-orange-800 to-blue-500 text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-6">Ready to Become Debt-Free?</h2>
           <p className="text-xl mb-8 max-w-2xl mx-auto">
