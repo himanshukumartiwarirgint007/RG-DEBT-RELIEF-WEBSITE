@@ -36,23 +36,29 @@ const principles = [
 
 const AboutUs = () => (
   <div className="bg-gradient-to-br from-blue-50 via-white to-green-50 min-h-screen">
-    {/* Hero */}
-    <section className="relative flex flex-col items-center justify-center text-center py-20 px-4 bg-gradient-to-r from-blue-800 via-blue-700 to-blue-500 text-white overflow-hidden">
-      {/* Animated Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-transparent to-green-300/20 animate-gradientMove pointer-events-none" />
-      <img src={teamPhoto} alt="Our Team" className="w-32 h-32 rounded-full object-cover border-4 border-white shadow-lg mb-6 z-10 animate-fadeIn" />
-      <span className="inline-block bg-yellow-400 text-blue-900 font-bold px-4 py-1 rounded-full shadow mb-4 animate-pop">Trusted by 5000+ Families</span>
-      <h1 className="text-3xl sm:text-5xl font-extrabold mb-4 drop-shadow-lg z-10 animate-slideDown">
+    {/* Hero - Replaced with image */}
+    <section 
+      className="relative flex flex-col items-center justify-center text-center py-20 px-4 overflow-hidden"
+      style={{
+        backgroundImage: `url(${ourMission})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center'
+      }}
+    >
+      {/* Dark overlay */}
+      <div className="absolute inset-0 bg-black/50 pointer-events-none" />
+      <span className="inline-block bg-yellow-400 text-blue-900 font-bold px-4 py-1 rounded-full shadow mb-4 animate-pop z-10">Trusted by 5000+ Families</span>
+      <h1 className="text-3xl sm:text-5xl font-extrabold mb-4 drop-shadow-lg z-10 animate-slideDown text-white">
         Guiding You Toward <span className="text-yellow-400">Financial Freedom</span>
       </h1>
-      <p className="max-w-xl mx-auto text-lg opacity-90 mb-6 z-10 animate-fadeIn delay-200">
+      <p className="max-w-xl mx-auto text-lg opacity-90 mb-6 z-10 animate-fadeIn delay-200 text-white">
         We're here to support you every step of the way on your journey to a debt-free life—committed to helping you find peace of mind and lasting relief.
       </p>
       <a
         href="https://forms.gle/your-form-link"
         target="_blank"
         rel="noopener noreferrer"
-        className="inline-block bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold px-8 py-3 rounded-full shadow-lg transition-all animate-pop"
+        className="inline-block bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold px-8 py-3 rounded-full shadow-lg transition-all animate-pop z-10"
       >
         Start Now
       </a>
@@ -64,22 +70,17 @@ const AboutUs = () => (
     </section>
 
    <section className="py-0 px-0">
-  {/* Our Mission */}
-  <div className="relative w-full min-h-[60vh] flex items-center justify-center mb-12">
-    <img
-      src={ourMission}
-      alt="Our Mission"
-      className="w-full h-[70vh] object-cover"
-      style={{ filter: "brightness(0.7)" }}
-    />
-    <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+  {/* Our Mission - Replaced with hero's color theme */}
+  <div className="relative w-full min-h-[60vh] flex items-center justify-center mb-12 bg-gradient-to-r from-blue-200 to-blue-500">
+    <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-transparent to-green-300/20 animate-gradientMove pointer-events-none" />
+    <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
       <h3 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">Our Mission</h3>
       <p className="text-lg sm:text-2xl text-white max-w-2xl drop-shadow-lg">
         To empower individuals and families to break free from debt and achieve lasting financial freedom through expert guidance, empathy, and support.
       </p>
     </div>
   </div>
-  {/* Our Vision */}
+  {/* Our Vision - Unchanged */}
   <div className="relative w-full min-h-[60vh] flex items-center justify-center">
     <img
       src={ourVision}
