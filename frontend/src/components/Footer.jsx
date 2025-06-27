@@ -35,9 +35,9 @@ const Footer = () => {
 
             {/* Social Icons */}
             <div className="flex gap-4 mt-5">
-              <a href="https://www.linkedin.com/company/immergixthefuture" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-400"> <FaFacebookF /> </a>
+              {/* <a href="https://www.linkedin.com/company/immergixthefuture" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-400"> <FaFacebookF /> </a>
               <a href="https://www.linkedin.com/company/immergixthefuture" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-400"> <FaTwitter /> </a>
-              <a href="https://www.linkedin.com/company/immergixthefuture" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-400"> <FaInstagram /> </a>
+              <a href="https://www.linkedin.com/company/immergixthefuture" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-400"> <FaInstagram /> </a> */}
               <a href="https://www.linkedin.com/company/immergixthefuture/" target="_blank" rel="noopener noreferrer" className="text-white hover:text-yellow-400"> <FaLinkedinIn /> </a>
             </div>
           </div>
