@@ -15,15 +15,8 @@ const initialForm = {
   state: "",
   city: "",
   zipCode: "",
-  debtAmount: "",
-  typeOfDebt: [],
-  employmentStatus: "",
-  monthlyIncome: "",
-  notes: "",
   disclaimerConsent: false,
 };
-
-const debtTypes = ["Credit Cards", "Loans", "Medical"];
 const states = [
   "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", 
   "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", 
@@ -98,14 +91,7 @@ export default function Apply() {
   const [cityOptionsList, setCityOptionsList] = useState([]);
 
   const timeOptions = [
-    "10:00 - 2:00",
-    "2:00 - 3:00",
-    "3:00 - 4:00",
-    "4:00 - 5:00",
-    "5:00 - 6:00",
-    "6:00 - 7:00",
-    "7:00 - 8:00",
-    "8:00 - 9:00"
+    "10:00 - 2:00", "2:00 - 3:00","3:00 - 4:00", "4:00 - 5:00","5:00 - 6:00","6:00 - 7:00","7:00 - 8:00","8:00 - 9:00"
   ];
   
   const phoneLength = 10;
@@ -295,7 +281,7 @@ export default function Apply() {
               <label className="block mt-4 mb-1 font-bold">Phone Number*</label>
               <div className="flex gap-2">
                 <div className="max-w-[110px] p-3 rounded border border-gray-300 bg-gray-100">
-                  +1 (USA)
+                  (US)+1
                 </div>
                 <input
                   type="tel"
@@ -304,7 +290,7 @@ export default function Apply() {
                   onChange={handleChange}
                   required
                   maxLength={phoneLength}
-                  placeholder="10-digit number"
+                  placeholder=" (555)-123-4567"
                   className="flex-1 p-3 rounded border border-gray-300"
                 />
               </div>

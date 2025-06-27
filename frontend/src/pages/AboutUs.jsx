@@ -35,15 +35,17 @@ const principles = [
 ];
 
 const AboutUs = () => (
-  <div className="bg-gradient-to-br from-blue-50 via-white to-green-50 min-h-screen">
+  <div>
     {/* Hero - Replaced with image */}
     <section 
-      className="relative flex flex-col items-center justify-center text-center py-20 px-4 overflow-hidden"
-      style={{
-        backgroundImage: `url(${ourMission})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center'
-      }}
+      className="relative flex flex-col items-center justify-center text-center"
+  style={{
+    backgroundImage: `url(${ourMission})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    minHeight: '100vh',
+    width: '100%'
+  }}
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-black/50 pointer-events-none" />
@@ -70,8 +72,8 @@ const AboutUs = () => (
     </section>
 
    <section className="py-0 px-0">
-  {/* Our Mission - Replaced with hero's color theme */}
-  <div className="relative w-full min-h-[60vh] flex items-center justify-center mb-12 bg-gradient-to-r from-blue-200 to-blue-500">
+  {/* Our Mission - Removed mb-12 margin */}
+  <div className="relative w-full min-h-[60vh] flex items-center justify-center bg-gradient-to-r from-blue-200 to-blue-500">
     <div className="absolute inset-0 bg-gradient-to-br from-yellow-400/20 via-transparent to-green-300/20 animate-gradientMove pointer-events-none" />
     <div className="relative z-10 flex flex-col items-center justify-center text-center px-4">
       <h3 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">Our Mission</h3>
@@ -80,7 +82,8 @@ const AboutUs = () => (
       </p>
     </div>
   </div>
-  {/* Our Vision - Unchanged */}
+  
+  {/* Our Vision - Removed top spacing */}
   <div className="relative w-full min-h-[60vh] flex items-center justify-center">
     <img
       src={ourVision}
@@ -91,7 +94,7 @@ const AboutUs = () => (
     <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
       <h3 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 drop-shadow-lg">Our Vision</h3>
       <p className="text-lg sm:text-2xl text-white max-w-2xl drop-shadow-lg">
-        To be the most trusted partner in debt relief, made a final chnge in society and empowered people for change, inspiring hope and building a financially healthy community for generations to come.
+        To be the most trusted partner in debt relief, made a final change in society and empowered people for change, inspiring hope and building a financially healthy community for generations to come.
       </p>
     </div>
   </div>
