@@ -133,7 +133,7 @@ const HowItWorks = () => (
     <section className="py-16 bg-gradient-to-r from-blue-50 to-green-50 text-center px-6">
       <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-blue-800">Debt We Can Help With</h2>
       <p className="text-lg font-semibold text-[#0d1b39] max-w-3xl mx-auto mb-10">
-        We cover most <span className="font-bold underline decoration-dotted">unsecured debt</span> and negotiate with major credit card issuers and banks every day to reduce what you owe.
+        We cover most <span className="font-bold ">Secured debt</span> and negotiate with major credit card issuers and banks every day to reduce what you owe.
       </p>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto mb-10">
         <div className="space-y-3">
