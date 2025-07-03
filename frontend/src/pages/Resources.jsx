@@ -12,16 +12,16 @@ const cardData = [
       <div className="mt-3 p-4 bg-gray-50 rounded-lg w-full text-left">
         <h4 className="font-bold text-gray-800 mb-2">How It Works:</h4>
         <p className="text-gray-600 text-sm">
-          Our debt relief settlement program helps you pay off debts faster by negotiating 
-          with creditors to reduce your total balance. We work with all major credit card 
-          companies and lenders to get you the best possible settlement terms.
+          Our proven debt settlement program creates a faster path to financial freedom by negotiating 
+          significant reductions with your creditors. We leverage our relationships with all major lenders 
+          to secure optimal settlement terms on your behalf.
         </p>
         <ul className="mt-2 list-disc pl-5 text-sm text-gray-600">
-          <li>Average savings: 30-50% before fees</li>
-          <li>Program duration: 24-48 months</li>
-          <li>No upfront fees</li>
-          <li>Personalized debt management plan</li>
-          <li>Dedicated account manager</li>
+          <li>Typical debt reduction: 30-50% before fees</li>
+          <li>Program completion: 2-4 years</li>
+          <li>Pay nothing until your debt is resolved</li>
+          <li>Customized repayment strategy</li>
+          <li>Your personal debt relief expert</li>
         </ul>
       </div>
     )
@@ -29,10 +29,11 @@ const cardData = [
 ];
 
 const howItWorksSteps = [
-  "Talk to a Debt Specialist for a free, no-obligation consultation.",
-  "Customize your plan to fit your needs and budget.",
-  "We negotiate with your creditors to reduce your total debt.",
-  "Complete your program and enjoy a fresh financial start."
+  "✓ Credit card balances",
+  "✓ Personal loans",
+  "✓ Private student loans",
+  "✓ Collections accounts",
+   "✓ Business debt "
 ];
 
 const Resources = () => {
@@ -251,7 +252,7 @@ const Resources = () => {
       >
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-8 sm:mb-10">
           <span className="relative inline-block pb-3">
-            How Debt Relief Works in 4 Life-Changing Steps
+            Freedom From Debt Starts Here
             <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#ff7a59] to-[#ff4c1c] rounded"></span>
           </span>
         </h2>
@@ -259,8 +260,10 @@ const Resources = () => {
         <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10">
           <div className="flex-1 w-full min-w-[280px] max-w-full lg:max-w-[55%]">
             <p className="text-gray-700 text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
-              At National Debt Relief, we've helped over 550,000 clients with their debt settlement. We negotiate with major credit card issuers and banks to reduce debts, and cover most unsecured debt. For anyone carrying the burden of credit card debt, personal loans, private student loans, collections or business debt, it starts with one simple call and ends with you living again, debt free!
-            </p>
+             
+            At Reddington Global Debt Relief, we’ve empowered 550,000+ clients to break free from overwhelming debt. Our experts negotiate directly with major creditors—including credit card companies, banks, and collectors—to reduce what you owe on.
+            Your fresh start begins with a single call. Let’s work together to rebuild your financial future—so you can finally live without the weight of debt.
+          </p>
             
             <a 
               className="
