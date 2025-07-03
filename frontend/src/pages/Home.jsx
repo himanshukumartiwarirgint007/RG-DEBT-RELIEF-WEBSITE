@@ -60,7 +60,7 @@ const Home = () => {
     </div>
 
     {/* Right Video */}
-    <div className="w-full md:w-1/2 flex justify-center pointer-events-auto">
+    {/* <div className="w-full md:w-1/2 flex justify-center pointer-events-auto">
       <div className="w-full max-w-[480px] aspect-video rounded-xl overflow-hidden shadow-lg">
         <iframe
   src="https://www.youtube.com/embed/CHiOBzqcMV8?autoplay=1&mute=1&loop=1&playlist=CHiOBzqcMV8"
@@ -72,7 +72,7 @@ const Home = () => {
 ></iframe>
 
       </div>
-    </div>
+    </div> */}
   </div>
 </div>
 

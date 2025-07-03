@@ -6,7 +6,7 @@ const cardData = [
   {
     icon: "📄",
     title: "Debt Relief Settlement",
-    description: "Pay off your debt in less time with the most savings.",
+    description: "Take control of your finances and pay off your debt faster while maximizing your savings. With our expert guidance and tailored solutions, you can reduce interest, avoid unnecessary fees, and achieve financial freedom sooner than you thought possible. Start your journey toward a debt-free future today.",
     link: "#",
     extraContent: (
       <div className="mt-3 p-4 bg-gray-50 rounded-lg w-full text-left">
@@ -33,7 +33,7 @@ const howItWorksSteps = [
   "✓ Personal loans",
   "✓ Private student loans",
   "✓ Collections accounts",
-   "✓ Business debt "
+  "✓ Business debt "
 ];
 
 const Resources = () => {
@@ -238,97 +238,92 @@ const Resources = () => {
       </div>
 
       {/* How It Works Section */}
-      <section 
-        ref={howItWorksRef}
-        className={`
-          flex flex-col 
-          bg-gradient-to-br from-white to-[#f8f9ff] 
-          rounded-3xl shadow-xl 
-          p-6 sm:p-7 md:p-8 lg:p-10
-          my-10 sm:my-12 md:my-14 lg:my-16
-          transition-all duration-700 ease-out 
-          ${isVisible.howItWorks ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
-        `}
-      >
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-8 sm:mb-10">
-          <span className="relative inline-block pb-3">
-            Freedom From Debt Starts Here
-            <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#ff7a59] to-[#ff4c1c] rounded"></span>
-          </span>
-        </h2>
-        
-        <div className="flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10">
-          <div className="flex-1 w-full min-w-[280px] max-w-full lg:max-w-[55%]">
-            <p className="text-gray-700 text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
-             
-            At Reddington Global Debt Relief, we’ve empowered 550,000+ clients to break free from overwhelming debt. Our experts negotiate directly with major creditors—including credit card companies, banks, and collectors—to reduce what you owe on.
-            Your fresh start begins with a single call. Let’s work together to rebuild your financial future—so you can finally live without the weight of debt.
-          </p>
-            
-            <a 
-              className="
-                inline-flex items-center justify-center 
-                bg-gradient-to-r from-[#1976d2] to-[#1e88e5] 
-                text-white font-bold px-6 py-3 sm:px-7 sm:py-3.5 md:px-8 md:py-4 rounded-xl 
-                shadow-lg hover:shadow-xl transition-all duration-300
-                transform hover:-translate-y-1
-                relative overflow-hidden z-10
-                animate-pulse-custom
-                text-base sm:text-lg
-                w-full sm:w-auto
-                mb-8 sm:mb-10
-              "
-              href="tel:8003009550"
-            >
-              <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#1e88e5] to-[#1976d2] z-[-1] transition-transform duration-500 origin-right scale-x-0 group-hover:scale-x-100 group-hover:origin-left"></span>
-              800-300-9550
-            </a>
-            
-            <ul className="list-none pl-0 mt-6 sm:mt-8">
-              {howItWorksSteps.map((step, idx) => (
-                <li 
-                  key={idx} 
-                  className={`
-                    relative pl-10 sm:pl-12 mb-6 sm:mb-8 transition-all duration-500 ease-out 
-                    ${isVisible.howItWorks ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-5'}
-                  `}
-                  style={{ transitionDelay: `${idx * 0.2}s` }}
-                >
-                  <div className="absolute left-0 top-0 font-bold text-[#ff7a59] text-xl sm:text-2xl w-7 h-7 sm:w-8 sm:h-8 md:w-9 md:h-9 rounded-full bg-gradient-to-br from-[#fff8f6] to-[#ffede8] flex items-center justify-center shadow">
-                    {idx + 1}
-                  </div>
-                  <p className="text-gray-700 text-base sm:text-lg leading-relaxed">{step}</p>
-                </li>
-              ))}
-            </ul>
-          </div>
-          
-          {/* Video Container */}
-          <div 
-            className={`
-              flex-1 w-full min-w-[280px] max-w-full lg:max-w-[40%] 
-              rounded-2xl shadow-lg overflow-hidden 
-              transform scale-95 
-              transition-all duration-700 ease-out 
-              ${isVisible.howItWorks ? 'opacity-100 translate-y-0 rotate-0' : 'opacity-0 translate-y-5 rotate-2'}
-              hover:scale-100 hover:shadow-xl
-            `}
-          >
-            <div className="aspect-w-16 aspect-h-9">
-              <iframe
-                width="100%"
-                height="100%"
-                src="https://www.youtube.com/embed/oQjdOMSUZpA"
-                title="How Debt Relief Works - 4 Simple Steps"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="rounded-2xl border-none w-full h-[280px] sm:h-[320px] md:h-[360px] lg:h-[400px]"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </section>
+<section 
+  ref={howItWorksRef}
+  className={`
+    flex flex-col items-center
+    bg-gradient-to-br from-white to-[#f8f9ff] 
+    rounded-3xl shadow-xl 
+    p-6 sm:p-7 md:p-8 lg:p-10
+    my-10 sm:my-12 md:my-14 lg:my-16
+    transition-all duration-700 ease-out 
+    ${isVisible.howItWorks ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}
+  `}
+>
+  <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-center mb-8 sm:mb-10">
+    <span className="relative inline-block pb-3">
+      Freedom From Debt Starts Here
+      <span className="absolute bottom-0 left-0 w-full h-1 bg-gradient-to-r from-[#ff7a59] to-[#ff4c1c] rounded"></span>
+    </span>
+  </h2>
+  
+  <div className="w-full flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-10">
+    {/* Full-width text content */}
+    <div className="w-full max-w-4xl mx-auto">
+      <div className="text-center">
+        <p className="text-gray-700 text-base sm:text-lg mb-6 sm:mb-8 leading-relaxed">
+          At Reddington Global Debt Relief, we've empowered 550,000+ clients to break free from overwhelming debt. Our experts negotiate directly with major creditors—including credit card companies, banks, and collectors—to reduce what you owe.
+          Your fresh start begins with a single call. Let's work together to rebuild your financial future—so you can finally live without the weight of debt.
+        </p>
+      </div>
       
+      <div className="flex justify-center mb-8 sm:mb-10">
+        <a 
+          className="
+            inline-flex items-center justify-center 
+            bg-gradient-to-r from-[#1976d2] to-[#1e88e5] 
+            text-white font-bold px-6 py-3 sm:px-7 sm:py-3.5 md:px-8 md:py-4 rounded-xl 
+            shadow-lg hover:shadow-xl transition-all duration-300
+            transform hover:-translate-y-1
+            relative overflow-hidden z-10
+            animate-pulse-custom
+            text-base sm:text-lg
+          "
+          href="tel:8003009550"
+        >
+          <span className="absolute top-0 left-0 w-full h-full bg-gradient-to-r from-[#1e88e5] to-[#1976d2] z-[-1] transition-transform duration-500 origin-right scale-x-0 group-hover:scale-x-100 group-hover:origin-left"></span>
+          800-300-9550
+        </a>
+      </div>
+      
+      {/* Benefits Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 w-full max-w-4xl mx-auto">
+        {[
+          "Credit card balances",
+          "Personal loans",
+          "Private student loans",
+          "Collections accounts",
+          "Business debt"
+        ].map((benefit, index) => (
+          <div 
+            key={index}
+            className="flex flex-col items-center text-center p-4 bg-white rounded-xl shadow-sm border border-gray-100"
+          >
+            <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#fff8f6] to-[#ffede8] flex items-center justify-center mb-2">
+              <span className="font-bold text-[#ff7a59]">{index + 1}</span>
+            </div>
+            <span className="text-gray-700 text-sm sm:text-base">✓ {benefit}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+    
+    {/* Video Container - Reserved Space */}
+    {/* <div className="w-full lg:w-2/5 max-w-[600px] mx-auto">
+      <div className="aspect-w-16 aspect-h-9 bg-gray-100 rounded-2xl border-2 border-dashed border-gray-300 flex items-center justify-center">
+        <div className="text-center p-6">
+          <div className="mb-4">
+            <svg className="w-16 h-16 mx-auto text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"></path>
+            </svg>
+          </div>
+          <p className="text-gray-500 font-medium">Video Coming Soon</p>
+          <p className="text-gray-400 text-sm mt-2">We're preparing an informative video about our debt relief process</p>
+        </div>
+      </div>
+    </div> */}
+  </div>
+</section>
       {/* FAQ Section */}
       <section 
         ref={faqRef}

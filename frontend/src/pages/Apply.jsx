@@ -17,6 +17,7 @@ const initialForm = {
   zipCode: "",
   disclaimerConsent: false,
 };
+
 const states = [
   "Alabama", "Alaska", "Arizona", "Arkansas", "California", "Colorado", 
   "Connecticut", "Delaware", "Florida", "Georgia", "Hawaii", "Idaho", 
@@ -29,58 +30,63 @@ const states = [
   "Tennessee", "Texas", "Utah", "Vermont", "Virginia", "Washington", 
   "West Virginia", "Wisconsin", "Wyoming"
 ];
+
 const cityOptions = {
-  "Alabama": ["Birmingham"],
-  "Alaska": ["Anchorage"],
-  "Arizona": ["Mesa", "Phoenix", "Tucson"],
-  "Arkansas": ["Little Rock"],
-  "California": ["Fresno", "Los Angeles", "Oakland", "Sacramento", "San Diego", "San Francisco", "San Jose"],
-  "Colorado": ["Colorado Springs", "Denver"],
-  "Connecticut": [],
-  "Delaware": [],
-  "Florida": ["Fort Lauderdale", "Jacksonville", "Miami", "Orlando", "Tampa"],
-  "Georgia": ["Atlanta", "Savannah"],
-  "Hawaii": ["Honolulu"],
-  "Idaho": ["Boise"],
-  "Illinois": ["Chicago"],
-  "Indiana": ["Indianapolis"],
-  "Iowa": ["Des Moines"],
-  "Kansas": ["Wichita"],
-  "Kentucky": ["Lexington", "Louisville"],
-  "Louisiana": ["Baton Rouge", "New Orleans"],
-  "Maine": [],
-  "Maryland": ["Baltimore"],
-  "Massachusetts": ["Boston"],
-  "Michigan": ["Detroit"],
-  "Minnesota": ["Minneapolis"],
-  "Mississippi": [],
-  "Missouri": ["Kansas City", "St. Louis"],
-  "Montana": [],
-  "Nebraska": ["Lincoln", "Omaha"],
-  "Nevada": ["Las Vegas", "Reno"],
-  "New Hampshire": [],
-  "New Jersey": ["Newark"],
-  "New Mexico": ["Albuquerque"],
-  "New York": ["Buffalo", "New York City"],
-  "North Carolina": ["Charlotte", "Durham", "Raleigh"],
-  "North Dakota": ["Fargo"],
-  "Ohio": ["Cincinnati", "Cleveland", "Columbus", "Toledo"],
-  "Oklahoma": ["Oklahoma City", "Tulsa"],
-  "Oregon": ["Portland"],
-  "Pennsylvania": ["Philadelphia", "Pittsburgh"],
-  "Rhode Island": ["Providence"],
-  "South Carolina": [],
-  "South Dakota": [],
-  "Tennessee": ["Memphis", "Nashville"],
-  "Texas": ["Arlington", "Austin", "Dallas", "El Paso", "Fort Worth", "Houston", "San Antonio"],
-  "Utah": ["Salt Lake City"],
-  "Vermont": [],
-  "Virginia": ["Richmond", "Virginia Beach"],
-  "Washington": ["Seattle", "Spokane"],
-  "West Virginia": [],
-  "Wisconsin": ["Madison", "Milwaukee"],
-  "Wyoming": []
+  
+  "Alabama": ["Alexander City", "Andalusia", "Anniston", "Athens", "Atmore", "Auburn", "Bessemer", "Birmingham", "Chickasaw", "Clanton", "Cullman", "Decatur", "Demopolis", "Dothan", "Enterprise", "Eufaula", "Florence", "Fort Payne", "Gadsden", "Greenville", "Guntersville", "Huntsville", "Jasper", "Madison", "Marion", "Mobile", "Montgomery", "Opelika", "Ozark", "Phenix City", "Prichard", "Scottsboro", "Selma", "Sheffield", "Sylacauga", "Talladega", "Troy", "Tuscaloosa", "Tuscumbia", "Tuskegee"],
+  "Alaska": ["Anchorage", "Cordova", "Fairbanks", "Haines", "Homer", "Juneau", "Ketchikan", "Kodiak", "Kotzebue", "Nome", "Palmer", "Seward", "Sitka", "Skagway", "Valdez"],
+  "Arizona": ["Ajo", "Avondale", "Bisbee", "Casa Grande", "Chandler", "Clifton", "Douglas", "Flagstaff", "Florence", "Gila Bend", "Glendale", "Globe", "Kingman", "Lake Havasu City", "Mesa", "Nogales", "Oraibi", "Phoenix", "Prescott", "Scottsdale", "Sierra Vista", "Tempe", "Tombstone", "Tucson", "Walpi", "Window Rock", "Winslow", "Yuma"],
+  "Arkansas": ["Arkadelphia", "Arkansas Post", "Batesville", "Benton", "Blytheville", "Camden", "Conway", "Crossett", "El Dorado", "Fayetteville", "Forrest City", "Fort Smith", "Harrison", "Helena", "Hope", "Hot Springs", "Jacksonville", "Jonesboro", "Little Rock", "Magnolia", "Morrilton", "Newport", "North Little Rock", "Osceola", "Pine Bluff", "Rogers", "Searcy", "Stuttgart", "Van Buren", "West Memphis"],
+  "California": ["Alameda", "Alhambra", "Anaheim", "Antioch", "Arcadia", "Bakersfield", "Barstow", "Belmont", "Berkeley", "Beverly Hills", "Brea", "Buena Park", "Burbank", "Calexico", "Calistoga", "Carlsbad", "Carmel", "Chico", "Chula Vista", "Claremont", "Compton", "Concord", "Corona", "Coronado", "Costa Mesa", "Culver City", "Daly City", "Davis", "Downey", "El Centro", "El Cerrito", "El Monte", "Escondido", "Eureka", "Fairfield", "Fontana", "Fremont", "Fresno", "Fullerton", "Garden Grove", "Glendale", "Hayward", "Hollywood", "Huntington Beach", "Indio", "Inglewood", "Irvine", "La Habra", "Laguna Beach", "Lancaster", "Livermore", "Lodi", "Lompoc", "Long Beach", "Los Angeles", "Malibu", "Martinez", "Marysville", "Menlo Park", "Merced", "Modesto", "Monterey", "Mountain View", "Napa", "Needles", "Newport Beach", "Norwalk", "Novato", "Oakland", "Oceanside", "Ojai", "Ontario", "Orange", "Oroville", "Oxnard", "Pacific Grove", "Palm Springs", "Palmdale", "Palo Alto", "Pasadena", "Petaluma", "Pomona", "Port Hueneme", "Rancho Cucamonga", "Red Bluff", "Redding", "Redlands", "Redondo Beach", "Redwood City", "Richmond", "Riverside", "Roseville", "Sacramento", "Salinas", "San Bernardino", "San Clemente", "San Diego", "San Fernando", "San Francisco", "San Gabriel", "San Jose", "San Juan Capistrano", "San Leandro", "San Luis Obispo", "San Marino", "San Mateo", "San Pedro", "San Rafael", "San Simeon", "Santa Ana", "Santa Barbara", "Santa Clara", "Santa Clarita", "Santa Cruz", "Santa Monica", "Santa Rosa", "Sausalito", "Simi Valley", "Sonoma", "South San Francisco", "Stockton", "Sunnyvale", "Susanville", "Thousand Oaks", "Torrance", "Turlock", "Ukiah", "Vallejo", "Ventura", "Victorville", "Visalia", "Walnut Creek", "West Covina", "Whittier", "Woodland", "Yorba Linda", "Yuba City"],
+  "Colorado": ["Alamosa", "Aspen", "Aurora", "Boulder", "Breckenridge", "Brighton", "Canon City", "Central City", "Climax", "Colorado Springs", "Cortez", "Cripple Creek", "Denver", "Durango", "Englewood", "Estes Park", "Fort Collins", "Fort Morgan", "Georgetown", "Glenwood Springs", "Golden", "Grand Junction", "Greeley", "Gunnison", "La Junta", "Leadville", "Littleton", "Longmont", "Loveland", "Montrose", "Ouray", "Pagosa Springs", "Pueblo", "Silverton", "Steamboat Springs", "Sterling", "Telluride", "Trinidad", "Vail", "Walsenburg", "Westminster"],
+  "Connecticut": ["Ansonia", "Berlin", "Bloomfield", "Branford", "Bridgeport", "Bristol", "Coventry", "Danbury", "Darien", "Derby", "East Hartford", "East Haven", "Enfield", "Fairfield", "Farmington", "Greenwich", "Groton", "Guilford", "Hamden", "Hartford", "Lebanon", "Litchfield", "Manchester", "Mansfield", "Meriden", "Middletown", "Milford", "Mystic", "Naugatuck", "New Britain", "New Haven", "New London", "North Haven", "Norwalk", "Norwich", "Old Saybrook", "Orange", "Seymour", "Shelton", "Simsbury", "Southington", "Stamford", "Stonington", "Stratford", "Torrington", "Wallingford", "Waterbury", "Waterford", "Watertown", "West Hartford", "West Haven", "Westport", "Wethersfield", "Willimantic", "Windham", "Windsor", "Windsor Locks", "Winsted"],
+  "Delaware": ["Dover", "Lewes", "Milford", "New Castle", "Newark", "Smyrna", "Wilmington"],
+  "Florida": ["Apalachicola", "Bartow", "Belle Glade", "Boca Raton", "Bradenton", "Cape Coral", "Clearwater", "Cocoa Beach", "Cocoa-Rockledge", "Coral Gables", "Daytona Beach", "De Land", "Deerfield Beach", "Delray Beach", "Fernandina Beach", "Fort Lauderdale", "Fort Myers", "Fort Pierce", "Fort Walton Beach", "Gainesville", "Hallandale Beach", "Hialeah", "Hollywood", "Homestead", "Jacksonville", "Key West", "Lake City", "Lake Wales", "Lakeland", "Largo", "Melbourne", "Miami", "Miami Beach", "Naples", "New Smyrna Beach", "Ocala", "Orlando", "Ormond Beach", "Palatka", "Palm Bay", "Palm Beach", "Panama City", "Pensacola", "Pompano Beach", "Port St. Lucie", "Saint Augustine", "Saint Petersburg", "Sanford", "Sarasota", "Sebring", "Tallahassee", "Tampa", "Tarpon Springs", "Titusville", "Venice", "West Palm Beach", "White Springs", "Winter Haven", "Winter Park"],
+  "Georgia": ["Albany", "Americus", "Andersonville", "Athens", "Atlanta", "Augusta", "Bainbridge", "Blairsville", "Brunswick", "Calhoun", "Carrollton", "Columbus", "Dahlonega", "Dalton", "Darien", "Decatur", "Douglas", "East Point", "Fitzgerald", "Fort Valley", "Gainesville", "La Grange", "Macon", "Marietta", "Milledgeville", "Plains", "Rome", "Savannah", "Toccoa", "Valdosta", "Warm Springs", "Warner Robins", "Washington", "Waycross"],
+  "Hawaii": ["Hilo", "Honolulu", "Kahului", "Kaneohe", "Kapaa", "Lahaina", "Lanai City", "Lihue", "Pearl City", "Wailuku", "Waipahu"],
+  "Idaho": ["Blackfoot", "Boise", "Caldwell", "Coeur d'Alene", "Hailey", "Idaho Falls", "Ketchum", "Lewiston", "Moscow", "Mountain Home", "Nampa", "Pocatello", "Rexburg", "Sun Valley", "Twin Falls"],
+  "Illinois": ["Alton", "Arlington Heights", "Aurora", "Belleville", "Belvidere", "Bloomington", "Carbondale", "Champaign", "Chicago", "Cicero", "Danville", "Decatur", "Des Plaines", "East Moline", "East Peoria", "East St. Louis", "Elgin", "Elmhurst", "Evanston", "Freeport", "Galesburg", "Glenview", "Granite City", "Harrisburg", "Joliet", "Kankakee", "Moline", "Mount Vernon", "Naperville", "North Chicago", "Oak Park", "Orland Park", "Ottawa", "Peoria", "Quincy", "Rantoul", "Rock Island", "Rockford", "Skokie", "Springfield", "Urbana", "Waukegan", "Wilmette", "Zion"],
+  "Indiana": ["Anderson", "Bedford", "Bloomington", "Columbus", "Connersville", "Crawfordsville", "East Chicago", "Elkhart", "Evansville", "Fort Wayne", "Gary", "Goshen", "Greencastle", "Hammond", "Huntington", "Indianapolis", "Jeffersonville", "Kokomo", "La Porte", "Lafayette", "Marion", "Michigan City", "Mishawaka", "Muncie", "New Albany", "Richmond", "South Bend", "Terre Haute", "Valparaiso", "Vincennes", "Warsaw"],
+  "Iowa": ["Ames", "Boone", "Burlington", "Carroll", "Cedar Falls", "Cedar Rapids", "Clinton", "Council Bluffs", "Davenport", "Des Moines", "Dubuque", "Fort Dodge", "Indianola", "Iowa City", "Keokuk", "Marshalltown", "Mason City", "Muscatine", "Newton", "Oskaloosa", "Ottumwa", "Sioux City", "Spencer", "Waterloo", "West Des Moines"],
+  "Kansas": ["Abilene", "Arkansas City", "Atchison", "Chanute", "Coffeyville", "Concordia", "Dodge City", "El Dorado", "Emporia", "Fort Scott", "Garden City", "Great Bend", "Hays", "Hutchinson", "Independence", "Junction City", "Kansas City", "Lawrence", "Leavenworth", "Liberal", "Manhattan", "McPherson", "Newton", "Olathe", "Ottawa", "Overland Park", "Parsons", "Pittsburg", "Salina", "Topeka", "Wichita"],
+  "Kentucky": ["Ashland", "Barbourville", "Bardstown", "Berea", "Bowling Green", "Campbellsville", "Covington", "Danville", "Elizabethtown", "Frankfort", "Harlan", "Hazard", "Henderson", "Hopkinsville", "Lexington", "Louisville", "Madisonville", "Mayfield", "Maysville", "Middlesboro", "Morehead", "Murray", "Newport", "Owensboro", "Paducah", "Paris", "Pikeville", "Richmond", "Somerset", "Winchester"],
+  "Louisiana": ["Abbeville", "Alexandria", "Bastrop", "Baton Rouge", "Bogalusa", "Bossier City", "Gretna", "Hammond", "Houma", "Kenner", "Lafayette", "Lake Charles", "Monroe", "Morgan City", "Natchitoches", "New Iberia", "New Orleans", "Opelousas", "Ruston", "Shreveport", "Slidell", "Thibodaux", "West Monroe", "Zachary"],
+  "Maine": ["Auburn", "Augusta", "Bangor", "Bath", "Biddeford", "Caribou", "Eastport", "Ellsworth", "Gardiner", "Houlton", "Lewiston", "Old Town", "Portland", "Presque Isle", "Rockland", "Saco", "Sanford", "South Portland", "Waterville", "Westbrook"],
+  "Maryland": ["Aberdeen", "Annapolis", "Baltimore", "Bel Air", "Bethesda", "Bowie", "Cambridge", "College Park", "Cumberland", "Easton", "Elkton", "Frederick", "Gaithersburg", "Greenbelt", "Hagerstown", "Hyattsville", "Laurel", "Rockville", "Salisbury", "Silver Spring", "Takoma Park", "Westminster"],
+  "Massachusetts": ["Amherst", "Arlington", "Attleboro", "Barnstable", "Beverly", "Boston", "Braintree", "Brockton", "Brookline", "Cambridge", "Chelsea", "Chicopee", "Everett", "Fall River", "Fitchburg", "Framingham", "Gloucester", "Haverhill", "Holyoke", "Lawrence", "Leominster", "Lowell", "Lynn", "Malden", "Marlborough", "Medford", "Melrose", "Methuen", "New Bedford", "Newburyport", "Newton", "North Adams", "Northampton", "Peabody", "Pittsfield", "Quincy", "Revere", "Salem", "Somerville", "Springfield", "Taunton", "Waltham", "Watertown", "Westfield", "Woburn", "Worcester"],
+  "Michigan": ["Adrian", "Alpena", "Ann Arbor", "Battle Creek", "Bay City", "Benton Harbor", "Big Rapids", "Cadillac", "Dearborn", "Dearborn Heights", "Detroit", "East Lansing", "Eastpointe", "Escanaba", "Ferndale", "Flint", "Garden City", "Grand Haven", "Grand Rapids", "Grayling", "Grosse Pointe", "Hamtramck", "Hancock", "Hazel Park", "Holland", "Houghton", "Inkster", "Iron Mountain", "Ishpeming", "Jackson", "Kalamazoo", "Lansing", "Lincoln Park", "Livonia", "Ludington", "Marquette", "Menominee", "Midland", "Monroe", "Mount Clemens", "Mount Pleasant", "Muskegon", "Niles", "Petoskey", "Pontiac", "Port Huron", "River Rouge", "Romulus", "Royal Oak", "Saginaw", "Saint Clair Shores", "Sault Ste. Marie", "South Haven", "Southfield", "St. Joseph", "Taylor", "Three Rivers", "Traverse City", "Trenton", "Troy", "Warren", "Wyandotte", "Wyoming", "Ypsilanti"],
+  "Minnesota": ["Albert Lea", "Alexandria", "Austin", "Bemidji", "Bloomington", "Brainerd", "Brooklyn Center", "Brooklyn Park", "Burnsville", "Cloquet", "Columbia Heights", "Coon Rapids", "Crookston", "Duluth", "Eagan", "East Grand Forks", "Eden Prairie", "Edina", "Elk River", "Faribault", "Fergus Falls", "Fridley", "Golden Valley", "Hastings", "Hibbing", "Hopkins", "International Falls", "Inver Grove Heights", "Lakeville", "Little Falls", "Mankato", "Maple Grove", "Maplewood", "Minneapolis", "Minnetonka", "Moorhead", "New Brighton", "New Hope", "North Mankato", "Northfield", "Owatonna", "Plymouth", "Red Wing", "Richfield", "Robbinsdale", "Rochester", "Roseville", "Saint Cloud", "Saint Louis Park", "Saint Paul", "Sauk Rapids", "Shakopee", "South St. Paul", "Stillwater", "Virginia", "West St. Paul", "White Bear Lake", "Willmar", "Winona"],
+  "Mississippi": ["Bay St. Louis", "Biloxi", "Canton", "Clarksdale", "Cleveland", "Columbus", "Corinth", "Greenville", "Greenwood", "Gulfport", "Hattiesburg", "Holly Springs", "Jackson", "Laurel", "Meridian", "Natchez", "Ocean Springs", "Oxford", "Pascagoula", "Philadelphia", "Starkville", "Tupelo", "Vicksburg", "West Point"],
+  "Missouri": ["Belton", "Branson", "Cape Girardeau", "Columbia", "Excelsior Springs", "Ferguson", "Florissant", "Hannibal", "Independence", "Jefferson City", "Joplin", "Kansas City", "Kirksville", "Lee's Summit", "Liberty", "Maryville", "Nixa", "O'Fallon", "Poplar Bluff", "Raytown", "Rolla", "Sedalia", "Sikeston", "Springfield", "St. Charles", "St. Joseph", "St. Louis", "St. Peters", "Warrensburg", "Washington", "Webb City", "West Plains"],
+  "Montana": ["Anaconda", "Belgrade", "Billings", "Bozeman", "Butte", "Columbia Falls", "Dillon", "Glendive", "Great Falls", "Hamilton", "Havre", "Helena", "Kalispell", "Laurel", "Lewistown", "Livingston", "Miles City", "Missoula", "Sidney", "Whitefish"],
+  "Nebraska": ["Alliance", "Beatrice", "Bellevue", "Columbus", "Fremont", "Grand Island", "Hastings", "Kearney", "La Vista", "Lincoln", "Norfolk", "North Platte", "Omaha", "Papillion", "Scottsbluff", "South Sioux City"],
+  "Nevada": ["Boulder City", "Carson City", "Elko", "Ely", "Fallon", "Henderson", "Las Vegas", "Mesquite", "North Las Vegas", "Reno", "Sparks", "Winnemucca"],
+  "New Hampshire": ["Berlin", "Claremont", "Concord", "Derry", "Dover", "Franklin", "Keene", "Laconia", "Lebanon", "Manchester", "Nashua", "Portsmouth", "Rochester", "Somersworth"],
+  "New Jersey": ["Atlantic City", "Bayonne", "Bloomfield", "Bridgeton", "Camden", "Clifton", "East Orange", "Elizabeth", "Hackensack", "Hoboken", "Irvington", "Jersey City", "Long Branch", "Millville", "Morristown", "New Brunswick", "Newark", "Passaic", "Paterson", "Perth Amboy", "Plainfield", "Rahway", "Trenton", "Union City", "Vineland", "West New York"],
+  "New Mexico": ["Alamogordo", "Albuquerque", "Artesia", "Carlsbad", "Clovis", "Deming", "Espanola", "Farmington", "Gallup", "Hobbs", "Las Cruces", "Las Vegas", "Los Alamos", "Lovington", "Portales", "Rio Rancho", "Roswell", "Santa Fe", "Silver City", "Taos", "Truth or Consequences", "Tucumcari"],
+  "New York": ["Albany", "Amsterdam", "Auburn", "Binghamton", "Buffalo", "Canandaigua", "Cohoes", "Corning", "Cortland", "Elmira", "Freeport", "Glens Falls", "Glen Cove", "Hornell", "Hudson", "Ithaca", "Jamestown", "Johnstown", "Kingston", "Lackawanna", "Little Falls", "Lockport", "Long Beach", "Mechanicville", "Middletown", "Mount Vernon", "New Rochelle", "New York", "Newburgh", "Niagara Falls", "North Tonawanda", "Nyack", "Ogdensburg", "Olean", "Oneida", "Oneonta", "Oswego", "Peekskill", "Plattsburgh", "Port Jervis", "Poughkeepsie", "Rensselaer", "Rochester", "Rome", "Rye", "Saratoga Springs", "Schenectady", "Sherrill", "Syracuse", "Tonawanda", "Troy", "Utica", "Watertown", "Watervliet", "White Plains", "Yonkers"],
+  "North Carolina": ["Albemarle", "Asheboro", "Asheville", "Boone", "Burlington", "Cary", "Chapel Hill", "Charlotte", "Concord", "Durham", "Eden", "Elizabeth City", "Fayetteville", "Gastonia", "Goldsboro", "Greensboro", "Greenville", "Hickory", "High Point", "Jacksonville", "Kannapolis", "Kinston", "Lumberton", "New Bern", "Raleigh", "Rocky Mount", "Salisbury", "Sanford", "Shelby", "Statesville", "Thomasville", "Wilmington", "Wilson", "Winston-Salem"],
+  "North Dakota": ["Bismarck", "Devils Lake", "Dickinson", "Fargo", "Grafton", "Grand Forks", "Jamestown", "Mandan", "Minot", "Valley City", "Wahpeton", "Watford City", "West Fargo", "Williston"],
+  "Ohio": ["Akron", "Alliance", "Ashland", "Ashtabula", "Athens", "Barberton", "Bedford", "Bellefontaine", "Bowling Green", "Cambridge", "Canton", "Chillicothe", "Cincinnati", "Cleveland", "Cleveland Heights", "Columbus", "Cuyahoga Falls", "Defiance", "Delaware", "Dover", "East Cleveland", "East Liverpool", "Elyria", "Findlay", "Gallipolis", "Greenville", "Hamilton", "Kent", "Lakewood", "Lancaster", "Lima", "Lorain", "Mansfield", "Marietta", "Marion", "Martins Ferry", "Massillon", "Middletown", "Mount Vernon", "Newark", "Niles", "Norwalk", "Oberlin", "Parma", "Piqua", "Portsmouth", "Sandusky", "Springfield", "Steubenville", "Tiffin", "Toledo", "Warren", "Wooster", "Xenia", "Youngstown", "Zanesville"],
+  "Oklahoma": ["Ada", "Altus", "Ardmore", "Bartlesville", "Bethany", "Broken Arrow", "Chickasha", "Claremore", "Duncan", "Durant", "Edmond", "El Reno", "Elk City", "Enid", "Guthrie", "Guymon", "Lawton", "McAlester", "Miami", "Midwest City", "Moore", "Muskogee", "Norman", "Oklahoma City", "Okmulgee", "Ponca City", "Pryor", "Sand Springs", "Sapulpa", "Shawnee", "Stillwater", "Tahlequah", "Tulsa", "Weatherford", "Woodward"],
+  "Oregon": ["Albany", "Ashland", "Astoria", "Beaverton", "Bend", "Canby", "Coos Bay", "Corvallis", "Eugene", "Grants Pass", "Gresham", "Hillsboro", "Hood River", "Klamath Falls", "La Grande", "Lake Oswego", "Medford", "McMinnville", "Newberg", "Oregon City", "Pendleton", "Portland", "Redmond", "Roseburg", "Salem", "Springfield", "The Dalles", "Tigard", "Tillamook", "Tualatin", "West Linn", "Woodburn"],
+  "Pennsylvania": ["Aliquippa", "Allentown", "Altoona", "Beaver Falls", "Bethlehem", "Bloomsburg", "Bradford", "Chambersburg", "Chester", "Columbia", "DuBois", "Easton", "Erie", "Franklin", "Greensburg", "Harrisburg", "Hazleton", "Hermitage", "Johnstown", "Lancaster", "Lebanon", "Lock Haven", "Lower Merion", "McKeesport", "Meadville", "Monessen", "Monongahela", "New Castle", "Norristown", "Oil City", "Philadelphia", "Pittsburgh", "Pottsville", "Reading", "Scranton", "Shamokin", "Sharon", "State College", "Stroudsburg", "Sunbury", "Uniontown", "Warren", "Washington", "West Chester", "Wilkes-Barre", "Williamsport", "York"],
+  "Rhode Island": ["Barrington", "Bristol", "Central Falls", "Cranston", "East Providence", "Middletown", "Narragansett", "Newport", "North Kingstown", "Pawtucket", "Portsmouth", "Providence", "South Kingstown", "Warwick", "West Warwick", "Westerly", "Woonsocket"],
+  "South Carolina": ["Aiken", "Anderson", "Beaufort", "Charleston", "Columbia", "Conway", "Darlington", "Florence", "Gaffney", "Georgetown", "Greenville", "Greenwood", "Hartsville", "Hilton Head Island", "Lancaster", "Myrtle Beach", "Newberry", "North Augusta", "North Charleston", "Orangeburg", "Rock Hill", "Spartanburg", "Sumter", "Union", "York"],
+  "South Dakota": ["Aberdeen", "Belle Fourche", "Brookings", "Deadwood", "Huron", "Lead", "Madison", "Mitchell", "Mobridge", "Pierre", "Rapid City", "Sioux Falls", "Spearfish", "Sturgis", "Vermillion", "Watertown", "Yankton"],
+  "Tennessee": ["Alcoa", "Bartlett", "Bristol", "Chattanooga", "Clarksville", "Cleveland", "Columbia", "Cookeville", "Dyersburg", "Elizabethton", "Franklin", "Gallatin", "Germantown", "Greeneville", "Jackson", "Johnson City", "Kingsport", "Knoxville", "La Vergne", "Lawrenceburg", "Lebanon", "Maryville", "Memphis", "Morristown", "Murfreesboro", "Nashville", "Shelbyville", "Smyrna", "Spring Hill", "Tullahoma"],
+  "Texas": ["Abilene", "Allen", "Amarillo", "Arlington", "Austin", "Baytown", "Beaumont", "Brownsville", "Bryan", "Carrollton", "Cedar Hill", "College Station", "Corpus Christi", "Dallas", "Denton", "Edinburg", "El Paso", "Euless", "Flower Mound", "Fort Worth", "Frisco", "Galveston", "Garland", "Grand Prairie", "Grapevine", "Harlingen", "Houston", "Irving", "Killeen", "Laredo", "League City", "Lewisville", "Longview", "Lubbock", "McAllen", "McKinney", "Mesquite", "Midland", "Mission", "New Braunfels", "North Richland Hills", "Odessa", "Pasadena", "Pearland", "Pharr", "Plano", "Richardson", "Round Rock", "San Angelo", "San Antonio", "Sugar Land", "Temple", "Texarkana", "Texas City", "The Colony", "Tyler", "Victoria", "Waco", "Wichita Falls"],
+  "Utah": ["Bountiful", "Brigham City", "Cedar City", "Clearfield", "Draper", "Layton", "Logan", "Midvale", "Murray", "Ogden", "Orem", "Payson", "Provo", "Riverton", "Roy", "Salt Lake City", "Sandy", "South Jordan", "South Salt Lake", "Spanish Fork", "Springville", "Taylorsville", "Tooele", "West Jordan", "West Valley City"],
+  "Vermont": ["Barre", "Bellows Falls", "Bennington", "Brattleboro", "Burlington", "Essex Junction", "Middlebury", "Montpelier", "Newport", "Rutland", "South Burlington", "St. Albans", "St. Johnsbury", "White River Junction", "Winooski"],
+  "Virginia": ["Alexandria", "Blacksburg", "Charlottesville", "Chesapeake", "Danville", "Fairfax", "Falls Church", "Fredericksburg", "Hampton", "Harrisonburg", "Hopewell", "Lexington", "Lynchburg", "Manassas", "Martinsville", "Newport News", "Norfolk", "Petersburg", "Poquoson", "Portsmouth", "Radford", "Richmond", "Roanoke", "Salem", "Suffolk", "Virginia Beach", "Waynesboro", "Williamsburg", "Winchester"],
+  "Washington": ["Aberdeen", "Anacortes", "Auburn", "Bellevue", "Bellingham", "Bremerton", "Centralia", "Cheney", "Everett", "Federal Way", "Kennewick", "Kent", "Longview", "Lynnwood", "Mount Vernon", "Olympia", "Pasco", "Pullman", "Puyallup", "Redmond", "Renton", "Richland", "Seattle", "Spokane", "Tacoma", "Tumwater", "Vancouver", "Walla Walla", "Wenatchee", "Yakima"],
+  "West Virginia": ["Beckley", "Bluefield", "Buckhannon", "Charles Town", "Charleston", "Clarksburg", "Elkins", "Fairmont", "Grafton", "Huntington", "Keyser", "Lewisburg", "Martinsburg", "Morgantown", "Moundsville", "New Martinsville", "Parkersburg", "Philippi", "Point Pleasant", "Princeton", "South Charleston", "St. Albans", "Weirton", "Welch", "Weston", "Wheeling", "Williamson"],
+  "Wisconsin": ["Appleton", "Ashland", "Baraboo", "Beaver Dam", "Beloit", "Brookfield", "Cudahy", "Eau Claire", "Fond du Lac", "Green Bay", "Greenfield", "Janesville", "Kaukauna", "Kenosha", "La Crosse", "Madison", "Manitowoc", "Marinette", "Marshfield", "Menasha", "Menomonie", "Mequon", "Milwaukee", "Monroe", "Neenah", "New Berlin", "Oshkosh", "Racine", "River Falls", "Sheboygan", "South Milwaukee", "Stevens Point", "Superior", "Watertown", "Waukesha", "Wausau", "Wauwatosa", "West Allis", "West Bend", "Whitewater"],
+  "Wyoming": ["Buffalo", "Casper", "Cheyenne", "Cody", "Douglas", "Evanston", "Gillette", "Green River", "Jackson", "Lander", "Laramie", "Rawlins", "Riverton", "Rock Springs", "Sheridan", "Torrington", "Wheatland"]
 };
+const timeOptions = [
+  "10:00 - 2:00", "2:00 - 3:00","3:00 - 4:00", "4:00 - 5:00","5:00 - 6:00","6:00 - 7:00","7:00 - 8:00","8:00 - 9:00"
+];
 
 export default function Apply() {
   const [form, setForm] = useState(initialForm);
@@ -89,24 +95,23 @@ export default function Apply() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [nextLoading, setNextLoading] = useState(false);
   const [cityOptionsList, setCityOptionsList] = useState([]);
+  const [emailError, setEmailError] = useState("");
+  const [showCityInput, setShowCityInput] = useState(false);
+  const [cityInputValue, setCityInputValue] = useState("");
+  const [filteredCities, setFilteredCities] = useState([]);
 
-  const timeOptions = [
-    "10:00 - 2:00", "2:00 - 3:00","3:00 - 4:00", "4:00 - 5:00","5:00 - 6:00","6:00 - 7:00","7:00 - 8:00","8:00 - 9:00"
-  ];
-  
   const phoneLength = 10;
+
+  // Email validation function
+  const validateEmail = (email) => {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  };
 
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     
-    if (name === "typeOfDebt") {
-      setForm(f => ({
-        ...f,
-        typeOfDebt: checked
-          ? [...f.typeOfDebt, value]
-          : f.typeOfDebt.filter(v => v !== value),
-      }));
-    } else if (type === "checkbox") {
+    if (type === "checkbox") {
       setForm(f => ({ ...f, [name]: checked }));
     } else if (name === "phone") {
       setForm(f => ({
@@ -118,24 +123,53 @@ export default function Apply() {
         ...f,
         zipCode: value.replace(/[^0-9]/g, "").slice(0, 5),
       }));
+    } else if (name === "email") {
+      setForm(f => ({ ...f, email: value }));
+      if (value && !validateEmail(value)) {
+        setEmailError("Please enter a valid email address");
+      } else {
+        setEmailError("");
+      }
+    } else if (name === "cityInput") {
+      setCityInputValue(value);
+      // Filter cities based on input
+      if (value) {
+        const filtered = cityOptionsList.filter(city => 
+          city.toLowerCase().includes(value.toLowerCase())
+        );
+        setFilteredCities(filtered);
+      } else {
+        setFilteredCities(cityOptionsList);
+      }
     } else {
       setForm(f => ({ ...f, [name]: value }));
     }
-    };
-    
+  };
+  
   // Update city options when state changes
   useEffect(() => {
     if (form.state && cityOptions[form.state]) {
-      setCityOptionsList(cityOptions[form.state]);
+      const cities = cityOptions[form.state];
+      setCityOptionsList(cities);
+      setFilteredCities(cities);
     } else {
       setCityOptionsList([]);
+      setFilteredCities([]);
     }
     // Reset city when state changes
     setForm(f => ({ ...f, city: "" }));
+    setCityInputValue("");
+    setShowCityInput(false);
   }, [form.state]);
   
   const validatePage = () => {
     if (page === 1) {
+      // Validate email
+      if (form.email && !validateEmail(form.email)) {
+        setEmailError("Please enter a valid email address");
+        return false;
+      }
+      
       return (
         form.firstName &&
         form.lastName &&
@@ -159,6 +193,7 @@ export default function Apply() {
   const handleNext = async () => {
     if (!validatePage()) {
       alert("Please fill all required fields.");
+      alert("Please fill all required fields correctly.");
       return;
     }
     setNextLoading(true);
@@ -184,8 +219,10 @@ export default function Apply() {
     e.preventDefault();
     if (!validatePage()) {
       alert("Please fill all required fields.");
+      alert("Please fill all required fields correctly.");
       return;
     }
+    
     setSubmitting(true);
     try {
       // Send data to backend
@@ -201,6 +238,28 @@ export default function Apply() {
       }
     } catch (err) {
       alert("Submission failed.");
+    // Simulate API call
+    setTimeout(() => {
+      setIsSubmitted(true);
+      setSubmitting(false);
+    }, 1000);
+  };
+  
+  const handleCitySelect = (city) => {
+    setForm(f => ({ ...f, city }));
+    setShowCityInput(false);
+    setCityInputValue("");
+  };
+  
+  const handleManualCity = () => {
+    setShowCityInput(true);
+    setCityInputValue("");
+  };
+  
+  const saveManualCity = () => {
+    if (cityInputValue.trim()) {
+      setForm(f => ({ ...f, city: cityInputValue.trim() }));
+      setShowCityInput(false);
     }
     setSubmitting(false);
   };
@@ -296,8 +355,16 @@ export default function Apply() {
                 value={form.email}
                 onChange={handleChange}
                 required
-                className="w-full p-3 rounded border border-gray-300"
+                className={`w-full p-3 rounded border ${emailError ? "border-red-500" : "border-gray-300"}`}
+                onBlur={() => {
+                  if (form.email && !validateEmail(form.email)) {
+                    setEmailError("Please enter a valid email address");
+                  }
+                }}
               />
+              {emailError && (
+                <p className="text-red-500 text-sm mt-1">{emailError}</p>
+              )}
               <label className="block mt-4 mb-1 font-bold">Phone Number*</label>
               <div className="flex gap-2">
                 <div className="max-w-[110px] p-3 rounded border border-gray-300 bg-gray-100">
@@ -382,34 +449,68 @@ export default function Apply() {
                 ))}
               </select>            
               <div className="grid grid-cols-2 gap-4">
-                <div>
+                <div className="relative">
                   <label className="block mt-4 mb-1 font-bold">City*</label>
-                  <select
-                    name="city"
-                    value={form.city}
-                    onChange={handleChange}
-                    required
-                    disabled={!form.state || cityOptionsList.length === 0}
-                    className="w-full p-3 rounded border border-gray-300 disabled:bg-gray-100 disabled:text-gray-400"
-                  >
-                    <option value="">{form.state ? "Select City" : "First select state"}</option>
-                    {cityOptionsList.map(city => (
-                      <option key={city} value={city}>{city}</option>
-                    ))}
-                  </select>
+                  
+                  {showCityInput ? (
+                    <div className="flex">
+                      <input
+                        type="text"
+                        name="cityInput"
+                        value={cityInputValue}
+                        onChange={handleChange}
+                        className="w-full p-3 rounded border border-gray-300"
+                        placeholder="Type your city"
+                        autoFocus
+                      />
+                      <button
+                        type="button"
+                        onClick={saveManualCity}
+                        className="ml-2 px-3 bg-[#4b38d3] text-white rounded"
+                      >
+                        Save
+                      </button>
+                    </div>
+                  ) : (
+                    <div 
+                      className="w-full p-3 rounded border border-gray-300 bg-white flex items-center cursor-pointer"
+                      onClick={() => setShowCityInput(true)}
+                    >
+                      {form.city || "Select or type your city"}
+                    </div>
+                  )}
+                  
+                  {showCityInput && (
+                    <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded shadow-lg max-h-60 overflow-y-auto">
+                      <div className="p-2 border-b">
+                        <div className="text-sm text-gray-500">Type to search or select</div>
+                      </div>
+                      {filteredCities.length > 0 ? (
+                        filteredCities.map(city => (
+                          <div 
+                            key={city} 
+                            className="p-3 hover:bg-gray-100 cursor-pointer"
+                            onClick={() => handleCitySelect(city)}
+                          >
+                            {city}
+                          </div>
+                        ))
+                      ) : (
+                        <div className="p-3 text-gray-500">
+                          No cities found. <span className="text-blue-500 cursor-pointer" onClick={handleManualCity}>Type manually</span>
+                        </div>
+                      )}
+                      <div 
+                        className="p-3 border-t bg-gray-50 text-blue-500 cursor-pointer hover:bg-gray-100"
+                        onClick={handleManualCity}
+                      >
+                        + Type city manually
+                      </div>
+                    </div>
+                  )}
+                  
                   {!form.state && (
                     <p className="text-xs text-red-500 mt-1">Please select state first</p>
-                  )}
-                  {form.state && cityOptionsList.length === 0 && (
-                    <input
-                      type="text"
-                      name="city"
-                      value={form.city}
-                      onChange={handleChange}
-                      required
-                      className="w-full p-3 rounded border border-gray-300 mt-2"
-                      placeholder="Enter your city"
-                    />
                   )}
                 </div>
                 <div>

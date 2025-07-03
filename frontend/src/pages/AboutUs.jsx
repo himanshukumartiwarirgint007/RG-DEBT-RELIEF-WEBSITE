@@ -132,7 +132,7 @@ const AboutUs = () => (
     </section>
 
     {/* Certificates */}
-    <section className="py-12 px-4 text-center">
+    {/* <section className="py-12 px-4 text-center">
       <h2 className="text-2xl sm:text-4xl font-bold text-blue-700 mb-8">Our Commitment</h2>
       <div className="flex flex-wrap justify-center gap-8 mb-8">
         <img src={certificate} alt="Certificate 1" className="w-60 rounded-xl shadow-lg" />
@@ -146,7 +146,7 @@ const AboutUs = () => (
       >
         Fill The Form To Start Now
       </a>
-    </section>
+    </section> */}
 
     {/* FAQ */}
     <section className="py-16 px-4 bg-white/80">
