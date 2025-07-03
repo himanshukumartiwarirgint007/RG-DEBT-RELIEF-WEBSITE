@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react';
-import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+// import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
+import { Mail } from 'lucide-react';
+
 
 const Footer = () => {
   useEffect(() => {
@@ -32,6 +34,7 @@ const Footer = () => {
             <p className="text-sm text-white dark:text-gray-300 mt-4">
               Helping families breathe easier and rebuild their futures through compassionate, ethical debt relief — proudly serving since 2025.
             </p>
+            <a href="mailto:debtsettlement@rgdebtrelief.com" className="text-[#ffffff] flex items-center gap-2"><Mail className="w-5 h-5 text-white" /> debtsettlement@rgdebtrelief.com</a>
 
             {/* Social Icons */}
             {/* <div className="flex gap-4 mt-5">
