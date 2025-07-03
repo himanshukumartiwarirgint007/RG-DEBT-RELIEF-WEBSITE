@@ -167,14 +167,14 @@ const LoanCalculator = () => {
           {/* Notes */}
           <div className="text-xs text-gray-700 mt-4 leading-relaxed">
             <p className="mb-2">
-              *This is a broad estimate based on trends and may vary. Settlement offers a way to reduce debt burden if full repayment isn't feasible.
+             Figures shown are broad estimates based on general trends and may vary. Debt settlement can help lower your repayment burden when full repayment isn’t possible.
             </p>
             <p className="mb-2">
-              *Not all loans qualify. Always consult with financial advisors for accurate settlement options. Settling may reduce your
-              <span className="text-orange-600 font-semibold"> financial burden significantly.</span>
+              Note: Not all loans are eligible. It’s strongly recommended to consult a financial advisor for personalized settlement options.
+              <span className="text-orange-600 font-semibold">  Settling may significantly ease your financial stress.</span>
             </p>
             <p>
-              *Credit card dues assumed at 5% repayment & Personal loan at 13% interest. Default repayment shown at 45%.
+              Assumptions: Credit card dues calculated at 5% repayment rate, personal loans at 13% interest, and default repayments estimated at 45%.
             </p>
           </div>
         </div>

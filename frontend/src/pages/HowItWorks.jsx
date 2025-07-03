@@ -18,23 +18,23 @@ const trustBadges = [
 ];
 
 // Example testimonials
-const testimonials = [
-  {
-    name: "Priya S.",
-    text: "I never thought I could be debt-free. This team made it possible and stress-free!",
-    img: "https://randomuser.me/api/portraits/women/44.jpg",
-  },
-  {
-    name: "Rahul M.",
-    text: "Professional, transparent, and truly caring. Highly recommended for anyone struggling with debt.",
-    img: "https://randomuser.me/api/portraits/men/32.jpg",
-  },
-  {
-    name: "Anjali K.",
-    text: "The process was simple and the results were life-changing. Thank you!",
-    img: "https://randomuser.me/api/portraits/women/65.jpg",
-  },
-];
+// const testimonials = [
+//   {
+//     name: "Priya S.",
+//     text: "I never thought I could be debt-free. This team made it possible and stress-free!",
+//     img: "https://randomuser.me/api/portraits/women/44.jpg",
+//   },
+//   {
+//     name: "Rahul M.",
+//     text: "Professional, transparent, and truly caring. Highly recommended for anyone struggling with debt.",
+//     img: "https://randomuser.me/api/portraits/men/32.jpg",
+//   },
+//   {
+//     name: "Anjali K.",
+//     text: "The process was simple and the results were life-changing. Thank you!",
+//     img: "https://randomuser.me/api/portraits/women/65.jpg",
+//   },
+// ];
 
 const HowItWorks = () => (
   <div className="bg-gradient-to-br from-blue-50 via-white to-green-50 min-h-screen font-['Inter',sans-serif]">
@@ -114,7 +114,7 @@ const HowItWorks = () => (
     </section>
 
     {/* Testimonial Section */}
-    <section className="py-16 bg-gradient-to-r from-blue-50 to-green-50">
+    {/* <section className="py-16 bg-gradient-to-r from-blue-50 to-green-50">
       <div className="max-w-4xl mx-auto text-center px-6">
         <h2 className="text-2xl sm:text-3xl font-bold mb-8 text-blue-800">What Our Clients Say</h2>
         <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch">
@@ -127,7 +127,7 @@ const HowItWorks = () => (
           ))}
         </div>
       </div>
-    </section>
+    </section> */}
 
     {/* Debt Types Section */}
     <section className="py-16 bg-gradient-to-r from-blue-50 to-green-50 text-center px-6">

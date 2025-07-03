@@ -19,10 +19,10 @@ const Navbar = () => {
 
   return (
     <header className="w-full sticky top-0 z-50 bg-gradient-to-r from-[#0059B3] to-[#66B3FF] dark:from-[#0e1a2b] dark:to-[#1a2d47] text-white shadow-md transition-all duration-300">
-      <div className="w-full mx-auto flex items-center px-4 py-4 justify-between">
+      <div className="w-full mx-auto flex items-center px-4 py-1 justify-between">
         
         {/* Left: Logo and Brand */}
-        <div className="flex items-center gap-3 flex-shrink-0 min-w-0">
+        <nav className="flex items-center gap-3 flex-shrink-0 min-w-0">
           <button
             onClick={() => handleNavClick('/')}
             className="flex items-center gap-3 cursor-pointer bg-transparent border-none outline-none p-0 m-0"
@@ -30,18 +30,18 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Logo"
-              className="w-24 h-20 object-contain sm:w-32 sm:h-24 lg:w-36 lg:h-28"
+              className="w-24 h-20 object-contain sm:w-32 sm:h-24 lg:w-56 lg:h-32"
             />
-            <div className="min-w-0 text-left hidden sm:block">
+            {/* <div className="min-w-0 text-left hidden sm:block">
               <div className="text-white font-bold text-xl lg:text-2xl leading-tight truncate">
                 REDDINGTON GLOBAL
               </div>
               <div className="text-white font-bold text-xl lg:text-2xl leading-tight truncate">
                 DEBT RELIEF
               </div>
-            </div>
+            </div> */}
           </button>
-        </div>
+        </nav>
 
         {/* Centre: Navbar */}
         <nav className="hidden lg:flex flex-1 justify-center flex-wrap gap-4 min-w-0 mx-2 whitespace-nowrap">

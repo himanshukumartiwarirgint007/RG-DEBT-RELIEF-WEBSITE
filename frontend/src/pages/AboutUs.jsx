@@ -1,4 +1,4 @@
-import teamPhoto from "../assets/Media/team photo.jpg";
+import React from 'react';
 import vishalBora from "../assets/Media/Vishal Bora.jpg";
 import jyotsanaBora from "../assets/Media/Jyotsana Bora.jpeg";
 import humanApproach from "../assets/Media/human approch.png";
@@ -57,8 +57,8 @@ const AboutUs = () => (
         We're here to support you every step of the way on your journey to a debt-free life—committed to helping you find peace of mind and lasting relief.
       </p>
       <a
-        href="https://forms.gle/your-form-link"
-        target="_blank"
+        href="/Apply"
+        // target="_blank"
         rel="noopener noreferrer"
         className="inline-block bg-yellow-400 hover:bg-yellow-300 text-blue-900 font-bold px-8 py-3 rounded-full shadow-lg transition-all animate-pop z-10"
       >
@@ -139,8 +139,8 @@ const AboutUs = () => (
         <img src={certificate2} alt="Certificate 2" className="w-60 rounded-xl shadow-lg" />
       </div>
       <a
-        href="https://forms.gle/your-form-link"
-        target="_blank"
+        href="/Apply"
+        // target="_blank"
         rel="noopener noreferrer"
         className="inline-block bg-blue-700 hover:bg-blue-800 text-white font-bold px-8 py-3 rounded-full shadow-lg transition-all"
       >
