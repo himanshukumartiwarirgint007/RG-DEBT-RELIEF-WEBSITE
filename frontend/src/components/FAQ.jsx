@@ -4,22 +4,22 @@ const FAQSection = () => {
   const [openIdx, setOpenIdx] = useState(null);
   
   const faqs = [
-    {
-      q: "Will your program impact my credit score?",
-      a: "Depending on your personal situation and whether you have already missed payments to your creditors, debt settlement programs may have a negative impact on your credit score. Due to it being a separately regulated service, we do not provide credit repair services or offer advice on ways to improve your credit."
-    },
-    {
-      q: "What will your service cost me?",
-      a: "At National Debt Relief we do not earn anything unless we get you results. Specifically, 3 things must happen for a fee to be earned for the service. First, a settlement offer must be received from the creditor, we must receive your approval of the settlement, and finally at least 1 settlement payment to the creditor must be made. Only then would our fee be earned and charged to your Dedicated Account. Once debts are settled, the average client usually pays a fee of up to 25% of the total debt enrolled. But, until these 3 things occur, there is no fee for the service."
-    },
-    {
-      q: "How does the debt relief process work?",
-      a: "Our debt relief process begins with a free consultation where we analyze your financial situation. We then develop a customized plan that may include debt settlement, consolidation, or management strategies. Our team negotiates directly with your creditors to reduce balances, lower interest rates, or create affordable payment plans."
-    },
-    {
-      q: "Can you help with all types of debt?",
-      a: "We specialize in unsecured debts like credit cards, medical bills, personal loans, and private student loans. We cannot assist with secured debts (mortgages, auto loans) or federal student loans. During your consultation, we'll review all your debts and advise which ones we can help with."
-    }
+{
+  q: "How does debt relief affect my credit score?",
+  a: "Enrollment in our program could impact your credit rating, particularly if you've already missed payments. While we help resolve your debt, we don't provide credit repair services due to separate industry regulations. We recommend reviewing your credit reports regularly throughout the process."
+},
+{
+  q: "What are your fees?",
+  a: "You pay nothing until we successfully settle your debts. Our fee applies only when: (1) We secure a settlement offer from your creditor, (2) You approve the agreement, and (3) At least one settlement payment is processed. The typical fee is up to 25% of enrolled debt, charged only after settlements are finalized. No upfront costs apply."
+},
+{
+  q: "How does your debt relief process work?",
+  a: "Our 4-phase approach: 1) Free Consultation: We review your financial situation 2) Custom Plan: We recommend the optimal debt solution 3) Creditor Negotiation: Our experts work to reduce what you owe 4) Resolution: You make payments through a protected account until debts are settled."
+},
+{
+  q: "Which types of debt can you help with?",
+  a: "We specialize in unsecured debts including: • Credit cards • Medical bills • Personal loans • Private student loans. We cannot assist with: × Mortgages × Auto loans × Federal student loans. During your consultation, we'll identify exactly which debts we can resolve."
+}
   ];
 
   return (
@@ -55,7 +55,7 @@ const FAQSection = () => {
           textAlign: "center"
         }}
       >
-        Everything you need to know about debt relief
+        Get clear, straightforward information about how debt relief works
       </p>
       <div style={{ maxWidth: 900, margin: "0 auto" }}>
         {faqs.map((faq, idx) => (
@@ -71,45 +71,51 @@ const FAQSection = () => {
               border: openIdx === idx ? "1.5px solid var(--primary)" : "none"
             }}
           >
-            <button
-              onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
-              aria-expanded={openIdx === idx}
-              style={{
-                background: "none",
-                border: "none",
-                outline: "none",
-                width: "100%",
-                textAlign: "left",
-                display: "flex",
-                alignItems: "center",
-                fontSize: "1.35rem",
-                fontWeight: 700,
-                color: "#181c2a",
-                padding: "24px 0",
-                cursor: "pointer",
-                borderRadius: "14px",
-                transition: "background 0.2s"
-              }}
-            >
-              <span
-                style={{
-                  display: "inline-flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  width: 36,
-                  height: 36,
-                  border: "2px solid var(--primary)",
-                  borderRadius: "50%",
-                  marginRight: 18,
-                  fontSize: "1.6rem",
-                  background: "#fff",
-                  color: "var(--primary)"
-                }}
-              >
-                {openIdx === idx ? "−" : "+"}
-              </span>
-              {faq.q}
-            </button>
+           <button
+  onClick={() => setOpenIdx(openIdx === idx ? null : idx)}
+  aria-expanded={openIdx === idx}
+  style={{
+    background: openIdx === idx ? "#f8f9ff" : "transparent",
+    border: "none",
+    width: "100%",
+    textAlign: "left",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    fontSize: "1.25rem",
+    fontWeight: 600,
+    color: "#181c2a",
+    padding: "20px 24px",
+    cursor: "pointer",
+    borderRadius: "12px",
+    transition: "all 0.3s ease",
+    boxShadow: openIdx === idx ? "0 4px 12px rgba(0,0,0,0.08)" : "none",
+    margin: "4px 0"
+  }}
+>
+  <span style={{
+    flex: 1,
+    paddingRight: "16px"
+  }}>
+    {faq.q}
+  </span>
+  
+  <span style={{
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    width: "32px",
+    height: "32px",
+    borderRadius: "8px",
+    backgroundColor: openIdx === idx ? "var(--primary)" : "#f0f2f7",
+    color: openIdx === idx ? "#fff" : "var(--primary)",
+    transition: "all 0.3s ease",
+    fontSize: "1.2rem",
+    fontWeight: 400
+  }}>
+    {openIdx === idx ? "−" : "+"}
+  </span>
+</button>
             <div
               style={{
                 maxHeight: openIdx === idx ? 500 : 0,
