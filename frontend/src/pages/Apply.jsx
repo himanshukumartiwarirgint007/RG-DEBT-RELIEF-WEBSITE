@@ -190,23 +190,13 @@ export default function Apply() {
     return true;
   };
   
-  const handleNext = async () => {
+  const handleNext = () => {
     if (!validatePage()) {
-      alert("Please fill all required fields.");
       alert("Please fill all required fields correctly.");
       return;
     }
     setNextLoading(true);
-    try {
-      // Save partial data to backend
-      await fetch("http://localhost:3001/api/apply/partial", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-    } catch (err) {
-      // Optionally handle error
-    }
+    // Simulate network delay for animation effect
     setTimeout(() => {
       setPage(p => p + 1);
       setNextLoading(false);
@@ -218,26 +208,11 @@ export default function Apply() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validatePage()) {
-      alert("Please fill all required fields.");
       alert("Please fill all required fields correctly.");
       return;
     }
     
     setSubmitting(true);
-    try {
-      // Send data to backend
-      const response = await fetch("http://localhost:3001/api/apply", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
-      });
-      if (response.ok) {
-        setIsSubmitted(true);
-      } else {
-        alert("Submission failed.");
-      }
-    } catch (err) {
-      alert("Submission failed.");
     // Simulate API call
     setTimeout(() => {
       setIsSubmitted(true);
@@ -261,7 +236,6 @@ export default function Apply() {
       setForm(f => ({ ...f, city: cityInputValue.trim() }));
       setShowCityInput(false);
     }
-    setSubmitting(false);
   };
   
   // Success screen after form submission
