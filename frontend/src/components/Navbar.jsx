@@ -19,7 +19,7 @@ const Navbar = () => {
 
   return (
     <header className="w-full sticky top-0 z-50 bg-gradient-to-r from-[#0059B3] to-[#66B3FF] dark:from-[#0e1a2b] dark:to-[#1a2d47] text-white shadow-md transition-all duration-300">
-      <div className="w-full mx-auto flex items-center px-4 py-1 justify-between">
+      <div className="w-full mx-auto flex items-center px-4 py-0 justify-between">
         
         {/* Left: Logo and Brand */}
         <nav className="flex items-center gap-3 flex-shrink-0 min-w-0">
@@ -30,7 +30,7 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Logo"
-              className="w-24 h-20 object-contain sm:w-32 sm:h-24 lg:w-56 lg:h-32"
+              className="w-24 h-20 object-contain sm:w-32 sm:h-24 lg:w-56 lg:h-28"
             />
             {/* <div className="min-w-0 text-left hidden sm:block">
               <div className="text-white font-bold text-xl lg:text-2xl leading-tight truncate">
