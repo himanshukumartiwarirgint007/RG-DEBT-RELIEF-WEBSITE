@@ -28,7 +28,7 @@ const AddressIcon = () => (
 export const PrivacyPolicy = () => (
   <div className="bg-zinc-50 dark:bg-gray-900 py-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 max-w-6xl mx-auto transition-colors duration-300">
     <h1 className="text-4xl font-extrabold text-center mb-6 text-indigo-600 dark:text-indigo-400">Privacy Policy</h1>
-    <p className="text-center text-sm text-zinc-500 dark:text-gray-400 mb-8">Effective Date: June 23, 2025</p>
+    <p className="text-center text-sm text-zinc-500 dark:text-gray-400 mb-8">Effective Date: July, 2025</p>
 
     <Section title="Information We Collect">
       <ul className="list-disc list-inside space-y-2">
@@ -68,7 +68,7 @@ export const PrivacyPolicy = () => (
         <li><strong>Deletion:</strong> Request deletion of your personal data.</li>
         <li><strong>Objection:</strong> Object to certain data processing activities.</li>
       </ul>
-      <p className="mt-4">To exercise any of these rights, please email us at <a className="text-indigo-600 dark:text-indigo-400 underline hover:no-underline" href="mailto:support@rgdebtrelief.com"><MailIcon />support@rgdebtrelief.com</a>.</p>
+      <p className="mt-4">To exercise any of these rights, please email us at <a className="text-indigo-600 dark:text-indigo-400 underline hover:no-underline" href="mailto:debtsettlement@rgdebtrelief.com"><MailIcon />debtsettlement@rgdebtrelief.com</a>.</p>
     </Section>
 
     <Section title="Security & Policy Updates">
@@ -78,8 +78,8 @@ export const PrivacyPolicy = () => (
 
     <Section title="Contact Us">
       <p>If you have any questions about this privacy policy or your personal data, please contact us:</p>
-      <p className="mt-2"><a className="text-indigo-600 dark:text-indigo-400 underline hover:no-underline" href="mailto:support@rgdebtrelief.com"><MailIcon />support@rgdebtrelief.com</a></p>
-      <p><AddressIcon />Reddington Global Consultancy</p>
+      <p className="mt-2"><a className="text-indigo-600 dark:text-indigo-400 underline hover:no-underline" href="mailto:debtsettlement@rgdebtrelief.com"><MailIcon />debtsettlement@rgdebtrelief.com</a></p>
+      {/* <p><AddressIcon />Reddington Global Consultancy</p> */}
     </Section>
   </div>
 );

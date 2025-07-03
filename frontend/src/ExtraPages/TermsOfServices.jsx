@@ -29,7 +29,7 @@ const AddressIcon = () => (
 const TermsOfService = () => (
   <div className="bg-zinc-50 dark:bg-gray-900 py-12 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-24 max-w-6xl mx-auto transition-colors duration-300">
     <h1 className="text-4xl font-extrabold text-center mb-6 text-indigo-600 dark:text-indigo-400">Terms of Service</h1>
-    <p className="text-center text-sm text-zinc-500 dark:text-gray-400 mb-8">Effective Date: June 23, 2025</p>
+    <p className="text-center text-sm text-zinc-500 dark:text-gray-400 mb-8">Effective Date: July, 2025</p>
 
     <Section title="Welcome">
       <p>Welcome to RG Debt Relief. By accessing or using our website and services, you agree to be bound by these Terms of Service and our <a href="/PrivacyPolicy" className="text-indigo-600 dark:text-indigo-400 underline hover:no-underline">Privacy Policy</a>. If you do not agree, please do not use our site.</p>
@@ -77,8 +77,8 @@ const TermsOfService = () => (
 
     <Section title="Contact Us">
       <p>If you have any questions about these terms, please contact us:</p>
-      <p className="mt-2"><a className="text-indigo-600 dark:text-indigo-400 underline hover:no-underline" href="mailto:support@rgdebtrelief.com"><MailIcon />support@rgdebtrelief.com</a></p>
-      <p><AddressIcon />Reddington Global Consultancy</p>
+      <p className="mt-2"><a className="text-indigo-600 dark:text-indigo-400 underline hover:no-underline" href="mailto:debtsettlement@rgdebtrelief.com"><MailIcon />debtsettlement@rgdebtrelief.com</a></p>
+      {/* <p><AddressIcon />Reddington Global Consultancy</p> */}
     </Section>
   </div>
 );

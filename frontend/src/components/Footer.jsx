@@ -51,7 +51,7 @@ const Footer = () => {
               <h5 className="text-[#f7c948] font-semibold mb-3">Company</h5>
               <ul className="space-y-2 text-sm">
                 <li><a href="AboutUs" className="text-white dark:text-gray-300 hover:text-yellow-400 transition-all">About Us</a></li>
-                <li><a href="Apply" className="text-white dark:text-gray-300 hover:text-yellow-400 transition-all">Contact Us</a></li>
+                <li><a href="ContactUs" className="text-white dark:text-gray-300 hover:text-yellow-400 transition-all">Contact Us</a></li>
               </ul>
             </div>
 
