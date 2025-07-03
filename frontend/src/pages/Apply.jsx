@@ -267,13 +267,13 @@ export default function Apply() {
           </div>
           <div className="mt-10">
             <p className="text-lg mb-4">
-              Email us at: <a href="mailto:support@reddingtonglobal.com" className="text-[#4b38d3] font-semibold">
-                support@reddingtonglobal.com
+              Email us at: <a href="mailto:debtsettlement@reddingtonglobal.com" className="text-[#4b38d3] font-semibold">
+                debtsettlement@reddingtonglobal.com
               </a>
             </p>
             <p className="text-lg">
               or you can also call us now at: 
-              <span className="text-[#4b38d3] font-bold ml-2">(800)-300-9550</span>
+              <span className="text-[#4b38d3] font-bold ml-2">+19545563969</span>
             </p>
           </div>
         </div>
@@ -381,7 +381,7 @@ export default function Apply() {
                     className="mt-1 w-4 h-4 accent-[#4b38d3]"
                   />
                   <span className="text-xs text-gray-600">
-                    By providing my phone number and opting in, I consent to receive marketing SMS text messages from Reddington Global Debt Relief at the number provided, including messages sent by an automatic telephone dialing system (auto-dialer). I understand that consent is not a condition of purchase, and I can opt out at any time. I will receive 1-4 messages per month. Standard message and data rates may apply. To opt out of future messages, reply STOP. For help, reply HELP or contact us at support@reddingtonglobalcom. For more information check our Privacy Policy
+                    By providing my phone number and opting in, I consent to receive marketing SMS text messages from Reddington Global Debt Relief at the number provided, including messages sent by an automatic telephone dialing system (auto-dialer). I understand that consent is not a condition of purchase, and I can opt out at any time. I will receive 1-4 messages per month. Standard message and data rates may apply. To opt out of future messages, reply STOP. For help, reply HELP or contact us at debtsettlement@reddingtonglobal.com . For more information check our Privacy Policy
                   </span>
                 </label>
               </div>
@@ -512,7 +512,7 @@ export default function Apply() {
                     required
                   />
                   <span className="text-xs text-gray-600">
-                    By clicking "Submit", I provide express written consent for Clarity Debt Resolution to contact me via email, phone calls, and/or text messages at the phone number associated with my account. This includes communications regarding scheduling, account alerts (Reddingtonglobal alert), and authorizing account transactions. I consent to the use of any telephone dialing system, including prerecorded or artificial voice messages and/or automatic dialing devices, as applicable, for sending these communications. My phone number and SMS consent will not be shared with third parties for any reason, and Msg & data rates may apply. Messaging frequency may vary. I can text HELP for assistance or email support@reddingtonglobal.com for additional support, and I can text STOP at any time to cancel these messages. Even if my phone number is on any state or federal Do-Not-Call list, I still authorize these communications. I understand that I can revoke this consent at any time and that opting in is not a condition for receiving services from Reddington Global Debt Relief. It is my responsibility to keep my phone number updated for these purposes.
+                    By clicking "Submit", I provide express written consent for RG Debt Relief to contact me via email, phone calls, and/or text messages at the phone number associated with my account. This includes communications regarding scheduling, account alerts (Reddingtonglobal alert), and authorizing account transactions. I consent to the use of any telephone dialing system, including prerecorded or artificial voice messages and/or automatic dialing devices, as applicable, for sending these communications. My phone number and SMS consent will not be shared with third parties for any reason, and Msg & data rates may apply. Messaging frequency may vary. I can text HELP for assistance or email debtsettlement@reddingtonglobal.com for additional support, and I can text STOP at any time to cancel these messages. Even if my phone number is on any state or federal Do-Not-Call list, I still authorize these communications. I understand that I can revoke this consent at any time and that opting in is not a condition for receiving services from Reddington Global Debt Relief. It is my responsibility to keep my phone number updated for these purposes.
                   </span>
                 </label>
               </div>
