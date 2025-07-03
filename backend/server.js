@@ -21,26 +21,24 @@ const applySchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
   email: String,
-  countryCode: String,
   phone: String,
+  bestTimeToCall: String,
+  consent: Boolean,
   state: String,
-  debtAmount: String,
-  typeOfDebt: [String],
-  employmentStatus: String,
-  monthlyIncome: String,
-  source: String,
-  status: String,
-  notes: String,
+  city: String,
+  zipCode: String,
+  disclaimerConsent: Boolean,
 }, { timestamps: true });
 
 const leaveSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
   email: String,
-  countryCode: String,
   phone: String,
- 
+  bestTimeToCall: String,
+  consent: Boolean,
 }, { timestamps: true });
+
 const Uncomplete = mongoose.model("Apply_uncomplete", leaveSchema);
 const Complete = mongoose.model("Apply_complete", applySchema);
 

@@ -156,13 +156,22 @@ export default function Apply() {
     return true;
   };
   
-  const handleNext = () => {
+  const handleNext = async () => {
     if (!validatePage()) {
       alert("Please fill all required fields.");
       return;
     }
     setNextLoading(true);
-    // Simulate network delay for animation effect
+    try {
+      // Save partial data to backend
+      await fetch("http://localhost:3001/api/apply/partial", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+    } catch (err) {
+      // Optionally handle error
+    }
     setTimeout(() => {
       setPage(p => p + 1);
       setNextLoading(false);
@@ -178,11 +187,22 @@ export default function Apply() {
       return;
     }
     setSubmitting(true);
-    // Simulate API call
-    setTimeout(() => {
-      setIsSubmitted(true);
-      setSubmitting(false);
-    }, 1000);
+    try {
+      // Send data to backend
+      const response = await fetch("http://localhost:3001/api/apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (response.ok) {
+        setIsSubmitted(true);
+      } else {
+        alert("Submission failed.");
+      }
+    } catch (err) {
+      alert("Submission failed.");
+    }
+    setSubmitting(false);
   };
   
   // Success screen after form submission
