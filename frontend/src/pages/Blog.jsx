@@ -1,4 +1,9 @@
 import React, { useState } from "react";
+import latestpic from "../assets/Media/nature.png";
+import newsmediapic from "../assets/Media/newsmedia.png";
+import debtguidepic from "../assets/Media/debt-guide.png";
+import lifestylepic from "../assets/Media/LifeStyle.png";
+import financialwellnesspic from "../assets/Media/financialpic.png";
 
 const blogPosts = [
   {
@@ -9,7 +14,7 @@ const blogPosts = [
       "Struggling with debt? Discover five practical tips to help you take control of your finances and reduce your debt burden.",
     content:
       "Managing debt can feel overwhelming, but with the right strategies, you can regain control. Start by creating a budget, prioritize high-interest debts, avoid unnecessary expenses, seek professional advice, and stay consistent with your payments. Remember, small steps can lead to big changes over time.",
-    image: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=600&q=80",
+    image: latestpic,
     section: "latest"
   },
   {
@@ -20,7 +25,7 @@ const blogPosts = [
       "Not sure which debt relief option is right for you? Learn about the different solutions available and how to choose the best one for your situation.",
     content:
       "Debt relief comes in many forms, including debt consolidation, settlement, and counseling. Each option has its pros and cons, so it's important to assess your financial situation and consult with experts before making a decision.",
-    image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=600&q=80",
+    image: debtguidepic,
     section: "debt-guide"
   },
   {
@@ -31,7 +36,7 @@ const blogPosts = [
       "Settled your debts? Here’s how you can start rebuilding your credit score and regain financial stability.",
     content:
       "After settling your debts, focus on paying bills on time, keeping credit card balances low, and monitoring your credit report regularly. Responsible financial habits will help you rebuild your credit over time.",
-    image: "https://images.unsplash.com/photo-1523289333742-be1143f6b766?auto=format&fit=crop&w=600&q=80",
+    image: financialwellnesspic,
     section: "financial-wellness"
   },
   {
@@ -42,7 +47,7 @@ const blogPosts = [
       "Stay up to date with the latest news and media coverage on debt relief and financial trends.",
     content:
       "Recent news highlights changes in debt relief regulations and new programs to help consumers. Stay informed to make the best decisions for your financial future.",
-    image: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=600&q=80",
+    image: newsmediapic,
     section: "news-media"
   },
   {
@@ -53,7 +58,7 @@ const blogPosts = [
       "Learn how small lifestyle changes can help you avoid debt and build lasting financial health.",
     content:
       "Cutting unnecessary expenses, cooking at home, and finding free entertainment are just a few ways to save money and stay out of debt.",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80",
+    image: lifestylepic,
     section: "lifestyle"
   }
 ];
