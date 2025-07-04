@@ -469,14 +469,14 @@ export default function Apply() {
                       className="w-full p-3 rounded border border-gray-300 bg-white flex items-center cursor-pointer"
                       onClick={() => setShowCityInput(true)}
                     >
-                      {form.city || "Select or type your city"}
+                      {form.city || "Select or type city"}
                     </div>
                   )}
                   
                   {showCityInput && (
                     <div className="absolute z-10 w-full mt-1 bg-white border border-gray-300 rounded shadow-lg max-h-60 overflow-y-auto">
                       <div className="p-2 border-b">
-                        <div className="text-sm text-gray-500">Type to search or select</div>
+                        <div className="text-sm text-gray-500">search or select</div>
                       </div>
                       {filteredCities.length > 0 ? (
                         filteredCities.map(city => (
