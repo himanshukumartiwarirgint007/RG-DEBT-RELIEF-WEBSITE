@@ -12,7 +12,7 @@ const Contact = () => {
   const [submitting, setSubmitting] = useState(false);
 
   const formatPhoneNumber = (value) => {
-    const cleaned = value.replace(/\D/g, '').slice(0, 10); // only digits, max 10
+    const cleaned = value.replace(/\D/g, '').slice(0, 10);
     const match = cleaned.match(/^(\d{0,3})(\d{0,3})(\d{0,4})$/);
     if (!match) return '';
     return !match[2]
@@ -20,8 +20,8 @@ const Contact = () => {
       : `(${match[1]}) ${match[2]}${match[3] ? '-' + match[3] : ''}`;
   };
 
-  const validatePhone = (e) => {
-    const raw = e.target.value.replace(/\D/g, '');
+  const validatePhone = (value) => {
+    const raw = value.replace(/\D/g, '');
     if (raw.length !== 10) {
       setPhoneError('Please enter a valid 10-digit number');
     } else {
@@ -31,7 +31,14 @@ const Contact = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setForm(f => ({ ...f, [name]: value }));
+
+    if (name === 'phone') {
+      const formatted = formatPhoneNumber(value);
+      setForm(f => ({ ...f, phone: formatted }));
+      validatePhone(formatted);
+    } else {
+      setForm(f => ({ ...f, [name]: value }));
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -150,7 +157,6 @@ const Contact = () => {
                 value={form.phone}
                 onChange={handleChange}
                 placeholder="(123) 456-7890"
-                maxLength={14}
                 required
                 className="w-full border border-gray-300 rounded px-4 py-3 text-base"
               />
