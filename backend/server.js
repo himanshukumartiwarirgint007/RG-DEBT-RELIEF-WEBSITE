@@ -39,8 +39,18 @@ const leaveSchema = new mongoose.Schema({
   consent: Boolean,
 }, { timestamps: true });
 
+const contactUsSchema = new mongoose.Schema({
+  firstName: String,
+  lastName: String,
+  email: String,
+  phone: String,
+  message: String,
+  createdAt: { type: Date, default: Date.now }
+});
+
 const Uncomplete = mongoose.model("Apply_uncomplete", leaveSchema);
 const Complete = mongoose.model("Apply_complete", applySchema);
+const ContactUs = mongoose.model("contact_us", contactUsSchema);
 
 // Save partial data
 app.post('/api/apply/partial', async (req, res) => {
@@ -59,6 +69,17 @@ app.post('/api/apply', async (req, res) => {
     const data = req.body;
     await Complete.create(data);
     res.json({ message: 'Form fully submitted!' });
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
+});
+
+app.post('/api/contact', async (req, res) => {
+  try {
+    const { firstName, lastName, email, phone, message } = req.body;
+    const contact = new ContactUs({ firstName, lastName, email, phone, message });
+    await contact.save();
+    res.json({ message: 'Contact form submitted!' });
   } catch (error) {
     res.status(500).json({ error: error.message });
   }

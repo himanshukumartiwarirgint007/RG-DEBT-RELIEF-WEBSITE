@@ -2,6 +2,14 @@ import React, { useState } from 'react';
 
 const Contact = () => {
   const [phoneError, setPhoneError] = useState('');
+  const [form, setForm] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    message: ""
+  });
+  const [submitting, setSubmitting] = useState(false);
 
   const formatPhoneNumber = (value) => {
     const cleaned = value.replace(/\D/g, '').slice(0, 10); // only digits, max 10
@@ -19,6 +27,32 @@ const Contact = () => {
     } else {
       setPhoneError('');
     }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm(f => ({ ...f, [name]: value }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    try {
+      const res = await fetch("http://localhost:3001/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form)
+      });
+      if (res.ok) {
+        alert("Thank you for contacting us!");
+        setForm({ firstName: "", lastName: "", email: "", phone: "", message: "" });
+      } else {
+        alert("Submission failed.");
+      }
+    } catch {
+      alert("Submission failed.");
+    }
+    setSubmitting(false);
   };
 
   return (
@@ -79,16 +113,22 @@ const Contact = () => {
         <div className="flex-1 bg-white shadow-lg rounded-lg p-8">
           <h2 className="text-2xl font-bold mb-4 text-[#0e2f4f]">Contact Us</h2>
           <p className="text-base mb-6 text-gray-700">We're here to help! Send us a message and we'll give you a quick call back.</p>
-          <form className="space-y-5">
+          <form className="space-y-5" onSubmit={handleSubmit}>
             <div className="flex flex-col md:flex-row gap-4">
               <input
                 type="text"
+                name="firstName"
+                value={form.firstName}
+                onChange={handleChange}
                 placeholder="Enter your first name"
                 required
                 className="w-full border border-gray-300 rounded px-4 py-3 text-base"
               />
               <input
                 type="text"
+                name="lastName"
+                value={form.lastName}
+                onChange={handleChange}
                 placeholder="Enter your last name"
                 required
                 className="w-full border border-gray-300 rounded px-4 py-3 text-base"
@@ -96,6 +136,9 @@ const Contact = () => {
             </div>
             <input
               type="email"
+              name="email"
+              value={form.email}
+              onChange={handleChange}
               placeholder="Email"
               required
               className="w-full border border-gray-300 rounded px-4 py-3 text-base"
@@ -103,20 +146,23 @@ const Contact = () => {
             <div>
               <input
                 type="text"
+                name="phone"
+                value={form.phone}
+                onChange={handleChange}
                 placeholder="(123) 456-7890"
                 maxLength={14}
                 required
-                onChange={(e) => {
-                  e.target.value = formatPhoneNumber(e.target.value);
-                }}
-                onBlur={validatePhone}
                 className="w-full border border-gray-300 rounded px-4 py-3 text-base"
               />
               {phoneError && <p className="text-sm text-red-600 mt-1">{phoneError}</p>}
             </div>
             <textarea
+              name="message"
+              value={form.message}
+              onChange={handleChange}
               placeholder="Message"
               className="w-full h-32 border border-gray-300 rounded px-4 py-3 text-base"
+              required
             ></textarea>
             <div className="text-sm text-gray-500">
               By providing my phone number and opting in, I consent to receive marketing SMS text messages from RG Debt Relief at the number provided. These messages may include updates, promotions, and service-related information. I understand that consent is not a condition of purchase and that message and data rates may apply. To opt out, I can reply STOP at any time.
@@ -125,9 +171,10 @@ const Contact = () => {
             </div>
             <button
               type="submit"
+              disabled={submitting}
               className="w-full bg-[#0e2f4f] text-white py-3 rounded font-semibold hover:bg-[#0c263e] transition text-lg"
             >
-              Send Message
+              {submitting ? 'Sending...' : 'Send Message'}
             </button>
           </form>
         </div>
