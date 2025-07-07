@@ -4,7 +4,6 @@ import HappyFamily from "../assets/Media/HappyFamily.jpg";
 import ChatIcon from "../assets/Media/chat.png";
 import CalculatorIcon from "../assets/Media/Calculator.png";
 import CoinIcon from "../assets/Media/coin.png";
-import secure from "../assets/Media/secure.png";
 import trusted from "../assets/Media/trusted.png";
 import support from "../assets/Media/support.png";
 import FAQSection from "../components/FAQ";
