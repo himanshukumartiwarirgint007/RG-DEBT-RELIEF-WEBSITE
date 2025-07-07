@@ -60,19 +60,18 @@ const Home = () => {
     </div>
 
     {/* Right Video */}
-    {/* <div className="w-full md:w-1/2 flex justify-center pointer-events-auto">
+    <div className="w-full md:w-1/2 flex justify-center pointer-events-auto">
       <div className="w-full max-w-[480px] aspect-video rounded-xl overflow-hidden shadow-lg">
         <iframe
-  src="https://www.youtube.com/embed/CHiOBzqcMV8?autoplay=1&mute=1&loop=1&playlist=CHiOBzqcMV8"
+  src="https://www.youtube.com/embed/VMLdA44sdtA?autoplay=1&mute=1&loop=1&playlist=VMLdA44sdtA"
   title="YouTube Video"
   frameBorder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowFullScreen
   className="w-full h-full"
 ></iframe>
-
       </div>
-    </div> */}
+    </div>
   </div>
 </div>
 
