@@ -12,7 +12,7 @@ import LoanCalculator from "../ExtraPages/LoanCalculator";
 
 // ✅ Correct trust badge format
 const trustBadges = [
-  { src: secure, alt: "Secure" },
+  // { src: secure, alt: "Secure" },
   { src: trusted, alt: "Trusted" },
   { src: support, alt: "Support" },
 ];
