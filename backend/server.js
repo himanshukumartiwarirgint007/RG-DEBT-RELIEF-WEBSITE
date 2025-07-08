@@ -9,7 +9,7 @@ const PORT = 3001;
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb+srv://sd5:SD5-123@rg.chrbsm4.mongodb.net/?retryWrites=true&w=majority&appName=rg', {
+mongoose.connect('mongodb+srv://RGdebtRelief:Admin123@rgdebtrelief.qyjunw9.mongodb.net/WebsiteData?retryWrites=true&w=majority&appName=RGDebtRelief', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
@@ -48,8 +48,8 @@ const contactUsSchema = new mongoose.Schema({
   createdAt: { type: Date, default: Date.now }
 });
 
-const Uncomplete = mongoose.model("Apply_uncomplete", leaveSchema);
-const Complete = mongoose.model("Apply_complete", applySchema);
+const Uncomplete = mongoose.model("apply_incomplete", leaveSchema);
+const Complete = mongoose.model("apply_complete", applySchema);
 const ContactUs = mongoose.model("contact_us", contactUsSchema);
 
 // Save partial data
