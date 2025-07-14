@@ -4,6 +4,7 @@ import ChatIcon from "../assets/Media/chat.png";
 import CalculatorIcon from "../assets/Media/Calculator.png";
 import CoinIcon from "../assets/Media/coin.png";
 import xyz from "../assets/Media/xyz.png";
+import applybg from "../assets/Media/abcd.png";
 
 const initialForm = {
   firstName: "",
@@ -197,9 +198,17 @@ export default function Apply() {
   // Success screen after form submission
   if (isSubmitted) {
     return (
-      <div className="min-h-screen bg-gradient-to-b from-[#edf2fa] to-[#abc4ff] flex flex-col items-center justify-center p-6">
+        <div 
+      className="min-h-screen bg-gradient-to-b from-[#edf2fa] to-[#abc4ff] flex flex-col items-center justify-center p-6 bsolute inset-0 bg-black bg-opacity-50"
+      style={{ 
+        backgroundImage: `url(${applybg})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundBlendMode: 'soft-light'
+      }}
+    >
         
-        <div className="rounded-2xl shadow-2xl max-w-4xl w-full p-8 md:p-16 text-center">
+        <div className="rounded-2xl shadow-2xl max-w-4xl w-full p-8 md:p-16 text-center bg-gradient-to-br from-[#edf2fa] to-[#abc4ff]">
           <div className="mb-9 flex justify-center">
           <img 
             src={xyz}
