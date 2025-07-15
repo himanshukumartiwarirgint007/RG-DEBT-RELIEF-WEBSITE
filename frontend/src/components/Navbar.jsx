@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { PhoneCall } from 'lucide-react';
-import logo from '../assets/Media/logo2.png';
+import logo from '../assets/Media/logo3.png';
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -30,7 +30,7 @@ const Navbar = () => {
             <img
               src={logo}
               alt="Logo"
-              className="w-24 h-20 object-contain sm:w-32 sm:h-24 lg:w-56 lg:h-28"
+              className="w-24 h-20 object-contain sm:w-32 sm:h-32 lg:w-49 lg:h-32 xl:w-64 xl:h-28"
             />
             {/* <div className="min-w-0 text-left hidden sm:block">
               <div className="text-white font-bold text-xl lg:text-2xl leading-tight truncate">
